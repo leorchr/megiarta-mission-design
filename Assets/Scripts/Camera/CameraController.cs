@@ -218,7 +218,6 @@ public class CameraController : MonoBehaviour
                     newDist = hit.distance - 0.1f;
                 }
                 Vector3 rPos = (transform.localRotation * Vector3.back) * newDist;
-                //if (Physics.Raycast())
                 transform.position = Vector3.SmoothDamp(transform.position, tpos + rPos, ref vel, cData.smoothTimePosition);
                 break;
             default: break;

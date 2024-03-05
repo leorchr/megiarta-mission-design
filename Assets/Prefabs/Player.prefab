@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 437685930972194487}
   - component: {fileID: 4749595798472013207}
   m_Layer: 0
-  m_Name: PlayerCollision
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
