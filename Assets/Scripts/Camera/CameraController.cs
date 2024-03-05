@@ -55,7 +55,6 @@ public class CameraController : MonoBehaviour
 
     void Start()
     {
-        pInput = target.GetComponent<PlayerInput>();
         cam = GetComponent<Camera>();
         swapCamViaID(currentCameraID);
     }
@@ -63,23 +62,16 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        checkInput();
 
-        if (useCPoints) { swapCam(getCurrentData()); }
-        CamUpdate();
-        if (tTime != 1) { transitionUpdate(); }
+        
 
     }
 
     private void Update()
     {
-
-    }
-
-    private void checkInput()
-    {
-        lookVectorInput = pInput.currentActionMap.FindAction("Look").ReadValue<Vector2>();
-        lookVectorInput = cData.invertedLook ? lookVectorInput * -1 : lookVectorInput; //Invert input
+        if (useCPoints) { swapCam(getCurrentData()); }
+        CamUpdate();
+        if (tTime != 1) { transitionUpdate(); }
     }
 
     private CameraData getCurrentData()
@@ -103,6 +95,11 @@ public class CameraController : MonoBehaviour
         }
     }
 
+    public void onLook(InputAction.CallbackContext callbackContext)
+    {
+        lookVectorInput = callbackContext.ReadValue<Vector2>();
+        lookVectorInput = cData.invertedLook ? lookVectorInput * -1 : lookVectorInput; //Invert input
+    }
 
     public void CameraChange(InputAction.CallbackContext context)
     {
