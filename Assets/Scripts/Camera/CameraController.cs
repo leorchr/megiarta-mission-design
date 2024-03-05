@@ -47,6 +47,8 @@ public class CameraController : MonoBehaviour
 
     public List<CameraPoint> cpList;
 
+    public LayerMask ignoreCamPlacement;
+
     [SerializeField]
     private AnimationCurve posTransitionCurve = AnimationCurve.EaseInOut(0, 0, 1, 1);
 
@@ -211,7 +213,7 @@ public class CameraController : MonoBehaviour
                 Vector3 tpos = target.transform.position + cData.positionOffset;
                 float newDist = cData.CamDistance;
                 RaycastHit hit;
-                if (Physics.Raycast(tpos, (transform.localRotation * Vector3.back), out hit,newDist))
+                if (Physics.Raycast(tpos, (transform.localRotation * Vector3.back), out hit,newDist, ignoreCamPlacement))
                 {
                     newDist = hit.distance - 0.1f;
                 }

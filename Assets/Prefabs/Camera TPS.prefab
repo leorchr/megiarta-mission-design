@@ -214,6 +214,9 @@ MonoBehaviour:
         z: 0
   transitionTime: 0.2
   cpList: []
+  ignoreCamPlacement:
+    serializedVersion: 2
+    m_Bits: 55
   posTransitionCurve:
     serializedVersion: 2
     m_Curve:
