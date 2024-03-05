@@ -9,8 +9,8 @@ public class PlayerInteraction : MonoBehaviour
     private PlayerInteractionAnim _anim;
     private InteractionType _possibleInteraction = InteractionType.None;
     private Inventory _inventory;
-    private Pickable _possiblePickable;
-    private Interactive _possibleInteractive;
+    [HideInInspector] public Pickable _possiblePickable;
+    [HideInInspector] public Interactive _possibleInteractive;
 
     private void Start()
     {
@@ -130,6 +130,7 @@ public class PlayerInteraction : MonoBehaviour
     public void SetInteraction(InteractionType interaction)
     {
         _possibleInteraction = interaction;
+        InteractionHelper.Instance.Show(interaction);
     }
 
     private void OnFail()
