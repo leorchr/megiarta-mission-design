@@ -171,6 +171,7 @@ public class CameraController : MonoBehaviour
             case RotationType.UseMouse:
                 Vector3 cRotation = lookRotation;
                 Vector2 lvi = lookVectorInput * Time.deltaTime;
+               
                 cRotation = new Vector3(cRotation.x + (-lvi.y * (sensitivity * cData.sensitivityMultiplier)), cRotation.y + (lvi.x * (sensitivity * cData.sensitivityMultiplier)), cRotation.z);
                 //cRotation *= Time.deltaTime;
                 lookRotation = cRotation;
@@ -208,7 +209,13 @@ public class CameraController : MonoBehaviour
                 break;
             case PositionType.RotateAroundTarget:
                 Vector3 tpos = target.transform.position + cData.positionOffset;
-                Vector3 rPos = (transform.localRotation * Vector3.back) * cData.CamDistance;
+                float newDist = cData.CamDistance;
+                RaycastHit hit;
+                if (Physics.Raycast(tpos, (transform.localRotation * Vector3.back), out hit,newDist))
+                {
+                    newDist = hit.distance - 0.1f;
+                }
+                Vector3 rPos = (transform.localRotation * Vector3.back) * newDist;
                 //if (Physics.Raycast())
                 transform.position = Vector3.SmoothDamp(transform.position, tpos + rPos, ref vel, cData.smoothTimePosition);
                 break;
