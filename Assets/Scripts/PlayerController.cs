@@ -15,10 +15,12 @@ public class PlayerController : MonoBehaviour
     private Vector2 moveInput = Vector2.zero;
 
     private Rigidbody rb;
+    private Animator animator;
     // Start is called before the first frame update
     void Start()
     {
         rb =GetComponent<Rigidbody>();
+        animator = GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
@@ -29,6 +31,7 @@ public class PlayerController : MonoBehaviour
         Vector3 plDir = (fwd + side);
         plDir = new Vector3(plDir.x,0,plDir.z).normalized;
         rb.velocity = Vector3.ClampMagnitude(rb.velocity + (plDir * accelerationSpeed * Time.deltaTime), maxSpeed);
+
         if(plDir.magnitude < 0.001)
         {
             float deccel = deccelerationSpeed * Time.deltaTime;
@@ -36,6 +39,13 @@ public class PlayerController : MonoBehaviour
             plSpeed = Vector2.ClampMagnitude(plSpeed, plSpeed.magnitude - deccel);
             rb.velocity = new Vector3(plSpeed.x,rb.velocity.y,plSpeed.y);
         }
+        else
+        {
+            Vector3 rot = Quaternion.LookRotation(rb.velocity.normalized, Vector3.forward).eulerAngles;
+            transform.rotation = Quaternion.Euler(new Vector3(0, rot.y, 0));
+        }
+
+        animator.SetFloat("Speed", rb.velocity.magnitude);
     }
 
     public void OnMove(InputAction.CallbackContext callbackContext)
