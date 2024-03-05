@@ -86,7 +86,7 @@ public class PlayerInteraction : MonoBehaviour
             if (other.transform.CompareTag("Pickable"))
             {
                 SetInteraction(InteractionType.Pickup);
-                _possiblePickable = other.GetComponentInChildren<Pickable>();
+                _possiblePickable = other.GetComponent<Pickable>();
             }
             else if (other.transform.CompareTag("Interactive"))
             {
@@ -94,7 +94,6 @@ public class PlayerInteraction : MonoBehaviour
                 if (interactive == null) return;
                 //if interaction doesn't need key object or interaction key object is in inventory
                 bool hasRequiredItems = _inventory.HasEveryItem(interactive.requiredItems);
-
                 if (!interactive.waitForObject || hasRequiredItems)
                 {
                     _possibleInteractive = interactive;

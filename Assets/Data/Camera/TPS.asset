@@ -17,7 +17,7 @@ MonoBehaviour:
     isOrthographic: 0
     cullingMask:
       serializedVersion: 2
-      m_Bits: 0
+      m_Bits: 4294967295
     typeOfRotation: 3
     staticRotation: {x: 0, y: 0, z: 0}
     transformToCopyRotation: {fileID: 0}
@@ -51,7 +51,7 @@ MonoBehaviour:
     updateFwdWhenPressed: 1
     CamDistance: 8
     positionOffset: {x: 0, y: 0, z: 0}
-    smoothTimePosition: 0.1
+    smoothTimePosition: 0
     clampXPosition:
       clamp: 0
       min: 0
