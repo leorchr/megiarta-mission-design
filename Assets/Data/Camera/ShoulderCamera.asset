@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6c96beace8eaa8148b9cdf0442cd3e77, type: 3}
-  m_Name: TPS
+  m_Name: ShoulderCamera
   m_EditorClassIdentifier: 
   cData:
     FOV: 90
@@ -28,7 +28,7 @@ MonoBehaviour:
     invertedLook: 0
     clampXRotation:
       clamp: 1
-      min: 0
+      min: -30
       max: 60
     clampYRotation:
       clamp: 0
@@ -49,8 +49,8 @@ MonoBehaviour:
     targetToBeAt: 0
     transformToCopyPosition: {fileID: 0}
     updateFwdWhenPressed: 1
-    CamDistance: 5
-    positionOffset: {x: 0, y: 0, z: 0}
+    CamDistance: 0.7
+    positionOffset: {x: 0.3, y: 0.7, z: 0}
     smoothTimePosition: 0
     clampXPosition:
       clamp: 0
