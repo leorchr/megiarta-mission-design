@@ -1085,7 +1085,7 @@ PrefabInstance:
         type: 3}
       propertyPath: CamDatas.Array.data[0].CamDataSC
       value: 
-      objectReference: {fileID: 11400000, guid: bd89a0e1f8506984c8fb5ea628942e9a,
+      objectReference: {fileID: 11400000, guid: 145b5716fa44b3a47af45f2f3bf28c2c,
         type: 2}
     - target: {fileID: 8940970613190826018, guid: c48943a3488df4d438cfd1728a5025c0,
         type: 3}
