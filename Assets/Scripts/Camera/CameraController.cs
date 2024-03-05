@@ -59,6 +59,7 @@ public class CameraController : MonoBehaviour
     {
         cam = GetComponent<Camera>();
         swapCamViaID(currentCameraID);
+        cam.fieldOfView = cData.FOV;
     }
 
     // Update is called once per frame
