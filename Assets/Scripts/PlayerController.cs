@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Rigidbody))]
+[RequireComponent (typeof(CameraPointTriggerCollector))]
 public class PlayerController : MonoBehaviour
 {
 
@@ -52,4 +53,6 @@ public class PlayerController : MonoBehaviour
     {
         moveInput = callbackContext.ReadValue<Vector2>();
     }
+
+    
 }
