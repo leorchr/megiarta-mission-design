@@ -49,7 +49,8 @@ MonoBehaviour:
     targetToBeAt: 0
     transformToCopyPosition: {fileID: 0}
     updateFwdWhenPressed: 1
-    CamDistance: 5
+    CamDistance: 3
+    positionOffsetType: 0
     positionOffset: {x: 0, y: 0, z: 0}
     smoothTimePosition: 0
     clampXPosition:
