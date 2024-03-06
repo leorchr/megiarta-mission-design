@@ -28,12 +28,12 @@ public class PlayerInteraction : MonoBehaviour
             _anim.PlayAnimation(_possibleInteraction);
             if (_possibleInteraction == InteractionType.Pickup && _possiblePickable && IsPickableNeeded())
             {
-                Invoke("Pickup", 2f);
+                Pickup();
                 QuestManager.Instance.Notify();
             }
             else if (_possibleInteraction != InteractionType.Pickup)
             {
-                Invoke("Interact", 1f);
+                Interact();
             }
         }
     }

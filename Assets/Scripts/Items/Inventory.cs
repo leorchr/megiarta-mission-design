@@ -14,14 +14,16 @@ public class Inventory : MonoBehaviour
         Instance = this;
     }
 
-    public void RemoveFromInventory(ItemData qItem)
+    public void RemoveFromInventory(ItemData qItem, int quantity = 0)
     {
-        int found = items.FindIndex(q => q.item.Equals(qItem));
+        int found = items.FindIndex(q => q.item != null && q.item.Equals(qItem));
         if (found >= 0)
         {
-            items.RemoveAt(found);
+            items[found].quantity -= quantity;
+            if (items[found].quantity <= 0) items.RemoveAt(found);
         }
     }
+
     public void PickupQuestItem(ItemData questItem)
     {
         int found = items.FindIndex(q => q.item.Equals(questItem));
@@ -70,5 +72,13 @@ public class Inventory : MonoBehaviour
         }
 
         return true;
+    }
+
+    public int GetItemQuantity(QuestItem item)
+    {
+        if (!IsItemFound(item.item)) return 0;
+        int index = GetItemIndex(item.item);
+        return items[index].quantity;
+
     }
 }

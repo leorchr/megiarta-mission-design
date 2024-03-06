@@ -11,8 +11,6 @@ public class QuestPanelAnimation : MonoBehaviour
 
     public void OpenClose()
     {
-        Debug.Log(_animator);
         _animator.SetTrigger("OpenClose");
     }
-
 }

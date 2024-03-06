@@ -1,10 +1,11 @@
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 public class Analyser : Interactive
 {
     public List<QuestData> quests = new List<QuestData>();
-    protected bool gaveQuest = false;
     protected int current = 0;
+    private bool firstQuest = false;
 
     public override void OnInteraction()
     {
@@ -15,49 +16,68 @@ public class Analyser : Interactive
         {
             QuestGivingUI.Instance.SetupQuest(quests[current], this);
         }*/
-        QuestManager.Instance.CompleteQuest(QuestManager.Instance.questsProgress[0]);
-        PlayerInteraction.Instance.StopInteractive();
+
+        if(!firstQuest)
+        {
+            QuestManager.Instance.CompleteQuest(quests[current]);
+            Invoke("GiveQuest",1f);
+            firstQuest = true;
+        }
+        else 
+        { 
+            FinishQuest();
+        }
     }
 
 
-    /*public virtual void GiveQuest()
+    public virtual void GiveQuest()
     {
         if (quests.Count > 0 && current < quests.Count)
         {
-            gaveQuest = true;
-            waitForObject = true;
-            //Setting up requirements to finish quests
-            foreach (QuestItem item in quests[current].requirements)
+            if (quests[current].requirements.Count > 0)
             {
-                requiredItems.Add(item);
+                waitForObject = true;
+                //Setting up requirements to finish quests
+                foreach (QuestItem item in quests[current].requirements)
+                {
+                    requiredItems.Add(item);
+                }
             }
             QuestManager.Instance.TakeQuest(quests[current]);
         }
     }
 
-    void ThanksMessage()
+    /*void ThanksMessage()
     {
         QuestGivingUI.Instance.ThankYou(quests[current]);
         FinishQuest();
-    }
+    }*/
 
     public virtual void FinishQuest()
     {
+
         //Dialogue end quest
-        foreach (QuestItem required in quests[current].requirements)
+        if(quests[current].requirements.Count > 0)
         {
-            Inventory.Instance.RemoveFromInventory(required.item, required.quantity);
+            foreach (QuestItem required in quests[current].requirements)
+            {
+                Inventory.Instance.RemoveFromInventory(required.item, required.quantity);
+            }
+            requiredItems.Clear();
         }
         QuestManager.Instance.CompleteQuest(quests[current]);
 
         waitForObject = false;
-        requiredItems.Clear();
-        current++;
-        gaveQuest = false;
 
         if (current == quests.Count)
         {
+            GetComponent<Collider>().enabled = false;
             Destroy(this);
         }
-    }*/
+        else
+        {
+            Invoke("GiveQuest", 1f);
+        }
+        current++;
+    }
 }

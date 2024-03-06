@@ -4,11 +4,12 @@ using UnityEngine.UI;
 
 public class QuestPanel : MonoBehaviour
 {
-    public TextMeshProUGUI questText, stepText;
-    private QuestData trackedQuest;
+    public TextMeshProUGUI questText, stepText, progress;
+    [HideInInspector] public QuestData trackedQuest;
     [SerializeField] QuestPanelAnimation panelAnim;
 
     private int max = 0;
+    private bool missionTook = false;
 
     public void SetupQuest(QuestData quest)
     {
@@ -17,35 +18,52 @@ public class QuestPanel : MonoBehaviour
         stepText.text = quest.stepName;
 
         panelAnim.OpenClose();
-        //SetTotalRequirements();
-        //Notify();
+        SetTotalRequirements();
+        Notify();
     }
 
-    /*public void Notify()
+    public void Notify()
     {
-        int amount = 0;
-        foreach (QuestItem item in trackedQuest.requirements)
+        if(trackedQuest.requirements.Count > 0)
         {
-            int qtt = Inventory.Instance.GetItemQuantity(item);
-            amount += qtt;
+            int amount = 0;
+            foreach (QuestItem item in trackedQuest.requirements)
+            {
+                int qtt = Inventory.Instance.GetItemQuantity(item);
+                amount += qtt;
+            }
+            progress.gameObject.SetActive(true);
+            progress.text = amount + " / " + max;
+            if (Inventory.Instance.HasEveryItem(trackedQuest.requirements))
+            {
+                Complete();
+            }
         }
-        progress.text = amount + " / " + max;
-        if (Inventory.Instance.HasEveryItem(trackedQuest.requirements))
+        if(missionTook)
         {
             Complete();
         }
-    }*/
+        missionTook = true;
+    }
 
     public void SetTotalRequirements()
     {
-        foreach (QuestItem item in trackedQuest.requirements)
+        if (trackedQuest.requirements.Count > 0)
         {
-            max += item.quantity;
+            foreach (QuestItem item in trackedQuest.requirements)
+            {
+                max += item.quantity;
+            }
         }
     }
 
     public void Complete()
     {
         panelAnim.OpenClose();
+    }
+
+    public void CompleteEnd()
+    {
+        Destroy(gameObject);
     }
 }

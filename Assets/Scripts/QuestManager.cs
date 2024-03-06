@@ -8,12 +8,11 @@ public class QuestManager : MonoBehaviour
     public static QuestManager Instance;
 
     public GameObject questPanelPrefab;
-    private GameObject panel;
     public Transform questParent;
 
     public List<QuestData> questsProgress = new List<QuestData>();
-    //private Dictionary<QuestData, GameObject> questVisulization
-    //    = new Dictionary<QuestData, GameObject>();
+    public Dictionary<QuestData, GameObject> questVisulization
+        = new Dictionary<QuestData, GameObject>();
 
     public void Awake()
     {
@@ -25,9 +24,7 @@ public class QuestManager : MonoBehaviour
     {
         if(questsProgress.Count > 0)
         {
-            panel = Instantiate(questPanelPrefab, questParent);
-            panel.GetComponent<QuestPanel>().SetupQuest(questsProgress[0]);
-            //questVisulization.Add(questsProgress[0], panel);
+            TakeQuest(questsProgress[0]);
         }
         else
         {
@@ -38,26 +35,28 @@ public class QuestManager : MonoBehaviour
     public void TakeQuest(QuestData quest)
     {
         questsProgress.Add(quest);
+        GameObject panel = Instantiate(questPanelPrefab, questParent);
         panel.GetComponent<QuestPanel>().SetupQuest(quest);
-        //questVisulization.Add(quest, panel);
+        questVisulization.Add(quest, panel);
     }
 
     public void CompleteQuest(QuestData quest)
     {
+        Notify();
         questsProgress.Remove(quest);
-        panel.GetComponent<QuestPanel>().Complete();
-        /*if (questVisulization.ContainsKey(quest))
+        if (questVisulization.ContainsKey(quest))
         {
-            Destroy(questVisulization[quest]);
-        }*/
+            questVisulization.Remove(quest);
+        }
     }
 
     public void Notify()
     {
-        /*foreach (GameObject quest in questVisulization.Values)
+        foreach (GameObject quest in questVisulization.Values)
         {
+            if (quest.GetComponent<QuestPanel>() == null) return;
             QuestPanel panel = quest.GetComponent<QuestPanel>();
             panel.Notify();
-        }*/
+        }
     }
 }
