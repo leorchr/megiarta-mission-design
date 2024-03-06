@@ -17,6 +17,9 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody rb;
     private Animator animator;
+
+    public float smoothRotValue = 0.2f;
+    private float smoothRotVel = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,7 +46,9 @@ public class PlayerController : MonoBehaviour
         else
         {
             Vector3 rot = Quaternion.LookRotation(rb.velocity.normalized, Vector3.forward).eulerAngles;
-            transform.rotation = Quaternion.Euler(new Vector3(0, rot.y, 0));
+            float smoothRot = Mathf.SmoothDampAngle(transform.rotation.eulerAngles.y, rot.y,ref smoothRotVel, smoothRotValue);
+            transform.rotation = Quaternion.Euler(new Vector3(0, smoothRot, 0));
+            Debug.Log(smoothRot);
         }
 
         animator.SetFloat("Speed", rb.velocity.magnitude);
@@ -54,5 +59,11 @@ public class PlayerController : MonoBehaviour
         moveInput = callbackContext.ReadValue<Vector2>();
     }
 
-    
+    public void onJump(InputAction.CallbackContext callbackContext)
+    {
+
+    }
+
+
+
 }
