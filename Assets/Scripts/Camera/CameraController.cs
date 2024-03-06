@@ -203,9 +203,9 @@ public class CameraController : MonoBehaviour
             case PositionOffsetType.Static:
                 posOffset = cData.positionOffset; break;
             case PositionOffsetType.CamRotBased:
-                posOffset = Quaternion.Euler(cam.transform.rotation.eulerAngles.x,0,0) * cData.positionOffset ; break;
-            case PositionOffsetType.TargetRotBased:
                 posOffset = cam.transform.rotation * cData.positionOffset; break;
+            case PositionOffsetType.TargetRotBased:
+                posOffset = target.transform.rotation * cData.positionOffset; break;
             default: break;
         }
 
@@ -225,6 +225,7 @@ public class CameraController : MonoBehaviour
                 break;
             case PositionType.RotateAroundTarget:
                 Vector3 tpos = target.transform.position + posOffset;
+                Debug.DrawRay(tpos, Vector3.up,Color.red,1);
                 float newDist = cData.CamDistance;
                 RaycastHit hit;
                 if (Physics.Raycast(tpos, (transform.localRotation * Vector3.back), out hit,newDist, ignoreCamPlacement))
