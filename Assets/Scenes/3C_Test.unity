@@ -523,6 +523,7 @@ MonoBehaviour:
       transformToCopyPosition: {fileID: 0}
       updateFwdWhenPressed: 1
       CamDistance: 0
+      positionOffsetType: 0
       positionOffset: {x: 0, y: 0, z: 0}
       smoothTimePosition: 0
       clampXPosition:
@@ -690,6 +691,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8796253216393764117, guid: c48943a3488df4d438cfd1728a5025c0,
+        type: 3}
+      propertyPath: sensitivity
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8796253216393764117, guid: c48943a3488df4d438cfd1728a5025c0,
+        type: 3}
+      propertyPath: CamDatas.Array.data[0].CamDataSC
+      value: 
+      objectReference: {fileID: 11400000, guid: bd89a0e1f8506984c8fb5ea628942e9a,
+        type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
