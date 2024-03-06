@@ -9,8 +9,8 @@ public class InteractionHelper : MonoBehaviour
 
     public GameObject interactionCue;
     private GameObject cam;
-    public float dist, scale;
-
+    private Transform interactionUiPos;
+    private float dist, scale;
 
     private void Awake()
     {
@@ -28,15 +28,32 @@ public class InteractionHelper : MonoBehaviour
         {
             if (interaction == InteractionType.Pickup)
             {
-                interactionCue = PlayerInteraction.Instance._possiblePickable.gameObject;
+                if (PlayerInteraction.Instance._possiblePickable.UiPos == null)
+                {
+                    Debug.LogWarning("Missing UI Position in pickable");
+                    return;
+                }
+                interactionUiPos = PlayerInteraction.Instance._possiblePickable.UiPos;
+
+                interactionCue.transform.parent = PlayerInteraction.Instance._possiblePickable.gameObject.transform;
+                interactionCue.transform.position = interactionUiPos.position;
             }
             else
             {
-                interactionCue = PlayerInteraction.Instance._possibleInteractive.gameObject;
+                if (PlayerInteraction.Instance._possibleInteractive.UiPos == null)
+                {
+                    Debug.LogWarning("Missing UI Position in interactive");
+                    return;
+                }
+                interactionUiPos = PlayerInteraction.Instance._possibleInteractive.UiPos;
+
+                interactionCue.transform.parent = PlayerInteraction.Instance._possibleInteractive.gameObject.transform;
+                interactionCue.transform.position = interactionUiPos.position;
             }
+
             interactionCue.SetActive(true);
-            dist = Vector3.Distance(cam.transform.position, interactionCue.gameObject.transform.GetChild(0).position);
-            scale = interactionCue.transform.localScale.x;
+            dist = Vector3.Distance(cam.transform.position, interactionUiPos.position);
+            scale = interactionUiPos.localScale.x;
         }
         else
         {
@@ -49,7 +66,7 @@ public class InteractionHelper : MonoBehaviour
         if (interactionCue.activeSelf)
         {
             interactionCue.transform.LookAt(cam.transform.position);
-            interactionCue.transform.Rotate(new Vector3(90, 0, 0));
+            interactionCue.transform.Rotate(new Vector3(0, 0, 0));
             float interactionScale = scale * dist * 0.5f;
             interactionCue.transform.localScale = new Vector3(interactionScale, interactionScale, interactionScale);
         }

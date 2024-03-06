@@ -3,7 +3,7 @@ using UnityEngine;
 public enum InteractionType
 {
     None,
-    OpenDoor,
+    Analyser,
     PushButton,
     OpenChest,
     FailedAction,
@@ -38,9 +38,9 @@ public class PlayerInteractionAnim : MonoBehaviour
         if (AnimationInProgress || _animator.GetFloat("Speed") > 1) return false;
         switch (animation)
         {
-            case InteractionType.OpenDoor:
+            case InteractionType.Analyser:
                 {
-                    _animator.SetTrigger("Open Door");
+                    _animator.SetTrigger("Analyser");
                     break;
                 }
             case InteractionType.PushButton:

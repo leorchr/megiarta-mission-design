@@ -9,8 +9,8 @@ public class PlayerInteraction : MonoBehaviour
     private PlayerInteractionAnim _anim;
     private InteractionType _possibleInteraction = InteractionType.None;
     private Inventory _inventory;
-    [HideInInspector] public Pickable _possiblePickable;
-    [HideInInspector] public Interactive _possibleInteractive;
+    public Pickable _possiblePickable;
+    public Interactive _possibleInteractive;
 
     private void Start()
     {
@@ -85,8 +85,8 @@ public class PlayerInteraction : MonoBehaviour
         {
             if (other.transform.CompareTag("Pickable"))
             {
-                SetInteraction(InteractionType.Pickup);
                 _possiblePickable = other.GetComponent<Pickable>();
+                SetInteraction(InteractionType.Pickup);
             }
             else if (other.transform.CompareTag("Interactive"))
             {
@@ -107,7 +107,7 @@ public class PlayerInteraction : MonoBehaviour
     {
         if (!PlayerInteractionAnim.AnimationInProgress)
         {
-            if (other.transform.CompareTag("Pickable") || other.transform.CompareTag("Interactive") || other.transform.CompareTag("NPC"))
+            if (other.transform.CompareTag("Pickable") || other.transform.CompareTag("Interactive"))
             {
                 StopInteractive();
             }
@@ -118,6 +118,7 @@ public class PlayerInteraction : MonoBehaviour
     {
         SetInteraction(InteractionType.None);
         _possibleInteractive = null;
+        _possiblePickable = null;
     }
 
     private void DisableInteractive()

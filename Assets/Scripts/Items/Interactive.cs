@@ -4,6 +4,7 @@ using UnityEngine;
 public class Interactive : MonoBehaviour
 {
     public InteractionType interactionType = InteractionType.PushButton;
+    public Transform UiPos;
 
     public bool onlyOnce = true;
 
