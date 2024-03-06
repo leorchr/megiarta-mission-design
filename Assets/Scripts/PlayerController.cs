@@ -89,6 +89,8 @@ public class PlayerController : MonoBehaviour
         rb.velocity = new Vector3 (rb.velocity.x,rb.velocity.y + gravityVelocity,rb.velocity.z);
 
         animator.SetFloat("Speed", rb.velocity.magnitude);
+        animator.SetFloat("VelY", rb.velocity.y);
+        animator.SetBool("IsGrounded", Physics.Raycast(groundCheck.position, Vector3.down, 0.2f, groundMask));
     }
 
     public void OnMove(InputAction.CallbackContext callbackContext)
@@ -128,7 +130,7 @@ public class PlayerController : MonoBehaviour
 
     private bool canJump()
     {
-        return !isJumping && Physics.Raycast(groundCheck.position,Vector3.down,0.1f,groundMask) ;
+        return !isJumping && Physics.Raycast(groundCheck.position,Vector3.down,0.2f,groundMask) ;
     }
 
     
