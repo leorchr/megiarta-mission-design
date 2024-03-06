@@ -48,7 +48,6 @@ public class PlayerController : MonoBehaviour
             Vector3 rot = Quaternion.LookRotation(rb.velocity.normalized, Vector3.forward).eulerAngles;
             float smoothRot = Mathf.SmoothDampAngle(transform.rotation.eulerAngles.y, rot.y,ref smoothRotVel, smoothRotValue);
             transform.rotation = Quaternion.Euler(new Vector3(0, smoothRot, 0));
-            Debug.Log(smoothRot);
         }
 
         animator.SetFloat("Speed", rb.velocity.magnitude);
