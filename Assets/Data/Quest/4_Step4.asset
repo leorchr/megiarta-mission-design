@@ -10,15 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5584d06220554064eb11d51bcdd0104e, type: 3}
-  m_Name: Second Quest
+  m_Name: 4_Step4
   m_EditorClassIdentifier: 
-  title: Help a friend
-  shortDescription: "Une qu\xEAte"
-  description: "Find one of the garrison\u2019s captain\u2019s coded reports.\r"
-  thankYouMessage: Good job guys !
-  reward: Argent
+  questName: To the bottom of things
+  stepName: 'Leave the island to report your findings !
+
+'
+  thankYouMessage: 
   requirements: []
-  moneyReward: 15
-  itemReward:
-    item: {fileID: 0}
-    quantity: 0
+  moneyReward: 40

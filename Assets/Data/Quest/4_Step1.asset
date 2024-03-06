@@ -9,8 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c76d6368d8b97e4ea73169e473ddea6, type: 3}
-  m_Name: CaptainsReports
+  m_Script: {fileID: 11500000, guid: 5584d06220554064eb11d51bcdd0104e, type: 3}
+  m_Name: 4_Step1
   m_EditorClassIdentifier: 
-  label: "Captain\u2019s reports"
-  icon: {fileID: 0}
+  questName: To the bottom of things
+  stepName: 'Find a tool to destroy the rocks blocking the cave.
+
+'
+  thankYouMessage: 
+  requirements: []
+  moneyReward: 0
