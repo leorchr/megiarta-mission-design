@@ -107,7 +107,7 @@ public class PlayerInteraction : MonoBehaviour
     {
         if (!PlayerInteractionAnim.AnimationInProgress)
         {
-            if (other.transform.CompareTag("Pickable") || other.transform.CompareTag("Interactive"))
+            if (other.transform.CompareTag("Pickable") || other.transform.CompareTag("Interactive") )
             {
                 StopInteractive();
             }
