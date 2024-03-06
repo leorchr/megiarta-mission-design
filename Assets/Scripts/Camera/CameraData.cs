@@ -14,6 +14,8 @@ public enum RotationType { Static = 0, UseTransformRotation = 1, LookTarget = 2,
 public enum PositionType { Static = 0, FollowTransform = 1, RotateAroundTarget = 2 }
 public enum TargetType { camTarget = 0, Custom = 1 }
 
+public enum PositionOffsetType { Static = 0, CamRotBased = 1, TargetRotBased = 2 }
+
 [Serializable]
 public class CameraData
 {
@@ -80,6 +82,7 @@ public class CameraData
     public float CamDistance;
 
     // All :
+    public PositionOffsetType positionOffsetType;
     public Vector3 positionOffset;
     public float smoothTimePosition = 0;
 
@@ -154,6 +157,7 @@ public class EditorCamData : PropertyDrawer
     SerializedProperty SP_clampYPosition;
     SerializedProperty SP_clampZPosition;
     SerializedProperty SP_lockPosition;
+    SerializedProperty SP_positionOffsetType;
     public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
     {
         //Get Property
@@ -187,6 +191,7 @@ public class EditorCamData : PropertyDrawer
         SP_clampYPosition = property.FindPropertyRelative("clampYPosition");
         SP_clampZPosition = property.FindPropertyRelative("clampZPosition");
         SP_lockPosition = property.FindPropertyRelative("lockPosition");
+        SP_positionOffsetType = property.FindPropertyRelative("positionOffsetType");
         //UI Editor
         EditorGUILayout.PropertyField(SP_FOV);
         EditorGUILayout.PropertyField(SP_cullingMask);
@@ -262,6 +267,7 @@ public class EditorCamData : PropertyDrawer
             default: break;
         }
 
+        EditorGUILayout.PropertyField(SP_positionOffsetType);
         EditorGUILayout.PropertyField(SP_positionOffset);
         EditorGUILayout.PropertyField(SP_smoothTimePosition);
 

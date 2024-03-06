@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEditor.Overlays;
 using UnityEngine;
@@ -195,12 +196,24 @@ public class CameraController : MonoBehaviour
         //nextRot = Quaternion.Euler(nextRotEuler);
         transform.rotation = Quaternion.Euler(lookRotation);
 
+        Vector3 posOffset = Vector3.zero;
+        //Position offset calculating
+        switch (cData.positionOffsetType)
+        {
+            case PositionOffsetType.Static:
+                posOffset = cData.positionOffset; break;
+            case PositionOffsetType.CamRotBased:
+                posOffset = Quaternion.Euler(cam.transform.rotation.eulerAngles.x,0,0) * cData.positionOffset ; break;
+            case PositionOffsetType.TargetRotBased:
+                posOffset = cam.transform.rotation * cData.positionOffset; break;
+            default: break;
+        }
 
         //Position
         switch (cData.typeOfPosition)
         {
             case PositionType.Static:
-                transform.position = cData.staticPosition;
+                transform.position = cData.staticPosition + posOffset;
                 break;
             case PositionType.FollowTransform:
                 Transform trgt = target.transform;
@@ -208,10 +221,10 @@ public class CameraController : MonoBehaviour
                 {
                     trgt = cData.transformToCopyPosition;
                 }
-                transform.position = Vector3.SmoothDamp(transform.position, trgt.transform.position + cData.positionOffset, ref vel, cData.smoothTimePosition);
+                transform.position = Vector3.SmoothDamp(transform.position, trgt.transform.position +posOffset, ref vel, cData.smoothTimePosition);
                 break;
             case PositionType.RotateAroundTarget:
-                Vector3 tpos = target.transform.position + cData.positionOffset;
+                Vector3 tpos = target.transform.position + posOffset;
                 float newDist = cData.CamDistance;
                 RaycastHit hit;
                 if (Physics.Raycast(tpos, (transform.localRotation * Vector3.back), out hit,newDist, ignoreCamPlacement))
