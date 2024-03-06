@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class AmbientSoundManager : MonoBehaviour
 {
-    public static AmbientSoundManager instance;
-
     [SerializeField] private AudioClip islandAmbience;
     [SerializeField] private AudioClip caveAmbience;
+    public bool isOnIsland;
     private AudioSource ambienceSource;
 
     private void Start()
@@ -17,10 +16,18 @@ public class AmbientSoundManager : MonoBehaviour
 
     public void AmbienceChange()
     {
-        if (ambienceSource.clip = islandAmbience)
+        if (isOnIsland)
+        {
             ambienceSource.clip = caveAmbience;
+            ambienceSource.Play();
+            isOnIsland = false; 
+        }
 
-        else if (ambienceSource.clip = caveAmbience)
+        else if (!isOnIsland)
+        {
             ambienceSource.clip = islandAmbience;
+            ambienceSource.Play();
+            isOnIsland = true;
+        }
     }
 }

@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class AmbientSoundtrigger : MonoBehaviour
 {
+    [SerializeField] private AmbientSoundManager ambientSoundManager;
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Player"))
-        AmbientSoundManager.instance.AmbienceChange();
+        {
+            ambientSoundManager.AmbienceChange();
+        }
     }
 }
