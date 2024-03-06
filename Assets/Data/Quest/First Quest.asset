@@ -12,16 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5584d06220554064eb11d51bcdd0104e, type: 3}
   m_Name: First Quest
   m_EditorClassIdentifier: 
-  title: Main Quest
-  shortDescription: "Une qu\xEAte"
-  description: "Ceci est un test ! C'est la premi\xE8re qu\xEAte du jeu. Va me chercher
-    3 sticks !"
+  questName: Become a hero
+  stepName: "Investigate the garrison\u2019s installations to try to find someone.\r"
   thankYouMessage: Good job guys !
-  reward: Argent
-  requirements:
-  - item: {fileID: 11400000, guid: 8c0b469490f2e6949baa5b06c9aa6998, type: 2}
-    quantity: 3
-  moneyReward: 5
-  itemReward:
-    item: {fileID: 0}
-    quantity: 0
+  requirements: []
+  moneyReward: 11

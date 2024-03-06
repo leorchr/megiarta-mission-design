@@ -7,7 +7,8 @@ public class QuestManager : MonoBehaviour
 {
     public static QuestManager Instance;
 
-    //public GameObject questPanelPrefab;
+    public GameObject questPanelPrefab;
+    private GameObject panel;
     public Transform questParent;
 
     public List<QuestData> questsProgress = new List<QuestData>();
@@ -20,17 +21,31 @@ public class QuestManager : MonoBehaviour
         else Instance = this;
     }
 
+    private void Start()
+    {
+        if(questsProgress.Count > 0)
+        {
+            panel = Instantiate(questPanelPrefab, questParent);
+            panel.GetComponent<QuestPanel>().SetupQuest(questsProgress[0]);
+            //questVisulization.Add(questsProgress[0], panel);
+        }
+        else
+        {
+            Debug.LogWarning("Il n'y a pas de quête");
+        }
+    }
+
     public void TakeQuest(QuestData quest)
     {
         questsProgress.Add(quest);
-        //GameObject panel = Instantiate(questPanelPrefab, questParent);
-        //panel.GetComponent<QuestPanel>().SetupQuest(quest);
+        panel.GetComponent<QuestPanel>().SetupQuest(quest);
         //questVisulization.Add(quest, panel);
     }
 
     public void CompleteQuest(QuestData quest)
     {
         questsProgress.Remove(quest);
+        panel.GetComponent<QuestPanel>().Complete();
         /*if (questVisulization.ContainsKey(quest))
         {
             Destroy(questVisulization[quest]);
