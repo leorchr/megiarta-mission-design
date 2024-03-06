@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
@@ -22,12 +23,22 @@ public class PlayerController : MonoBehaviour
     private float smoothRotVel = 0;
 
     public AnimationCurve jumpPowerCurveMultiplier = AnimationCurve.EaseInOut(0,1,1,0);
+    public float initialJumpPower;
     public float jumpPower;
     public float jumpDuration;
+
+    private float jumpTime;
+
+    private bool isJumping = false;
 
     [Range(0.01f, 1f)]
     public float turnPower = 0.5f;
     public float angleOffset = 15;
+
+    public Transform groundCheck;
+    public LayerMask groundMask;
+
+    
     
     // Start is called before the first frame update
     void Start()
@@ -43,16 +54,21 @@ public class PlayerController : MonoBehaviour
         Vector3 side = Camera.main.transform.right * moveInput.x;
         Vector3 plDir = (fwd + side);
         plDir = new Vector3(plDir.x,0,plDir.z).normalized;
+
+        float gravityVelocity = rb.velocity.y;
+        Vector3 velNoGrav = new Vector3(rb.velocity.x,0,rb.velocity.z);
+
         float angleDiff = Vector3.Angle(plDir, new Vector3(rb.velocity.x, 0, rb.velocity.z).normalized);
         if ( angleDiff > angleOffset)
         {
-            Vector3 velocityDiff = Vector3.ClampMagnitude(plDir * maxSpeed, maxSpeed) - Vector3.ClampMagnitude(rb.velocity.normalized * maxSpeed, maxSpeed);
+            Vector3 velocityDiff = Vector3.ClampMagnitude(plDir * maxSpeed, maxSpeed) - Vector3.ClampMagnitude(velNoGrav.normalized * maxSpeed, maxSpeed);
             velocityDiff = velocityDiff * turnPower;
-            rb.velocity = Vector3.ClampMagnitude(rb.velocity + (velocityDiff), maxSpeed);
+            
+            rb.velocity = Vector3.ClampMagnitude(velNoGrav + (velocityDiff), maxSpeed);
         }
         else
         {
-            rb.velocity = Vector3.ClampMagnitude(rb.velocity + (plDir * accelerationSpeed * Time.deltaTime), maxSpeed);
+            rb.velocity = Vector3.ClampMagnitude(velNoGrav + (plDir * accelerationSpeed * Time.deltaTime), maxSpeed);
         }
         
 
@@ -61,7 +77,7 @@ public class PlayerController : MonoBehaviour
             float deccel = deccelerationSpeed * Time.deltaTime;
             Vector2 plSpeed = new Vector2(plDir.x, plDir.z);
             plSpeed = Vector2.ClampMagnitude(plSpeed, plSpeed.magnitude - deccel);
-            rb.velocity = new Vector3(plSpeed.x,rb.velocity.y,plSpeed.y);
+            rb.velocity = new Vector3(plSpeed.x,0,plSpeed.y);
         }
         else
         {
@@ -69,6 +85,8 @@ public class PlayerController : MonoBehaviour
             float smoothRot = Mathf.SmoothDampAngle(transform.rotation.eulerAngles.y, rot.y,ref smoothRotVel, smoothRotValue);
             transform.rotation = Quaternion.Euler(new Vector3(0, smoothRot, 0));
         }
+
+        rb.velocity = new Vector3 (rb.velocity.x,rb.velocity.y + gravityVelocity,rb.velocity.z);
 
         animator.SetFloat("Speed", rb.velocity.magnitude);
     }
@@ -78,10 +96,42 @@ public class PlayerController : MonoBehaviour
         moveInput = callbackContext.ReadValue<Vector2>();
     }
 
-    public void onJump(InputAction.CallbackContext callbackContext)
+    public void OnJump(InputAction.CallbackContext callbackContext)
     {
-
+        switch (callbackContext.phase)
+        {
+            case InputActionPhase.Started:
+                if (canJump())
+                {
+                    isJumping = true;
+                    rb.AddForce(Vector3.up * initialJumpPower, ForceMode.VelocityChange);
+                    jumpTime = 0;
+                }
+                break;
+            case InputActionPhase.Performed:
+                jumpTime += Time.deltaTime;
+                if (jumpTime < jumpDuration)
+                {
+                    rb.AddForce(Vector3.up * (jumpPower * jumpPowerCurveMultiplier.Evaluate(jumpTime/jumpDuration)), ForceMode.Force);
+                }
+                else
+                {
+                    isJumping = false;
+                }
+                break;
+            case InputActionPhase.Canceled:
+                isJumping = false;
+                break;
+            default: break;
+        }
     }
+
+    private bool canJump()
+    {
+        return !isJumping && Physics.Raycast(groundCheck.position,Vector3.down,0.1f,groundMask) ;
+    }
+
+    
 
 
 

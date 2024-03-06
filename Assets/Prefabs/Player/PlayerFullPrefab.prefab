@@ -64,6 +64,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 731036900550431435}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7280538008158973307
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1649538930920751204}
+  m_Layer: 0
+  m_Name: GroundDetector
+  m_TagString: Untagged
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1649538930920751204
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7280538008158973307}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 731036900550431435}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &4210373463702762385
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -186,8 +217,33 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2899940632246791720, guid: 55cd9cac3e5e8ee48b4958db637af5c3,
         type: 3}
+      propertyPath: jumpPower
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2899940632246791720, guid: 55cd9cac3e5e8ee48b4958db637af5c3,
+        type: 3}
+      propertyPath: groundCheck
+      value: 
+      objectReference: {fileID: 1649538930920751204}
+    - target: {fileID: 2899940632246791720, guid: 55cd9cac3e5e8ee48b4958db637af5c3,
+        type: 3}
+      propertyPath: jumpDuration
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2899940632246791720, guid: 55cd9cac3e5e8ee48b4958db637af5c3,
+        type: 3}
+      propertyPath: initialJumpPower
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2899940632246791720, guid: 55cd9cac3e5e8ee48b4958db637af5c3,
+        type: 3}
       propertyPath: accelerationSpeed
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2899940632246791720, guid: 55cd9cac3e5e8ee48b4958db637af5c3,
+        type: 3}
+      propertyPath: groundMask.m_Bits
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 2899940632246791720, guid: 55cd9cac3e5e8ee48b4958db637af5c3,
         type: 3}
@@ -201,9 +257,54 @@ PrefabInstance:
       objectReference: {fileID: 3650440515769452237}
     - target: {fileID: 4086391014026971703, guid: 55cd9cac3e5e8ee48b4958db637af5c3,
         type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4086391014026971703, guid: 55cd9cac3e5e8ee48b4958db637af5c3,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_ActionId
+      value: d52f98c3-eae3-4ee5-8310-76ff2a6e8030
+      objectReference: {fileID: 0}
+    - target: {fileID: 4086391014026971703, guid: 55cd9cac3e5e8ee48b4958db637af5c3,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_ActionName
+      value: Player/Jump[/Keyboard/space,/XInputControllerWindows/buttonSouth]
+      objectReference: {fileID: 0}
+    - target: {fileID: 4086391014026971703, guid: 55cd9cac3e5e8ee48b4958db637af5c3,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4086391014026971703, guid: 55cd9cac3e5e8ee48b4958db637af5c3,
+        type: 3}
       propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 8796253216393764117}
+    - target: {fileID: 4086391014026971703, guid: 55cd9cac3e5e8ee48b4958db637af5c3,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5924736875476553917}
+    - target: {fileID: 4086391014026971703, guid: 55cd9cac3e5e8ee48b4958db637af5c3,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4086391014026971703, guid: 55cd9cac3e5e8ee48b4958db637af5c3,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnJump
+      objectReference: {fileID: 0}
+    - target: {fileID: 4086391014026971703, guid: 55cd9cac3e5e8ee48b4958db637af5c3,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlayerController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4086391014026971703, guid: 55cd9cac3e5e8ee48b4958db637af5c3,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6504127299300196089, guid: 55cd9cac3e5e8ee48b4958db637af5c3,
         type: 3}
       propertyPath: m_Layer
@@ -857,6 +958,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 4914273246829928466}
+    - targetCorrespondingSourceObject: {fileID: 8080414718192807006, guid: 55cd9cac3e5e8ee48b4958db637af5c3,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1649538930920751204}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6655652320888935060, guid: 55cd9cac3e5e8ee48b4958db637af5c3,
         type: 3}
@@ -1018,3 +1123,15 @@ MonoBehaviour:
   grassStepSounds: []
   rockStepSounds: []
   ambientSoundManager: {fileID: 0}
+--- !u!114 &5924736875476553917 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2899940632246791720, guid: 55cd9cac3e5e8ee48b4958db637af5c3,
+    type: 3}
+  m_PrefabInstance: {fileID: 8792799365413125781}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2764063286284282881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5861c66337b178488aabfea3a750b5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
