@@ -20,6 +20,15 @@ public class PlayerController : MonoBehaviour
 
     public float smoothRotValue = 0.2f;
     private float smoothRotVel = 0;
+
+    public AnimationCurve jumpPowerCurveMultiplier = AnimationCurve.EaseInOut(0,1,1,0);
+    public float jumpPower;
+    public float jumpDuration;
+
+    [Range(0.01f, 1f)]
+    public float turnPower = 0.5f;
+    public float angleOffset = 15;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -34,7 +43,18 @@ public class PlayerController : MonoBehaviour
         Vector3 side = Camera.main.transform.right * moveInput.x;
         Vector3 plDir = (fwd + side);
         plDir = new Vector3(plDir.x,0,plDir.z).normalized;
-        rb.velocity = Vector3.ClampMagnitude(rb.velocity + (plDir * accelerationSpeed * Time.deltaTime), maxSpeed);
+        float angleDiff = Vector3.Angle(plDir, new Vector3(rb.velocity.x, 0, rb.velocity.z).normalized);
+        if ( angleDiff > angleOffset)
+        {
+            Vector3 velocityDiff = Vector3.ClampMagnitude(plDir * maxSpeed, maxSpeed) - Vector3.ClampMagnitude(rb.velocity.normalized * maxSpeed, maxSpeed);
+            velocityDiff = velocityDiff * turnPower;
+            rb.velocity = Vector3.ClampMagnitude(rb.velocity + (velocityDiff), maxSpeed);
+        }
+        else
+        {
+            rb.velocity = Vector3.ClampMagnitude(rb.velocity + (plDir * accelerationSpeed * Time.deltaTime), maxSpeed);
+        }
+        
 
         if(plDir.magnitude < 0.001)
         {
