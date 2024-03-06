@@ -269,6 +269,7 @@ MonoBehaviour:
   onlyOnce: 0
   requiredItems: []
   waitForObject: 0
+  quests: []
 --- !u!1 &40786345
 GameObject:
   m_ObjectHideFlags: 0
@@ -870,6 +871,8 @@ GameObject:
   - component: {fileID: 1193923649}
   - component: {fileID: 1193923650}
   - component: {fileID: 1193923651}
+  - component: {fileID: 1193923653}
+  - component: {fileID: 1193923652}
   m_Layer: 5
   m_Name: QuestPanel
   m_TagString: Untagged
@@ -939,6 +942,40 @@ MonoBehaviour:
   questText: {fileID: 596287110}
   stepText: {fileID: 583245335}
   completeQuest: {fileID: 0}
+  panelAnim: {fileID: 1193923652}
+--- !u!114 &1193923652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1193923648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8604ebbfb7bc86d4f8b6d708017e8f46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &1193923653
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1193923648}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1268228364 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6655652320888935060, guid: 55cd9cac3e5e8ee48b4958db637af5c3,

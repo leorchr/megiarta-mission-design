@@ -5,11 +5,10 @@ using UnityEngine.UI;
 public class QuestPanel : MonoBehaviour
 {
     public TextMeshProUGUI questText, stepText;
-    //public TextMeshProUGUI progress;
-    public Sprite completeQuest;
     private QuestData trackedQuest;
-    private int max = 0;
     [SerializeField] QuestPanelAnimation panelAnim;
+
+    private int max = 0;
 
     public void SetupQuest(QuestData quest)
     {
@@ -47,6 +46,6 @@ public class QuestPanel : MonoBehaviour
 
     public void Complete()
     {
-        GetComponent<Image>().sprite = completeQuest;
+        panelAnim.OpenClose();
     }
 }
