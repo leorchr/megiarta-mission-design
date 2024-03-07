@@ -272,6 +272,7 @@ MonoBehaviour:
   quests:
   - {fileID: 11400000, guid: 073c3ca520d5001469e8bfeaeb746676, type: 2}
   - {fileID: 11400000, guid: 9571cbe28091d6243a5e85b220ac5781, type: 2}
+  - {fileID: 11400000, guid: a2347967f8a14134a90687875b3197fa, type: 2}
 --- !u!1 &97886252
 GameObject:
   m_ObjectHideFlags: 0
@@ -722,17 +723,17 @@ PrefabInstance:
     - target: {fileID: 1689733599090723215, guid: c48943a3488df4d438cfd1728a5025c0,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 135.21872
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1689733599090723215, guid: c48943a3488df4d438cfd1728a5025c0,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 15.045798
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1689733599090723215, guid: c48943a3488df4d438cfd1728a5025c0,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 105.365845
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1689733599090723215, guid: c48943a3488df4d438cfd1728a5025c0,
         type: 3}

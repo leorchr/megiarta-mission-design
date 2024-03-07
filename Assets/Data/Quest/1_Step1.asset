@@ -13,7 +13,21 @@ MonoBehaviour:
   m_Name: 1_Step1
   m_EditorClassIdentifier: 
   questName: Anybody here ?!
-  stepName: "Investigate the garrison\u2019s installations to try to find someone.\r"
-  thankYouMessage: Good job guys !
-  requirements: []
+  steps:
+  - stepName: "Coucou\t"
+    thankYouMessage: Merci
+    requirements: []
+  - stepName: Oh la la
+    thankYouMessage: Merci
+    requirements:
+    - item: {fileID: 11400000, guid: 8c0b469490f2e6949baa5b06c9aa6998, type: 2}
+      quantity: 1
+  - stepName: sdfhzsodijf
+    thankYouMessage: Merci
+    requirements:
+    - item: {fileID: 11400000, guid: 8c0b469490f2e6949baa5b06c9aa6998, type: 2}
+      quantity: 1
+    - item: {fileID: 11400000, guid: c56a3323767441f47908193de34bf0b2, type: 2}
+      quantity: 3
+  currentStep: 1
   moneyReward: 11

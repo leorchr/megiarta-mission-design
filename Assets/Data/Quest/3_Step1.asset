@@ -13,11 +13,9 @@ MonoBehaviour:
   m_Name: 3_Step1
   m_EditorClassIdentifier: 
   questName: A strange cave
-  stepName: "Find the cave\u2019s entrance.\r\n"
-  thankYouMessage: 
-  requirements:
-  - item: {fileID: 11400000, guid: b235e9cbac7110a4da5894c9d751263b, type: 2}
-    quantity: 1
-  - item: {fileID: 11400000, guid: a157688f880d52048baff6a421176e14, type: 2}
-    quantity: 1
+  steps:
+  - stepName: 
+    thankYouMessage: 
+    requirements: []
+  currentStep: 0
   moneyReward: 0

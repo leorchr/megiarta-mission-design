@@ -14,19 +14,27 @@ public class QuestPanel : MonoBehaviour
     {
         trackedQuest = quest;
         questText.text = quest.questName;
-        stepText.text = quest.stepName;
+        stepText.text = quest.GetCurrentStep().stepName;
 
         panelAnim.OpenClose();
         SetTotalRequirements();
         Notify();
     }
 
+    public void UpdateQuest()
+    {
+        questText.text = trackedQuest.questName;
+        stepText.text = trackedQuest.GetCurrentStep().stepName;
+        SetTotalRequirements();
+    }
+
     public void Notify()
     {
-        if(trackedQuest.requirements.Count > 0)
+        UpdateQuest();
+        if (trackedQuest.GetCurrentStep().requirements.Count > 0)
         {
             int amount = 0;
-            foreach (QuestItem item in trackedQuest.requirements)
+            foreach (QuestItem item in trackedQuest.GetCurrentStep().requirements)
             {
                 int qtt = Inventory.Instance.GetItemQuantity(item);
                 amount += qtt;
@@ -38,9 +46,10 @@ public class QuestPanel : MonoBehaviour
 
     public void SetTotalRequirements()
     {
-        if (trackedQuest.requirements.Count > 0)
+        max = 0;
+        if (trackedQuest.GetCurrentStep().requirements.Count > 0)
         {
-            foreach (QuestItem item in trackedQuest.requirements)
+            foreach (QuestItem item in trackedQuest.GetCurrentStep().requirements)
             {
                 max += item.quantity;
             }

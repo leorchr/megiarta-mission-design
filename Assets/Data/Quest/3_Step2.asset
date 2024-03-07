@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: 3_Step2
   m_EditorClassIdentifier: 
   questName: A strange cave
-  stepName: 'Investigate the entrance.
-
-'
-  thankYouMessage: 
-  requirements: []
+  steps:
+  - stepName: 
+    thankYouMessage: 
+    requirements: []
+  currentStep: 0
   moneyReward: 0

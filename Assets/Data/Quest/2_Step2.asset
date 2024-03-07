@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: 2_Step2
   m_EditorClassIdentifier: 
   questName: Administrative work
-  stepName: "Bring back the captain\u2019s coded report to the \u201CAnalyser\u201D.\r\n"
-  thankYouMessage: 
-  requirements: []
+  steps:
+  - stepName: 
+    thankYouMessage: 
+    requirements: []
+  currentStep: 0
   moneyReward: 15

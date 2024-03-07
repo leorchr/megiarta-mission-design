@@ -23,6 +23,7 @@ public class QuestManager : MonoBehaviour
     public void TakeQuest(QuestData quest)
     {
         questsProgress.Add(quest);
+        quest.StartQuest();
         GameObject panel = Instantiate(questPanelPrefab, questParent);
         panel.GetComponent<QuestPanel>().SetupQuest(quest);
         questVisulization.Add(quest, panel);
@@ -30,7 +31,7 @@ public class QuestManager : MonoBehaviour
 
     public void CompleteQuest(QuestData quest)
     {
-        Notify();
+        Notify(quest.IsFinished());
         questVisulization[quest].GetComponent<QuestPanel>().Complete();
         questsProgress.Remove(quest);
         if (questVisulization.ContainsKey(quest))
@@ -39,12 +40,13 @@ public class QuestManager : MonoBehaviour
         }
     }
 
-    public void Notify()
+    public void Notify(bool finished = false)
     {
         foreach (GameObject quest in questVisulization.Values)
         {
             QuestPanel panel = quest.GetComponent<QuestPanel>();
-            panel.Notify();
+            if(!finished) panel.Notify();
+            else panel.Complete();
         }
     }
 }

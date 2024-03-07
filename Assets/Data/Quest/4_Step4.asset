@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: 4_Step4
   m_EditorClassIdentifier: 
   questName: To the bottom of things
-  stepName: 'Leave the island to report your findings !
-
-'
-  thankYouMessage: 
-  requirements: []
+  steps:
+  - stepName: 
+    thankYouMessage: 
+    requirements: []
+  currentStep: 0
   moneyReward: 40

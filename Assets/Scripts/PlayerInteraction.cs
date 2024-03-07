@@ -42,7 +42,7 @@ public class PlayerInteraction : MonoBehaviour
     {
         foreach (QuestData quest in QuestManager.Instance.questsProgress)
         {
-            foreach (QuestItem item in quest.requirements)
+            foreach (QuestItem item in quest.GetCurrentStep().requirements)
             {
                 if (_possiblePickable.item.Equals(item.item)
                     && !Inventory.Instance.HasEvery(item))
@@ -57,6 +57,7 @@ public class PlayerInteraction : MonoBehaviour
 
     private void Pickup()
     {
+        _possiblePickable.OnPick();
         _inventory.PickupQuestItem(_possiblePickable.item);
         _possiblePickable.gameObject.SetActive(false);
         SetInteraction(InteractionType.None);

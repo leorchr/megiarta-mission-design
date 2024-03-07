@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: 4_Step3
   m_EditorClassIdentifier: 
   questName: To the bottom of things
-  stepName: 'Investigate the cave.
-
-'
-  thankYouMessage: 
-  requirements: []
+  steps:
+  - stepName: 
+    thankYouMessage: 
+    requirements: []
+  currentStep: 0
   moneyReward: 0

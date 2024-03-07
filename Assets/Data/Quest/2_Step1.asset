@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: 2_Step1
   m_EditorClassIdentifier: 
   questName: Administrative work
-  stepName: "Find one of the garrison\u2019s captain\u2019s coded reports.\r\n"
-  thankYouMessage: Good job guys !
-  requirements:
-  - item: {fileID: 11400000, guid: 8c0b469490f2e6949baa5b06c9aa6998, type: 2}
-    quantity: 1
+  steps:
+  - stepName: 
+    thankYouMessage: 
+    requirements: []
+  currentStep: 0
   moneyReward: 0

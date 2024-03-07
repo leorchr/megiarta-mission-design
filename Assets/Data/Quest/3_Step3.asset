@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: 3_Step3
   m_EditorClassIdentifier: 
   questName: A strange cave
-  stepName: "Bring the message back to the \u201CAnalyser\u201D.\r\n"
-  thankYouMessage: 
-  requirements:
-  - item: {fileID: 11400000, guid: b6375180682c0e440b47c06899594bf2, type: 2}
-    quantity: 1
+  steps:
+  - stepName: 
+    thankYouMessage: 
+    requirements: []
+  currentStep: 0
   moneyReward: 21

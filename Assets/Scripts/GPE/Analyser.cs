@@ -1,6 +1,4 @@
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
-using UnityEngine;
 public class Analyser : Interactive
 {
     public List<QuestData> quests = new List<QuestData>();
@@ -30,16 +28,17 @@ public class Analyser : Interactive
     {
         if (quests.Count > 0 && current < quests.Count)
         {
-            if (quests[current].requirements.Count > 0)
+            QuestManager.Instance.TakeQuest(quests[current]);
+
+            if (quests[current].GetCurrentStep().requirements.Count > 0)
             {
                 waitForObject = true;
                 //Setting up requirements to finish quests
-                foreach (QuestItem item in quests[current].requirements)
+                foreach (QuestItem item in quests[current].GetCurrentStep().requirements)
                 {
                     requiredItems.Add(item);
                 }
             }
-            QuestManager.Instance.TakeQuest(quests[current]);
         }
     }
 
@@ -53,20 +52,21 @@ public class Analyser : Interactive
     {
 
         //Dialogue end quest
-        if(quests[current].requirements.Count > 0)
+        if(quests[current].GetCurrentStep().requirements.Count > 0)
         {
-            foreach (QuestItem required in quests[current].requirements)
+            foreach (QuestItem required in quests[current].GetCurrentStep().requirements)
             {
                 Inventory.Instance.RemoveFromInventory(required.item, required.quantity);
             }
             requiredItems.Clear();
         }
-        QuestManager.Instance.CompleteQuest(quests[current]);
-
+        //QuestManager.Instance.CompleteQuest(quests[current]);
+        quests[current].NextStep();
         waitForObject = false;
-
+        if (!quests[current].IsFinished()) return;
         current++;
-        if (current == quests.Count)
+      
+        if(current == quests.Count)
         {
             Destroy(this);
         }
