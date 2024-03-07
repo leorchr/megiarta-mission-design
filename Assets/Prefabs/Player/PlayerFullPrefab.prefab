@@ -978,10 +978,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1649538930920751204}
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6655652320888935060, guid: 55cd9cac3e5e8ee48b4958db637af5c3,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 3294687556831252551}
     - targetCorrespondingSourceObject: {fileID: 6504127300840684978, guid: 55cd9cac3e5e8ee48b4958db637af5c3,
         type: 3}
       insertIndex: -1
@@ -1123,21 +1119,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 8792799365413125781}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &3294687556831252551
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2764063286284282881}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3965ec68cab448a40bc11a3ad849893e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  grassStepSounds: []
-  rockStepSounds: []
-  ambientSoundManager: {fileID: 0}
 --- !u!114 &5924736875476553917 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2899940632246791720, guid: 55cd9cac3e5e8ee48b4958db637af5c3,
