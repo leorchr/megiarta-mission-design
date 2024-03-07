@@ -67,6 +67,7 @@ public class PlayerInteraction : MonoBehaviour
         if (!_possibleInteractive.waitForObject || _inventory.HasEveryItem(_possibleInteractive.requiredItems))
         {
             _possibleInteractive.OnInteraction();
+            StopInteractive();
             if (_possibleInteractive && _possibleInteractive.onlyOnce)
             {
                 DisableInteractive();
