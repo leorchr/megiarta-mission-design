@@ -5,7 +5,12 @@ public class Analyser : Interactive
 {
     public List<QuestData> quests = new List<QuestData>();
     protected int current = 0;
-    private bool firstQuest = false;
+
+    private void Start()
+    {
+        GiveQuest();
+    }
+
 
     public override void OnInteraction()
     {
@@ -17,16 +22,7 @@ public class Analyser : Interactive
             QuestGivingUI.Instance.SetupQuest(quests[current], this);
         }*/
 
-        if(!firstQuest)
-        {
-            QuestManager.Instance.CompleteQuest(quests[current]);
-            Invoke("GiveQuest",1f);
-            firstQuest = true;
-        }
-        else 
-        { 
-            FinishQuest();
-        }
+        FinishQuest();
     }
 
 
@@ -69,15 +65,14 @@ public class Analyser : Interactive
 
         waitForObject = false;
 
+        current++;
         if (current == quests.Count)
         {
-            GetComponent<Collider>().enabled = false;
             Destroy(this);
         }
         else
         {
             Invoke("GiveQuest", 1f);
         }
-        current++;
     }
 }

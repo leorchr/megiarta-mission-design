@@ -9,7 +9,6 @@ public class QuestPanel : MonoBehaviour
     [SerializeField] QuestPanelAnimation panelAnim;
 
     private int max = 0;
-    private bool missionTook = false;
 
     public void SetupQuest(QuestData quest)
     {
@@ -34,16 +33,7 @@ public class QuestPanel : MonoBehaviour
             }
             progress.gameObject.SetActive(true);
             progress.text = amount + " / " + max;
-            if (Inventory.Instance.HasEveryItem(trackedQuest.requirements))
-            {
-                Complete();
-            }
         }
-        if(missionTook)
-        {
-            Complete();
-        }
-        missionTook = true;
     }
 
     public void SetTotalRequirements()

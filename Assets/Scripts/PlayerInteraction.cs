@@ -86,7 +86,7 @@ public class PlayerInteraction : MonoBehaviour
             if (other.transform.CompareTag("Pickable"))
             {
                 _possiblePickable = other.GetComponent<Pickable>();
-                SetInteraction(InteractionType.Pickup);
+                if (IsPickableNeeded()) SetInteraction(InteractionType.Pickup);
             }
             else if (other.transform.CompareTag("Interactive"))
             {

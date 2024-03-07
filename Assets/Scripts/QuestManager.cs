@@ -20,18 +20,6 @@ public class QuestManager : MonoBehaviour
         else Instance = this;
     }
 
-    private void Start()
-    {
-        if(questsProgress.Count > 0)
-        {
-            TakeQuest(questsProgress[0]);
-        }
-        else
-        {
-            Debug.LogWarning("Il n'y a pas de quête");
-        }
-    }
-
     public void TakeQuest(QuestData quest)
     {
         questsProgress.Add(quest);
@@ -43,6 +31,7 @@ public class QuestManager : MonoBehaviour
     public void CompleteQuest(QuestData quest)
     {
         Notify();
+        questVisulization[quest].GetComponent<QuestPanel>().Complete();
         questsProgress.Remove(quest);
         if (questVisulization.ContainsKey(quest))
         {
@@ -54,7 +43,6 @@ public class QuestManager : MonoBehaviour
     {
         foreach (GameObject quest in questVisulization.Values)
         {
-            if (quest.GetComponent<QuestPanel>() == null) return;
             QuestPanel panel = quest.GetComponent<QuestPanel>();
             panel.Notify();
         }
