@@ -8,8 +8,23 @@ public class DialogueManager : MonoBehaviour
     public Canvas UICanvas;
     public GameObject AutomaticDiscussion;
     public GameObject ManualDiscussion;
-    public TextMeshProUGUI tm;
+    private GameObject currentDialogueBox;
     public DialogueSC currentDialogue;
+
+    public static DialogueManager instance;
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,11 +37,35 @@ public class DialogueManager : MonoBehaviour
         
     }
 
-    private void PlayDialogue(DialogueSC dsc)
+    public void PlayDialogue(DialogueSC dsc)
     {
-        if (tm == null)
+        currentDialogue = dsc;
+        if (currentDialogueBox != null)
         {
-            
+            Destroy(currentDialogueBox);
+            currentDialogueBox = null;
+        }
+        
+        switch(currentDialogue.dialogueType) {
+            case DialogueType.Automatic:
+                currentDialogueBox = Instantiate(AutomaticDiscussion, UICanvas.transform);
+                break;
+            case DialogueType.Manual:
+                currentDialogueBox = Instantiate(ManualDiscussion, UICanvas.transform);
+                break;
+            default:  break;
+        }
+
+        DialogueBoxContent dbc = currentDialogueBox.GetComponent<DialogueBoxContent>();
+
+        if (dbc.hasSpecificNamePos)
+        {
+            dbc.nameText.text = dsc.subDialogues[0].getName();
+            dbc.contentText.text = dsc.subDialogues[0].getText();
+        }
+        else
+        {
+            dbc.contentText.text = dsc.subDialogues[0].getString();
         }
     }
 }

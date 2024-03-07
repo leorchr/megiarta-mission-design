@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64a33b52a406789489485e0cc26e9bca, type: 3}
   m_Name: DialogueTest
   m_EditorClassIdentifier: 
-  dialogueType: 0
+  dialogueType: 1
   subDialogues:
-  - defaultNameColor: {r: 0.380429, g: 0.59720826, b: 0.7830189, a: 1}
-    name: Chara1
+  - showName: 1
+    defaultNameColor: {r: 0.380429, g: 0.59720826, b: 0.7830189, a: 1}
+    name: Chara
     defaultTextColor: {r: 1, g: 1, b: 1, a: 1}
     text: Hello young friend !

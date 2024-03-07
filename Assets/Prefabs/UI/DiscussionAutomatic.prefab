@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6420411940830014484}
   - component: {fileID: 1721333881823072902}
   - component: {fileID: 3743133807993433083}
+  - component: {fileID: 4232622002460992097}
   m_Layer: 5
   m_Name: DiscussionAutomatic
   m_TagString: Untagged
@@ -135,3 +136,18 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &4232622002460992097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3171082859279597872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e13effa9c3ac6e48995f86a5ec28b35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contentText: {fileID: 3743133807993433083}
+  nameText: {fileID: 0}
+  hasSpecificNamePos: 0
