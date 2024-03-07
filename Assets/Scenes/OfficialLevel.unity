@@ -1864,11 +1864,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerFullPrefab
       objectReference: {fileID: 0}
-    - target: {fileID: 1649538930920751204, guid: c48943a3488df4d438cfd1728a5025c0,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.94
-      objectReference: {fileID: 0}
     - target: {fileID: 1689733599090723215, guid: c48943a3488df4d438cfd1728a5025c0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1918,26 +1913,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2103121944921544943, guid: c48943a3488df4d438cfd1728a5025c0,
-        type: 3}
-      propertyPath: m_RenderPostProcessing
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3650440515769452237, guid: c48943a3488df4d438cfd1728a5025c0,
-        type: 3}
-      propertyPath: near clip plane
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5924736875476553917, guid: c48943a3488df4d438cfd1728a5025c0,
-        type: 3}
-      propertyPath: maxSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5924736875476553917, guid: c48943a3488df4d438cfd1728a5025c0,
-        type: 3}
-      propertyPath: turnPower
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6645699426215511725, guid: c48943a3488df4d438cfd1728a5025c0,
         type: 3}
