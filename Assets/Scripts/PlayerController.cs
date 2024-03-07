@@ -112,7 +112,7 @@ public class PlayerController : MonoBehaviour
 
     private bool checkIsGrounded()
     {
-        return Physics.Raycast(groundCheck.position, Vector3.down, 0.2f, groundMask);
+        return Physics.Raycast(groundCheck.position, Vector3.down, 0.3f, groundMask);
     }
 
     public void OnMove(InputAction.CallbackContext callbackContext)

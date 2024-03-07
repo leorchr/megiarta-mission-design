@@ -61,6 +61,7 @@ public class CameraController : MonoBehaviour
         cam = GetComponent<Camera>();
         swapCamViaID(currentCameraID);
         cam.fieldOfView = cData.FOV;
+        lookRotation = transform.rotation.eulerAngles;
     }
 
     // Update is called once per frame
@@ -227,11 +228,11 @@ public class CameraController : MonoBehaviour
                 Vector3 tpos = target.transform.position + posOffset;
                 float newDist = cData.CamDistance;
                 RaycastHit hit;
-                if (Physics.Raycast(tpos, (transform.localRotation * Vector3.back), out hit,newDist, ignoreCamPlacement))
+                if (Physics.Raycast(tpos, (transform.rotation * Vector3.back), out hit,newDist, ignoreCamPlacement))
                 {
                     newDist = hit.distance - 0.1f;
                 }
-                Vector3 rPos = (transform.localRotation * Vector3.back) * newDist;
+                Vector3 rPos = (transform.rotation * Vector3.back) * newDist;
                 transform.position = Vector3.SmoothDamp(transform.position, tpos + rPos, ref vel, cData.smoothTimePosition);
                 break;
             default: break;
