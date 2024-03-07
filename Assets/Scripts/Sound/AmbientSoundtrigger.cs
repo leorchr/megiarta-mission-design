@@ -11,6 +11,7 @@ public class AmbientSoundtrigger : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             ambientSoundManager.AmbienceChange();
+            print("saucisse");
         }
     }
 }
