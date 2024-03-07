@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4936993620686914877}
   - component: {fileID: 7162780333953855991}
   - component: {fileID: 3981961057595616548}
+  - component: {fileID: 3007621482717839473}
   m_Layer: 0
   m_Name: Wagon.003
   m_TagString: Untagged
@@ -133,11 +134,32 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -6299455910856566172, guid: f2188007460e85e439d9bd0c71e8f855, type: 3}
+--- !u!65 &3007621482717839473
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8676099692105732130}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.6513433, y: 3.1095638, z: 3.2012706}
+  m_Center: {x: -0.026560783, y: 1.5547819, z: -0.418181}
 --- !u!1001 &642467068482705358
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -474,6 +496,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WagonProp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6262936984122547546, guid: 9924e7d3fef4b754eae91575b112bb8d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

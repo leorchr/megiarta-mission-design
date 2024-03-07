@@ -8231,8 +8231,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.0094457, y: 0.35743046, z: 4.197418}
-  m_Center: {x: -0.07088292, y: 0.32128477, z: -0.35529327}
+  m_Size: {x: 2.0094457, y: 0.35743043, z: 4.127751}
+  m_Center: {x: -0.07088294, y: 0.3212845, z: -0.32046068}
 --- !u!4 &1341196960 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6253839500901314724, guid: db8e825d1ca7e264693b9462abeaebb0,
@@ -18583,6 +18583,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Cauldron
+      objectReference: {fileID: 0}
+    - target: {fileID: 9060317395929042153, guid: 72be203f6998d5b4a884ad62f9c671aa,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1.771931
+      objectReference: {fileID: 0}
+    - target: {fileID: 9060317395929042153, guid: 72be203f6998d5b4a884ad62f9c671aa,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 2.0078382
+      objectReference: {fileID: 0}
+    - target: {fileID: 9060317395929042153, guid: 72be203f6998d5b4a884ad62f9c671aa,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 1.0039191
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
