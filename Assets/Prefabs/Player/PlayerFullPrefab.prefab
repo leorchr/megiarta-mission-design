@@ -262,6 +262,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2899940632246791720, guid: 55cd9cac3e5e8ee48b4958db637af5c3,
         type: 3}
+      propertyPath: airForceMultiplier
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2899940632246791720, guid: 55cd9cac3e5e8ee48b4958db637af5c3,
+        type: 3}
       propertyPath: deccelerationSpeed
       value: 20
       objectReference: {fileID: 0}

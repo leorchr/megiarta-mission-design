@@ -123,35 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &537755957 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2764063286284282881, guid: c48943a3488df4d438cfd1728a5025c0,
-    type: 3}
-  m_PrefabInstance: {fileID: 615055284858445326}
-  m_PrefabAsset: {fileID: 0}
---- !u!136 &537755968
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 537755957}
-  m_Material: {fileID: 13400000, guid: 4e68bf1b8b1e9df4886b7cc263daa928, type: 2}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.55
-  m_Height: 1.8
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1109918847
 GameObject:
   m_ObjectHideFlags: 0
@@ -720,30 +691,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8796253216393764117, guid: c48943a3488df4d438cfd1728a5025c0,
-        type: 3}
-      propertyPath: sensitivity
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 8796253216393764117, guid: c48943a3488df4d438cfd1728a5025c0,
-        type: 3}
-      propertyPath: CamDatas.Array.data[0].CamDataSC
-      value: 
-      objectReference: {fileID: 11400000, guid: bd89a0e1f8506984c8fb5ea628942e9a,
-        type: 2}
-    - target: {fileID: 9012601342242959264, guid: c48943a3488df4d438cfd1728a5025c0,
-        type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2764063286284282881, guid: c48943a3488df4d438cfd1728a5025c0,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 537755968}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c48943a3488df4d438cfd1728a5025c0, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

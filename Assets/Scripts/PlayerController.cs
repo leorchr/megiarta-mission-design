@@ -35,8 +35,12 @@ public class PlayerController : MonoBehaviour
     public float turnPower = 0.5f;
     public float angleOffset = 15;
 
+    public float airForceMultiplier = 0.2f;
+
     public Transform groundCheck;
     public LayerMask groundMask;
+
+    bool isGrounded = false;
 
     
     
@@ -50,6 +54,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        isGrounded = checkIsGrounded();
         Vector3 fwd = Camera.main.transform.forward * moveInput.y;
         Vector3 side = Camera.main.transform.right * moveInput.x;
         Vector3 plDir = (fwd + side);
@@ -86,11 +91,28 @@ public class PlayerController : MonoBehaviour
             transform.rotation = Quaternion.Euler(new Vector3(0, smoothRot, 0));
         }
 
-        rb.velocity = new Vector3 (rb.velocity.x,rb.velocity.y + gravityVelocity,rb.velocity.z);
+        if (!isGrounded)
+        {
+            Vector3 additiveForce = new Vector3(rb.velocity.x - velNoGrav.x, 0, rb.velocity.z - velNoGrav.z);
+            additiveForce = additiveForce * airForceMultiplier;
+            rb.velocity = new Vector3(velNoGrav.x + additiveForce.x, gravityVelocity, velNoGrav.z + additiveForce.z);
+        }
+        else
+        {
+            rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y + gravityVelocity, rb.velocity.z);
+        }
+        
+
+       
 
         animator.SetFloat("Speed", rb.velocity.magnitude);
         animator.SetFloat("VelY", rb.velocity.y);
         animator.SetBool("IsGrounded", Physics.Raycast(groundCheck.position, Vector3.down, 0.2f, groundMask));
+    }
+
+    private bool checkIsGrounded()
+    {
+        return Physics.Raycast(groundCheck.position, Vector3.down, 0.2f, groundMask);
     }
 
     public void OnMove(InputAction.CallbackContext callbackContext)
@@ -130,7 +152,7 @@ public class PlayerController : MonoBehaviour
 
     private bool canJump()
     {
-        return !isJumping && Physics.Raycast(groundCheck.position,Vector3.down,0.2f,groundMask) ;
+        return !isJumping && isGrounded;
     }
 
     
