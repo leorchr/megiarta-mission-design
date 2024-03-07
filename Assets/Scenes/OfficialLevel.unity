@@ -398,13 +398,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 15871842}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.7141767, z: -0, w: 0.6999655}
-  m_LocalPosition: {x: 203.852, y: 17.98, z: 193.94}
+  m_LocalRotation: {x: -0, y: -0.6907423, z: -0, w: 0.7231011}
+  m_LocalPosition: {x: 205.03, y: 18.05, z: 194.11}
   m_LocalScale: {x: 4.5874057, y: 4.2171407, z: 0.07297761}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 13759839}
-  m_LocalEulerAnglesHint: {x: 0, y: -91.152, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -87.378, z: 0}
 --- !u!114 &15871844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -428,10 +428,10 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 0
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
@@ -2393,17 +2393,17 @@ PrefabInstance:
     - target: {fileID: 1689733599090723215, guid: c48943a3488df4d438cfd1728a5025c0,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 321.08
+      value: 172.71
       objectReference: {fileID: 0}
     - target: {fileID: 1689733599090723215, guid: c48943a3488df4d438cfd1728a5025c0,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 22.43
+      value: 7.44
       objectReference: {fileID: 0}
     - target: {fileID: 1689733599090723215, guid: c48943a3488df4d438cfd1728a5025c0,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 214.43
+      value: 126.22
       objectReference: {fileID: 0}
     - target: {fileID: 1689733599090723215, guid: c48943a3488df4d438cfd1728a5025c0,
         type: 3}
@@ -2445,11 +2445,6 @@ PrefabInstance:
       propertyPath: ambientSoundManager
       value: 
       objectReference: {fileID: 1879594098}
-    - target: {fileID: 8796253216393764117, guid: c48943a3488df4d438cfd1728a5025c0,
-        type: 3}
-      propertyPath: ignoreCamPlacement.m_Bits
-      value: 55
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

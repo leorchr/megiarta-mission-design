@@ -136,17 +136,17 @@ PrefabInstance:
     - target: {fileID: 7196505317371025203, guid: 7c422a5ca6cc35444a47bde69cb51b11,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -135.21872
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7196505317371025203, guid: 7c422a5ca6cc35444a47bde69cb51b11,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -14.045798
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7196505317371025203, guid: 7c422a5ca6cc35444a47bde69cb51b11,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -115.365845
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7196505317371025203, guid: 7c422a5ca6cc35444a47bde69cb51b11,
         type: 3}
@@ -923,17 +923,17 @@ PrefabInstance:
     - target: {fileID: 8080414718192807006, guid: 55cd9cac3e5e8ee48b4958db637af5c3,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -135.21872
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8080414718192807006, guid: 55cd9cac3e5e8ee48b4958db637af5c3,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -14.560799
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8080414718192807006, guid: 55cd9cac3e5e8ee48b4958db637af5c3,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -105.365845
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8080414718192807006, guid: 55cd9cac3e5e8ee48b4958db637af5c3,
         type: 3}
@@ -1024,7 +1024,13 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 2163a3ca3c5d8be4ba71670e0c586215, type: 3}
   - {fileID: 8300000, guid: 94ae16c60e2ff3b419490518492a431f, type: 3}
   - {fileID: 8300000, guid: 7944c0d6c12326042897eb7b0f11a1f6, type: 3}
-  rockStepSounds: []
+  rockStepSounds:
+  - {fileID: 8300000, guid: bbf95af6329ab7e4c9e188bddf12d43a, type: 3}
+  - {fileID: 8300000, guid: ff626c12cc208a544bf9411c5a20ec49, type: 3}
+  - {fileID: 8300000, guid: 5fd5afb73e52d4240ab71c14c076e3e0, type: 3}
+  - {fileID: 8300000, guid: a6065f82fc7b66d47865d51e9afc41c7, type: 3}
+  - {fileID: 8300000, guid: a24e22feada849a46a206cb963dc8aeb, type: 3}
+  - {fileID: 8300000, guid: c6058d8d5d3b81f47a6bc7acc7c8ace9, type: 3}
   ambientSoundManager: {fileID: 0}
 --- !u!82 &6647188553035847522
 AudioSource:
@@ -1138,10 +1144,10 @@ CapsuleCollider:
   m_Material: {fileID: 13400000, guid: 4e68bf1b8b1e9df4886b7cc263daa928, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4294967295
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4294967295
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0

@@ -18,16 +18,16 @@ public class AmbientSoundManager : MonoBehaviour
     {
         if (isOnIsland)
         {
+            isOnIsland = false;
             ambienceSource.clip = caveAmbience;
             ambienceSource.Play();
-            isOnIsland = false; 
         }
 
         else if (!isOnIsland)
         {
+            isOnIsland = true;
             ambienceSource.clip = islandAmbience;
             ambienceSource.Play();
-            isOnIsland = true;
         }
     }
 }
