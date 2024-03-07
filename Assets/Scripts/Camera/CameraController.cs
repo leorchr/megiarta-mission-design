@@ -225,7 +225,6 @@ public class CameraController : MonoBehaviour
                 break;
             case PositionType.RotateAroundTarget:
                 Vector3 tpos = target.transform.position + posOffset;
-                Debug.DrawRay(tpos, Vector3.up,Color.red,1);
                 float newDist = cData.CamDistance;
                 RaycastHit hit;
                 if (Physics.Raycast(tpos, (transform.localRotation * Vector3.back), out hit,newDist, ignoreCamPlacement))
