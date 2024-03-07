@@ -1,4 +1,6 @@
+using UnityEngine;
 using System.Collections.Generic;
+
 public class Analyser : Interactive
 {
     public List<QuestData> quests = new List<QuestData>();
@@ -42,6 +44,19 @@ public class Analyser : Interactive
         }
     }
 
+    public void SetupStep()
+    {
+        if (quests[current].GetCurrentStep().requirements.Count > 0)
+        {
+            waitForObject = true;
+            //Setting up requirements to finish quests
+            foreach (QuestItem item in quests[current].GetCurrentStep().requirements)
+            {
+                requiredItems.Add(item);
+            }
+        }
+    }
+
     /*void ThanksMessage()
     {
         QuestGivingUI.Instance.ThankYou(quests[current]);
@@ -62,8 +77,13 @@ public class Analyser : Interactive
         }
         //QuestManager.Instance.CompleteQuest(quests[current]);
         quests[current].NextStep();
+
         waitForObject = false;
-        if (!quests[current].IsFinished()) return;
+        if (!quests[current].IsFinished())
+        {
+            SetupStep();
+            return;
+        }
         current++;
       
         if(current == quests.Count)

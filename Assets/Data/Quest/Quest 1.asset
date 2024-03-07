@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5584d06220554064eb11d51bcdd0104e, type: 3}
-  m_Name: 2_Step2
+  m_Name: Quest 1
   m_EditorClassIdentifier: 
-  questName: Administrative work
+  questName: Become a hero
   steps:
-  - stepName: 
-    thankYouMessage: 
+  - stepName: "Investigate the garrison\u2019s installations to try to find someone."
+    thankYouMessage: Merci
     requirements: []
   currentStep: 0
-  moneyReward: 15
+  moneyReward: 11

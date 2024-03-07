@@ -10,24 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5584d06220554064eb11d51bcdd0104e, type: 3}
-  m_Name: 1_Step1
+  m_Name: Quest 2
   m_EditorClassIdentifier: 
-  questName: Anybody here ?!
+  questName: Help a friend
   steps:
-  - stepName: "Coucou\t"
-    thankYouMessage: Merci
+  - stepName: "Find one of the garrison\u2019s captain\u2019s coded reports."
+    thankYouMessage: 
     requirements: []
-  - stepName: Oh la la
-    thankYouMessage: Merci
+  - stepName: "Bring back the captain\u2019s coded report to the \u201CAnalyser\u201D."
+    thankYouMessage: 
     requirements:
     - item: {fileID: 11400000, guid: 8c0b469490f2e6949baa5b06c9aa6998, type: 2}
       quantity: 1
-  - stepName: sdfhzsodijf
-    thankYouMessage: Merci
-    requirements:
-    - item: {fileID: 11400000, guid: 8c0b469490f2e6949baa5b06c9aa6998, type: 2}
-      quantity: 1
-    - item: {fileID: 11400000, guid: c56a3323767441f47908193de34bf0b2, type: 2}
-      quantity: 3
-  currentStep: 1
-  moneyReward: 11
+  currentStep: 0
+  moneyReward: 15

@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Reports : Pickable
 {
+    [SerializeField] private Analyser analyser;
     public override void OnPick()
     {
-        //MainQuest.Instance.FinishQuest();
+        analyser.FinishQuest();
     }
 }
