@@ -30,4 +30,10 @@ public class Analyser : QuestInteractor
             Debug.Log("Dialogue Current Quest !");
         }
     }
+
+    private void OnDestroy()
+    {
+        if (Rowboat.Instance) Rowboat.Instance.enabled = true;
+        else Debug.LogWarning("Missing rowboat for quest 4");
+    }
 }

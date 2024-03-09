@@ -83,6 +83,37 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &4891237997202704353
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7386924947778007366}
+  m_Layer: 0
+  m_Name: UIPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7386924947778007366
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4891237997202704353}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.15}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8902466590799895887}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7420108059643441675
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,9 +208,10 @@ GameObject:
   - component: {fileID: 8902466590799895887}
   - component: {fileID: 2506331407149584819}
   - component: {fileID: 1761160799957160782}
+  - component: {fileID: -7093609472968427100}
   m_Layer: 0
   m_Name: RowBoat
-  m_TagString: Untagged
+  m_TagString: Interactive
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -197,6 +229,7 @@ Transform:
   m_LocalScale: {x: 11.691706, y: 11.691706, z: 11.691706}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 7386924947778007366}
   - {fileID: 1209928424624993865}
   - {fileID: 1014729244334854436}
   m_Father: {fileID: 0}
@@ -251,3 +284,23 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &-7093609472968427100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9170902134420986370}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32f619961798c344a9aa8c051031a04f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionType: 3
+  UiPos: {fileID: 7386924947778007366}
+  onlyOnce: 0
+  requiredItems: []
+  waitForObject: 0
+  quests:
+  - {fileID: 11400000, guid: 3e4670ede95d22a4baeb4728f0b615d8, type: 2}
+  current: 0
