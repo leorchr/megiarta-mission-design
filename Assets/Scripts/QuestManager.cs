@@ -31,6 +31,7 @@ public class QuestManager : MonoBehaviour
 
     public void CompleteQuest(QuestData quest)
     {
+        Wallet.Instance.EarnMoney(quest.moneyReward);
         Notify(quest.IsFinished());
         questVisulization[quest].GetComponent<QuestPanel>().Complete();
         questsProgress.Remove(quest);

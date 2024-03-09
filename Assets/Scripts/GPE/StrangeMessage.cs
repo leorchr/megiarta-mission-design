@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Reports : Pickable
+public class StrangeMessage : Pickable
 {
     public override void OnPick()
     {

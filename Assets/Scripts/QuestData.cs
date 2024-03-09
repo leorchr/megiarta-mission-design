@@ -8,7 +8,7 @@ public class QuestData : ScriptableObject
 {
     public string questName;
     public List<QuestStep> steps = new List<QuestStep>();
-    public int currentStep = 0;
+    [HideInInspector] public int currentStep = 0;
     public int moneyReward;
     public void StartQuest()
     {
@@ -41,6 +41,7 @@ public class QuestStep
 {
     [TextArea] public string stepName;
 
+    [TextArea] public string dialogue;
     [TextArea] public string thankYouMessage;
 
     public List<QuestItem> requirements = new List<QuestItem>();

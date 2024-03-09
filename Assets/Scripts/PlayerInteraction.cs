@@ -65,19 +65,11 @@ public class PlayerInteraction : MonoBehaviour
 
     private void Interact()
     {
-        if (!_possibleInteractive.waitForObject || _inventory.HasEveryItem(_possibleInteractive.requiredItems))
+        _possibleInteractive.OnInteraction();
+        StopInteractive();
+        if (_possibleInteractive && _possibleInteractive.onlyOnce)
         {
-            _possibleInteractive.OnInteraction();
-            StopInteractive();
-            if (_possibleInteractive && _possibleInteractive.onlyOnce)
-            {
-                DisableInteractive();
-            }
-        }
-        else
-        {
-            _anim.PlayAnimation(_possibleInteractive.interactionType);
-            Invoke("OnFail", 1f);
+            DisableInteractive();
         }
     }
 
@@ -95,12 +87,8 @@ public class PlayerInteraction : MonoBehaviour
                 Interactive interactive = other.GetComponent<Interactive>();
                 if (interactive == null) return;
                 //if interaction doesn't need key object or interaction key object is in inventory
-                bool hasRequiredItems = _inventory.HasEveryItem(interactive.requiredItems);
-                if (!interactive.waitForObject || hasRequiredItems)
-                {
-                    _possibleInteractive = interactive;
-                    SetInteraction(_possibleInteractive.interactionType);
-                }
+                _possibleInteractive = interactive;
+                SetInteraction(_possibleInteractive.interactionType);
             }
         }
     }

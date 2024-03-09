@@ -4,11 +4,10 @@ public enum InteractionType
 {
     None,
     Analyser,
-    PushButton,
-    OpenChest,
-    FailedAction,
+    Mine,
+    TakeBoat,
     Pickup,
-    Talk
+    FailedAction
 }
 
 public class PlayerInteractionAnim : MonoBehaviour
@@ -43,24 +42,24 @@ public class PlayerInteractionAnim : MonoBehaviour
                     _animator.SetTrigger("Analyser");
                     break;
                 }
-            case InteractionType.PushButton:
+            case InteractionType.Mine:
                 {
-                    _animator.SetTrigger("Push Button");
+                    _animator.SetTrigger("Mine");
                     break;
                 }
-            case InteractionType.OpenChest:
+            case InteractionType.TakeBoat:
                 {
-                    _animator.SetTrigger("Open Chest");
-                    break;
-                }
-            case InteractionType.FailedAction:
-                {
-                    _animator.SetTrigger("Failed");
+                    _animator.SetTrigger("TakeBoat");
                     break;
                 }
             case InteractionType.Pickup:
                 {
                     _animator.SetTrigger("Pickup");
+                    break;
+                }
+            case InteractionType.FailedAction:
+                {
+                    _animator.SetTrigger("Failed");
                     break;
                 }
         }

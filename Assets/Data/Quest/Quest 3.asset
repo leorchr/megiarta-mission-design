@@ -10,19 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5584d06220554064eb11d51bcdd0104e, type: 3}
-  m_Name: Quest 2
+  m_Name: Quest 3
   m_EditorClassIdentifier: 
-  questName: Help a friend
+  questName: A strange cave
   steps:
-  - stepName: "Find one of the garrison\u2019s captain\u2019s coded reports."
+  - stepName: "Find the cave\u2019s entrance."
+    dialogue: 
+    thankYouMessage: 
+    requirements: []
+  - stepName: Investigate the entrance.
+    dialogue: 
     thankYouMessage: 
     requirements:
-    - item: {fileID: 11400000, guid: 8c0b469490f2e6949baa5b06c9aa6998, type: 2}
+    - item: {fileID: 11400000, guid: b6375180682c0e440b47c06899594bf2, type: 2}
       quantity: 1
-  - stepName: "Bring back the captain\u2019s coded report to the \u201CAnalyser\u201D."
+  - stepName: "Bring the message back to the \u201CAnalyser\u201D"
+    dialogue: 
     thankYouMessage: 
     requirements:
-    - item: {fileID: 11400000, guid: 8c0b469490f2e6949baa5b06c9aa6998, type: 2}
+    - item: {fileID: 11400000, guid: b6375180682c0e440b47c06899594bf2, type: 2}
       quantity: 1
-  currentStep: 2
-  moneyReward: 15
+  moneyReward: 21

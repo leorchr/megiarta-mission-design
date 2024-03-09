@@ -15,7 +15,7 @@ MonoBehaviour:
   questName: Become a hero
   steps:
   - stepName: "Investigate the garrison\u2019s installations to try to find someone."
-    thankYouMessage: Merci
+    thankYouMessage: 
     requirements: []
-  currentStep: 0
+  currentStep: 1
   moneyReward: 11

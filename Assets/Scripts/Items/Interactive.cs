@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Interactive : MonoBehaviour
 {
-    public InteractionType interactionType = InteractionType.PushButton;
+    public InteractionType interactionType = InteractionType.Analyser;
     public Transform UiPos;
 
     public bool onlyOnce = true;
