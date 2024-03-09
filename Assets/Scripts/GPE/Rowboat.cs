@@ -22,6 +22,7 @@ public class Rowboat : QuestInteractor
         if (quests[current].currentStep == 3)
         {
             Debug.Log("Code Enigme Rowboat");
+            Debug.Log("Finish Game");
         }
         else
         {

@@ -42,6 +42,7 @@ public class QuestPanel : MonoBehaviour
             progress.gameObject.SetActive(true);
             progress.text = amount + " / " + max;
         }
+        else progress.text = string.Empty;
     }
 
     public void SetTotalRequirements()

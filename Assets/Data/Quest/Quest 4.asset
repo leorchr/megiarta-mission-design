@@ -32,5 +32,5 @@ MonoBehaviour:
     dialogue: 
     thankYouMessage: 
     requirements: []
-  currentStep: 0
+  currentStep: 3
   moneyReward: 40
