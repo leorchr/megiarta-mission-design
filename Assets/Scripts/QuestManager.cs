@@ -33,6 +33,10 @@ public class QuestManager : MonoBehaviour
     {
         Wallet.Instance.EarnMoney(quest.moneyReward);
         Notify(quest.IsFinished());
+        if(SFXManager.instance)
+        {
+            SFXManager.instance.PlaySound(SFXManager.instance.missionRewardSound);
+        }
         questVisulization[quest].GetComponent<QuestPanel>().Complete();
         questsProgress.Remove(quest);
         if (questVisulization.ContainsKey(quest))
