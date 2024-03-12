@@ -22,6 +22,8 @@ public class SubDialogue
     public Color defaultTextColor = Color.white;
     public String text;
 
+    public AudioClip audioClip;
+
     public String getString() {
         if (showName)
         {

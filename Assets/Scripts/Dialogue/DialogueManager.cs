@@ -9,12 +9,11 @@ using UnityEngine.InputSystem;
 
 public class DialogueManager : MonoBehaviour
 {
-    public DialogueSC startDialogue;
     public Canvas UICanvas;
     public GameObject AutomaticDiscussion;
     public GameObject ManualDiscussion;
     private GameObject currentDialogueBox;
-    public DialogueSC currentDialogue;
+    private DialogueSC currentDialogue;
 
     public float autoDialogueSpeed = 1;
     private float averageReadingSpeed = 20;
@@ -27,6 +26,8 @@ public class DialogueManager : MonoBehaviour
 
     public static DialogueManager instance;
 
+    public PlayerController playerController;
+
     private void Awake()
     {
         if (instance == null)
@@ -37,13 +38,6 @@ public class DialogueManager : MonoBehaviour
         {
             Destroy(this);
         }
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        PlayDialogue(startDialogue);
-        PlayDialogue(startDialogue);
     }
 
     // Update is called once per frame
@@ -83,6 +77,7 @@ public class DialogueManager : MonoBehaviour
                 break;
             case DialogueType.Manual:
                 currentDialogueBox = Instantiate(ManualDiscussion, UICanvas.transform);
+                playerController.lockPlayer();
                 break;
             default:  break;
         }
@@ -154,6 +149,7 @@ public class DialogueManager : MonoBehaviour
         if (currentDialogueBox.GetComponent<Animator>() != null)
         {
             currentDialogueBox.GetComponent<Animator>().SetTrigger("Close");
+            playerController.unlockPlayer();
         }
         else
         {
@@ -164,9 +160,10 @@ public class DialogueManager : MonoBehaviour
         Debug.Log("Dialogue Ended");
         if(dialogueQueue.Count > 0)
         {
-            PlayDialogue(dialogueQueue.First());
-            dialogueQueue.RemoveAt(0);
+            PlayDialogue(dialogueQueue[0]);
+            dialogueQueue.Remove(dialogueQueue[0]);
             //dialogueQueue.RemoveAt(0);
         }
+
     }
 }

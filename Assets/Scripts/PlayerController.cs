@@ -41,7 +41,9 @@ public class PlayerController : MonoBehaviour
     public LayerMask groundMask;
 
     bool isGrounded = false;
+    bool isLocked = false;
 
+    Vector3 velocityB4Lock = Vector3.zero;
     
     
     // Start is called before the first frame update
@@ -54,6 +56,12 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isLocked)
+        {
+            rb.velocity = Vector3.zero;
+            return;
+        }
+
         isGrounded = checkIsGrounded();
         Vector3 fwd = Camera.main.transform.forward * moveInput.y;
         Vector3 side = Camera.main.transform.right * moveInput.x;
@@ -112,41 +120,48 @@ public class PlayerController : MonoBehaviour
 
     private bool checkIsGrounded()
     {
+        
         return Physics.Raycast(groundCheck.position, Vector3.down, 0.3f, groundMask);
     }
 
     public void OnMove(InputAction.CallbackContext callbackContext)
     {
-        moveInput = callbackContext.ReadValue<Vector2>();
+        if (!isLocked)
+        {
+            moveInput = callbackContext.ReadValue<Vector2>();
+        }
     }
 
     public void OnJump(InputAction.CallbackContext callbackContext)
     {
-        switch (callbackContext.phase)
+        if (!isLocked)
         {
-            case InputActionPhase.Started:
-                if (canJump())
-                {
-                    isJumping = true;
-                    rb.AddForce(Vector3.up * initialJumpPower, ForceMode.VelocityChange);
-                    jumpTime = 0;
-                }
-                break;
-            case InputActionPhase.Performed:
-                jumpTime += Time.deltaTime;
-                if (jumpTime < jumpDuration)
-                {
-                    rb.AddForce(Vector3.up * (jumpPower * jumpPowerCurveMultiplier.Evaluate(jumpTime/jumpDuration)), ForceMode.Force);
-                }
-                else
-                {
+            switch (callbackContext.phase)
+            {
+                case InputActionPhase.Started:
+                    if (canJump())
+                    {
+                        isJumping = true;
+                        rb.AddForce(Vector3.up * initialJumpPower, ForceMode.VelocityChange);
+                        jumpTime = 0;
+                    }
+                    break;
+                case InputActionPhase.Performed:
+                    jumpTime += Time.deltaTime;
+                    if (jumpTime < jumpDuration)
+                    {
+                        rb.AddForce(Vector3.up * (jumpPower * jumpPowerCurveMultiplier.Evaluate(jumpTime / jumpDuration)), ForceMode.Force);
+                    }
+                    else
+                    {
+                        isJumping = false;
+                    }
+                    break;
+                case InputActionPhase.Canceled:
                     isJumping = false;
-                }
-                break;
-            case InputActionPhase.Canceled:
-                isJumping = false;
-                break;
-            default: break;
+                    break;
+                default: break;
+            }
         }
     }
 
@@ -155,8 +170,22 @@ public class PlayerController : MonoBehaviour
         return !isJumping && isGrounded;
     }
 
-    
+    public void lockPlayer()
+    {
+        isLocked = true;
+        moveInput = Vector2.zero;
+        velocityB4Lock = rb.velocity;
+        rb.velocity = Vector3.zero;
+        animator.speed = 0;
+        
+    }
 
+    public void unlockPlayer()
+    {
+        isLocked = false;
+        rb.velocity = velocityB4Lock;
+        animator.speed = 1;
+    }
 
 
 }
