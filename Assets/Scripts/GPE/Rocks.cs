@@ -28,7 +28,7 @@ public class Rocks : Interactive
         if(health < 1)
         {
             Rowboat.Instance.FinishQuest();
-            Destroy(this);
+            Destroy(gameObject);
         }
     }
 }
