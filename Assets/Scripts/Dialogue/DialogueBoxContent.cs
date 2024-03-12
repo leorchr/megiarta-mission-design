@@ -9,4 +9,6 @@ public class DialogueBoxContent : MonoBehaviour
     public TextMeshProUGUI nameText ;
 
     public bool hasSpecificNamePos;
+
+    public void destroyUI() {  Destroy(gameObject); }
 }

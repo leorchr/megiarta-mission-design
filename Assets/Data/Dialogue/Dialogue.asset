@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 64a33b52a406789489485e0cc26e9bca, type: 3}
-  m_Name: DialogueTest
+  m_Name: Dialogue
   m_EditorClassIdentifier: 
-  dialogueType: 1
+  dialogueType: 0
   subDialogues:
-  - showName: 1
-    defaultNameColor: {r: 0.380429, g: 0.59720826, b: 0.7830189, a: 1}
-    name: Character 1
+  - showName: 0
+    defaultNameColor: {r: 0, g: 0, b: 0, a: 0}
+    name: 
     defaultTextColor: {r: 1, g: 1, b: 1, a: 1}
-    text: Hello young friend !
-  - showName: 1
-    defaultNameColor: {r: 0.8207547, g: 0.12001601, b: 0.16200182, a: 1}
-    name: Character 2
+    text: Why am i talking to myself ?
+  - showName: 0
+    defaultNameColor: {r: 0, g: 0, b: 0, a: 0}
+    name: 
     defaultTextColor: {r: 1, g: 1, b: 1, a: 1}
-    text: No !
+    text: I have no idea
