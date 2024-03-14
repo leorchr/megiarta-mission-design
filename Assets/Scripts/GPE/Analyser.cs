@@ -17,6 +17,8 @@ public class Analyser : QuestInteractor
 
     public override void OnInteraction()
     {
+        this.GetComponent<ArtifactRandomSound>().MakeSound();
+
         if (current == 2 && quests[current].currentStep == 0)
         {
             Debug.Log("Dialogue Quest 3 !");

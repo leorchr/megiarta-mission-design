@@ -12,14 +12,6 @@ public class ArtifactRandomSound : MonoBehaviour
         artifactSource = GetComponent<AudioSource>();
     }
 
-    private void Update()
-    {
-        if (Input.GetKey(KeyCode.F))
-        {
-            MakeSound();
-        }
-    }
-
     public void MakeSound()
     {
         if (artifactSource != null && artifactSounds.Count != 0)

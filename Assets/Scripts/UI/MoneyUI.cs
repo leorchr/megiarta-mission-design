@@ -14,5 +14,6 @@ public class MoneyUI : MonoBehaviour
     public void UpdateMoney()
     {
         moneyText.text = Wallet.Instance.GetMoney().ToString();
+        this.GetComponent<Animator>().SetTrigger("EarnGold");
     }
 }
