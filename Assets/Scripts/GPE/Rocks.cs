@@ -62,7 +62,7 @@ public class Rocks : Interactive
             Rowboat.Instance.FinishQuest();
             GetComponent<Collider>().isTrigger = true;
             PlayerInteraction.Instance.StopInteractive();
-            Destroy(this);
+            Destroy(gameObject);
         }
     }
 }
