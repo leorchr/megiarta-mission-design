@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     [SerializeField] private GameObject blackScreen;
+    [SerializeField] private GameObject UiSettings;
+    [SerializeField] private GameObject UiMenu;
 
     public void StartGame()
     {
@@ -20,11 +22,18 @@ public class MainMenu : MonoBehaviour
 
     public void SettingsMenu()
     {
-
+        UiSettings.SetActive(true);
+        UiMenu.SetActive(false);
     }
 
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void BackToMain()
+    {
+        UiMenu.SetActive(true);
+        UiSettings.SetActive(false);
     }
 }
