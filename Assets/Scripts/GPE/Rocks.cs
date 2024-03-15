@@ -7,29 +7,60 @@ public class Rocks : Interactive
     public static Rocks Instance;
 
     public ItemData obsidianPickaxe;
-    private int health = 6;
+
+    public List<GameObject> rocks = new List<GameObject>(4);
+    private int destroyIndex = 0;
+    public GameObject vfx,vfx2;
 
     private void Awake()
     {
         if (Instance) Destroy(this);
         else Instance = this;
     }
-    private void Start(){}
+    private void Start()
+    {
+        destroyIndex = 0;
+    }
 
     public override void OnInteraction()
     {
         if (Inventory.Instance.IsItemFound(obsidianPickaxe)){
-            health -= 2;
+            if(rocks[destroyIndex] != null)
+            {
+                GameObject vfxTemp = Instantiate(vfx, this.gameObject.transform);
+                vfxTemp.transform.position = rocks[destroyIndex].transform.position;
+                GameObject vfxTemp2 = Instantiate(vfx2, this.gameObject.transform);
+                vfxTemp2.transform.position = rocks[destroyIndex].transform.position;
+                Destroy(rocks[destroyIndex]);
+                destroyIndex++;
+            }
+
+            if (rocks[destroyIndex+1] != null)
+            {
+                GameObject vfxTemp = Instantiate(vfx, this.gameObject.transform);
+                vfxTemp.transform.position = rocks[destroyIndex+1].transform.position;
+                GameObject vfxTemp2 = Instantiate(vfx2, this.gameObject.transform);
+                vfxTemp2.transform.position = rocks[destroyIndex+1].transform.position;
+                Destroy(rocks[destroyIndex+1]);
+                destroyIndex++; ;
+            }
         }
         else
         {
-            health -= 1;
+            if (rocks[destroyIndex] != null)
+            {
+                GameObject vfxTemp = Instantiate(vfx, this.gameObject.transform);
+                vfxTemp.transform.position = rocks[destroyIndex].transform.position;
+                GameObject vfxTemp2 = Instantiate(vfx2, this.gameObject.transform);
+                vfxTemp2.transform.position = rocks[destroyIndex].transform.position;
+                Destroy(rocks[destroyIndex]);
+                destroyIndex++;
+            }
         }
-        if(health < 1)
+        if (destroyIndex >= rocks.Count)
         {
             Rowboat.Instance.FinishQuest();
             GetComponent<Collider>().isTrigger = true;
-            GetComponent<MeshRenderer>().enabled = false;
             PlayerInteraction.Instance.StopInteractive();
             Destroy(this);
         }
