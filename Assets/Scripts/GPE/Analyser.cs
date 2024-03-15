@@ -35,6 +35,7 @@ public class Analyser : QuestInteractor
 
     private void OnDestroy()
     {
+        PlayerInteraction.Instance.StopInteractive();
         if (Rowboat.Instance) Rowboat.Instance.enabled = true;
         else Debug.LogWarning("Missing rowboat for quest 4");
     }

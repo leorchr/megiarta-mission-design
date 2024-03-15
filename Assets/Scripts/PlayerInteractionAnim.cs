@@ -35,7 +35,8 @@ public class PlayerInteractionAnim : MonoBehaviour
     {
         //if an animation is already in progress or we are trying to do something while walking
         if (AnimationInProgress || _animator.GetFloat("Speed") > 1) return false;
-        switch (animation)
+        return true; // fonction pas codée
+        /*switch (animation)
         {
             case InteractionType.Analyser:
                 {
@@ -64,6 +65,6 @@ public class PlayerInteractionAnim : MonoBehaviour
                 }
         }
 
-        return false;
+        return false;*/
     }
 }

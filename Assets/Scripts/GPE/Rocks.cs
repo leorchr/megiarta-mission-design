@@ -28,7 +28,10 @@ public class Rocks : Interactive
         if(health < 1)
         {
             Rowboat.Instance.FinishQuest();
-            Destroy(gameObject);
+            GetComponent<Collider>().isTrigger = true;
+            GetComponent<MeshRenderer>().enabled = false;
+            PlayerInteraction.Instance.StopInteractive();
+            Destroy(this);
         }
     }
 }

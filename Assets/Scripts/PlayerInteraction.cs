@@ -66,7 +66,6 @@ public class PlayerInteraction : MonoBehaviour
     private void Interact()
     {
         _possibleInteractive.OnInteraction();
-        StopInteractive();
         if (_possibleInteractive && _possibleInteractive.onlyOnce)
         {
             DisableInteractive();
