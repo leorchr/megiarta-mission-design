@@ -1,27 +1,11 @@
+using System.Collections.Generic;
 using UnityEngine;
 
-public class WeirdBranch : QuestInteractor
+public class WeirdBranch : Pickable
 {
-    public static WeirdBranch Instance;
-
-    private bool isActive = false;
-
-    private void Awake()
+    public override void OnPick()
     {
-        if (Instance) Destroy(this);
-        else Instance = this;
-    }
-
-    public override void OnInteraction()
-    {
-        if (!isActive)
-        {
-            GiveQuest();
-            isActive = true;
-        }
-        else
-        {
-            Debug.Log("Dialogue Current Quest !");
-        }
+        Debug.Log("Dialogue");
+        Smelter.Instance.FinishQuest();
     }
 }

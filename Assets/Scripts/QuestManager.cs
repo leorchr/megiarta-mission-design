@@ -8,6 +8,7 @@ public class QuestManager : MonoBehaviour
     public static QuestManager Instance;
 
     public GameObject questPanelPrefab;
+    public GameObject sideQuestPanelPrefab;
     public Transform questParent;
 
     public List<QuestData> questsProgress = new List<QuestData>();
@@ -20,13 +21,22 @@ public class QuestManager : MonoBehaviour
         else Instance = this;
     }
 
-    public void TakeQuest(QuestData quest)
+    public void TakeQuest(QuestData quest, bool isSideQuest = false)
     {
         questsProgress.Add(quest);
         quest.StartQuest();
-        GameObject panel = Instantiate(questPanelPrefab, questParent);
-        panel.GetComponent<QuestPanel>().SetupQuest(quest);
-        questVisulization.Add(quest, panel);
+        if (isSideQuest)
+        {
+            GameObject panel = Instantiate(sideQuestPanelPrefab, questParent);
+            panel.GetComponent<QuestPanel>().SetupQuest(quest);
+            questVisulization.Add(quest, panel);
+        }
+        else
+        {
+            GameObject panel = Instantiate(questPanelPrefab, questParent);
+            panel.GetComponent<QuestPanel>().SetupQuest(quest);
+            questVisulization.Add(quest, panel);
+        }
     }
 
     public void CompleteQuest(QuestData quest)

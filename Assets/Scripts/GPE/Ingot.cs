@@ -6,6 +6,7 @@ public class Ingot : Pickable
 {
     public override void OnPick()
     {
-        WeirdBranch.Instance.FinishQuest();
+        Debug.Log("Dialogue");
+        Smelter.Instance.FinishQuest();
     }
 }

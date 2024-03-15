@@ -14,6 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questName: Acquire hardware
   steps:
+  - stepName: Find a branch to use with this smelter.
+    dialogue: 
+    thankYouMessage: 
+    requirements:
+    - item: {fileID: 11400000, guid: 989be1f4ca2146c44a95775493f25a12, type: 2}
+      quantity: 1
   - stepName: Find a strong material to fuse with this branch.
     dialogue: 
     thankYouMessage: 
@@ -23,6 +29,10 @@ MonoBehaviour:
   - stepName: "Use the armory\u2019s smelter to create a unique tool !"
     dialogue: 
     thankYouMessage: 
-    requirements: []
+    requirements:
+    - item: {fileID: 11400000, guid: c56a3323767441f47908193de34bf0b2, type: 2}
+      quantity: 1
+    - item: {fileID: 11400000, guid: 989be1f4ca2146c44a95775493f25a12, type: 2}
+      quantity: 1
   currentStep: 3
   moneyReward: 0

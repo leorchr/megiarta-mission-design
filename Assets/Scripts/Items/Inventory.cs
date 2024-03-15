@@ -14,6 +14,11 @@ public class Inventory : MonoBehaviour
         Instance = this;
     }
 
+    public void AddToInventory(QuestItem item)
+    {
+        items.Add(item);
+    }
+
     public void RemoveFromInventory(ItemData qItem, int quantity = 0)
     {
         int found = items.FindIndex(q => q.item != null && q.item.Equals(qItem));
