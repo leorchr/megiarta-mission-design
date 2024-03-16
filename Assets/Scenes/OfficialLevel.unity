@@ -8788,6 +8788,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CaveEntrance
       objectReference: {fileID: 0}
+    - target: {fileID: 5641019471552989894, guid: c28c5c4e83229764bb2936d327bb1a8e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8291872538252057541, guid: c28c5c4e83229764bb2936d327bb1a8e,
         type: 3}
       propertyPath: m_Radius
@@ -13847,7 +13852,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1441015346}
   - component: {fileID: 1441015347}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21427,6 +21432,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rocks
       objectReference: {fileID: 0}
+    - target: {fileID: 1024532037562782994, guid: 11c9be10b7c99374b9508ff25c7f5120,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2238285628891319313, guid: 11c9be10b7c99374b9508ff25c7f5120,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2434783443597080582, guid: 11c9be10b7c99374b9508ff25c7f5120,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -21552,6 +21567,16 @@ PrefabInstance:
       propertyPath: colliderRock
       value: 
       objectReference: {fileID: 1441015345}
+    - target: {fileID: 4702543550430099451, guid: 11c9be10b7c99374b9508ff25c7f5120,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4802549509996800482, guid: 11c9be10b7c99374b9508ff25c7f5120,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4953749547219294722, guid: 11c9be10b7c99374b9508ff25c7f5120,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -21647,6 +21672,16 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0.918
       objectReference: {fileID: 0}
+    - target: {fileID: 7174132270059919430, guid: 11c9be10b7c99374b9508ff25c7f5120,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7597929344120100282, guid: 11c9be10b7c99374b9508ff25c7f5120,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7761199196646741750, guid: 11c9be10b7c99374b9508ff25c7f5120,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -21676,6 +21711,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: -0.591
+      objectReference: {fileID: 0}
+    - target: {fileID: 8378797504054630471, guid: 11c9be10b7c99374b9508ff25c7f5120,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8592705109197402012, guid: 11c9be10b7c99374b9508ff25c7f5120,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8800872047848794542, guid: 11c9be10b7c99374b9508ff25c7f5120,
         type: 3}

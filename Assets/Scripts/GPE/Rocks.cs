@@ -65,10 +65,10 @@ public class Rocks : Interactive
         }
         if (destroyIndex >= rocks.Count)
         {
+            Destroy(colliderRock);
             Rowboat.Instance.FinishQuest();
             GetComponent<Collider>().isTrigger = true;
             PlayerInteraction.Instance.StopInteractive();
-            Destroy(colliderRock);
             Destroy(this);
         }
     }
