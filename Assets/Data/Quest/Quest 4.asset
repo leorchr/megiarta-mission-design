@@ -24,7 +24,7 @@ MonoBehaviour:
     dialogue: 
     thankYouMessage: 
     requirements:
-    - item: {fileID: 11400000, guid: 0e3a20307f29deb47bca661029688aad, type: 2}
+    - item: {fileID: 11400000, guid: b235e9cbac7110a4da5894c9d751263b, type: 2}
       quantity: 1
   - stepName: Investigate the cave.
     dialogue: 
