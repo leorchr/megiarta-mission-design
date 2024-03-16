@@ -45,7 +45,7 @@ public class QuestManager : MonoBehaviour
         Notify(quest.IsFinished());
         if(SFXManager.instance)
         {
-            SFXManager.instance.PlaySound(SFXManager.instance.missionRewardSound);
+            SFXManager.instance.PlayQuestSound(SFXManager.instance.missionRewardSound);
         }
         questVisulization[quest].GetComponent<QuestPanel>().Complete();
         questsProgress.Remove(quest);
@@ -59,7 +59,7 @@ public class QuestManager : MonoBehaviour
     {
         if (SFXManager.instance)
         {
-            SFXManager.instance.PlaySound(SFXManager.instance.completeStepSound);
+            SFXManager.instance.PlayQuestSound(SFXManager.instance.completeStepSound);
         }
         foreach (GameObject quest in questVisulization.Values)
         {

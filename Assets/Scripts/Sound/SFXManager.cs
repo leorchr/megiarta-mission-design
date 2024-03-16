@@ -5,7 +5,8 @@ using UnityEngine;
 public class SFXManager : MonoBehaviour
 {
     public static SFXManager instance;
-    private AudioSource audioSource;
+    public AudioSource audioSource;
+    public AudioSource audioQuest;
 
     public AudioClip missionRewardSound;
     public AudioClip completeStepSound;
@@ -25,5 +26,11 @@ public class SFXManager : MonoBehaviour
     {
         audioSource.clip = soundToPlay;
         audioSource.Play();
+    }
+
+    public void PlayQuestSound(AudioClip soundToPlay)
+    {
+        audioQuest.clip = soundToPlay;
+        audioQuest.Play();
     }
 }

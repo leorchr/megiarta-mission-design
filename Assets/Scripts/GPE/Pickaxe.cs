@@ -15,5 +15,6 @@ public class Pickaxe : Pickable
         }
         else Debug.LogWarning("Missing rocks for quest 4");
         Rowboat.Instance.FinishQuest();
+        Destroy(gameObject);
     }
 }
