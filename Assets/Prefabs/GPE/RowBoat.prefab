@@ -210,6 +210,7 @@ GameObject:
   - component: {fileID: 1761160799957160782}
   - component: {fileID: 8822532395350491479}
   - component: {fileID: -7093609472968427100}
+  - component: {fileID: 8359249285757150761}
   m_Layer: 0
   m_Name: RowBoat
   m_TagString: Untagged
@@ -302,7 +303,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 0.23966019
   m_Center: {x: -0.0000000049274234, y: 0.0052161375, z: 0.043425903}
@@ -326,3 +327,25 @@ MonoBehaviour:
   quests:
   - {fileID: 11400000, guid: 3e4670ede95d22a4baeb4728f0b615d8, type: 2}
   current: 0
+--- !u!64 &8359249285757150761
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9170902134420986370}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 5070706223121578333, guid: ead206bd4189d7d41b953f0ffb13afe7, type: 3}

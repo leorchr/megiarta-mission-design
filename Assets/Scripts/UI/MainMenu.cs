@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
@@ -11,6 +12,11 @@ public class MainMenu : MonoBehaviour
 
     [SerializeField] private AudioClip introSound;
     [SerializeField] private AudioSource ambienceSource;
+
+    [Header("Controller Support")]
+    [SerializeField] private EventSystem inputEventSystem;
+    [SerializeField] private GameObject exitButton;
+    [SerializeField] private GameObject playButton;
 
     public void StartGame()
     {
@@ -34,6 +40,7 @@ public class MainMenu : MonoBehaviour
     {
         UiSettings.SetActive(true);
         UiMenu.SetActive(false);
+        inputEventSystem.firstSelectedGameObject = exitButton;
     }
 
     public void QuitGame()
@@ -45,5 +52,6 @@ public class MainMenu : MonoBehaviour
     {
         UiMenu.SetActive(true);
         UiSettings.SetActive(false);
+        inputEventSystem.firstSelectedGameObject = playButton;
     }
 }
