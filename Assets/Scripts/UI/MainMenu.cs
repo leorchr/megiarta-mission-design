@@ -9,10 +9,20 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private GameObject UiSettings;
     [SerializeField] private GameObject UiMenu;
 
+    [SerializeField] private AudioClip introSound;
+    [SerializeField] private AudioSource ambienceSource;
+
     public void StartGame()
     {
         blackScreen.SetActive(true);
-        Invoke("SceneChange", 2f);
+        Invoke("PlayIntroSound", 2f);
+    }
+
+    private void PlayIntroSound()
+    {
+        ambienceSource.clip = introSound;
+        ambienceSource.Play();
+        Invoke("SceneChange", 40f);
     }
 
     private void SceneChange()
