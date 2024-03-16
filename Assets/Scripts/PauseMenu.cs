@@ -12,16 +12,19 @@ public class PauseMenu : MonoBehaviour
     {
         pauseMenu.SetActive(false);
         Time.timeScale = 1;
+        Cursor.visible = false;
     }
 
     public void Settings()
     {
+        pauseMenu.SetActive(false);
         settingsPanel.SetActive(true);
     }
 
     public void QuitSettings()
     {
         settingsPanel.SetActive(false);
+        pauseMenu.SetActive(true);
     }
 
     public void ReturnToMenu()
