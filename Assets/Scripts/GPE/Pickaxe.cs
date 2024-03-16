@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Pickaxe : Pickable
 {
+    [SerializeField] private AudioClip pickUp;
     public override void OnPick()
     {
+        SFXManager.instance.PlaySound(pickUp);
         if (Rocks.Instance)
         {
             Rocks.Instance.gameObject.tag = "Interactive";

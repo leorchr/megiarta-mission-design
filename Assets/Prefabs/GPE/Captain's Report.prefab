@@ -123,6 +123,7 @@ MonoBehaviour:
   UiPos: {fileID: 2284812595674588822}
   VfxPos: {fileID: 8043559551387424671}
   item: {fileID: 11400000, guid: 8c0b469490f2e6949baa5b06c9aa6998, type: 2}
+  pickUp: {fileID: 8300000, guid: f2efdef0e83b186448ac99f44a4dddb1, type: 3}
 --- !u!1 &5657560681238557213
 GameObject:
   m_ObjectHideFlags: 0
