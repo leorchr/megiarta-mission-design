@@ -11,6 +11,9 @@ public class Rocks : Interactive
     public List<GameObject> rocks = new List<GameObject>(4);
     private int destroyIndex = 0;
     public GameObject vfx,vfx2;
+    public AudioClip RockDestroy;
+
+    public GameObject colliderRock;
 
     private void Awake()
     {
@@ -29,6 +32,7 @@ public class Rocks : Interactive
             {
                 GameObject vfxTemp = Instantiate(vfx, this.gameObject.transform);
                 vfxTemp.transform.position = rocks[destroyIndex].transform.position;
+                SFXManager.instance.PlaySound(RockDestroy);
                 GameObject vfxTemp2 = Instantiate(vfx2, this.gameObject.transform);
                 vfxTemp2.transform.position = rocks[destroyIndex].transform.position;
                 Destroy(rocks[destroyIndex]);
@@ -39,6 +43,7 @@ public class Rocks : Interactive
             {
                 GameObject vfxTemp = Instantiate(vfx, this.gameObject.transform);
                 vfxTemp.transform.position = rocks[destroyIndex+1].transform.position;
+                SFXManager.instance.PlaySound(RockDestroy);
                 GameObject vfxTemp2 = Instantiate(vfx2, this.gameObject.transform);
                 vfxTemp2.transform.position = rocks[destroyIndex+1].transform.position;
                 Destroy(rocks[destroyIndex+1]);
@@ -51,6 +56,7 @@ public class Rocks : Interactive
             {
                 GameObject vfxTemp = Instantiate(vfx, this.gameObject.transform);
                 vfxTemp.transform.position = rocks[destroyIndex].transform.position;
+                SFXManager.instance.PlaySound(RockDestroy);
                 GameObject vfxTemp2 = Instantiate(vfx2, this.gameObject.transform);
                 vfxTemp2.transform.position = rocks[destroyIndex].transform.position;
                 Destroy(rocks[destroyIndex]);
@@ -62,6 +68,7 @@ public class Rocks : Interactive
             Rowboat.Instance.FinishQuest();
             GetComponent<Collider>().isTrigger = true;
             PlayerInteraction.Instance.StopInteractive();
+            Destroy(colliderRock);
             Destroy(this);
         }
     }
