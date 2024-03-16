@@ -8470,6 +8470,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CaveEntrance
       objectReference: {fileID: 0}
+    - target: {fileID: 8291872538252057541, guid: c28c5c4e83229764bb2936d327bb1a8e,
+        type: 3}
+      propertyPath: m_Radius
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8949095845411835874, guid: c28c5c4e83229764bb2936d327bb1a8e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11506,6 +11511,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   missionRewardSound: {fileID: 8300000, guid: 9ca8c17fad0827c41b95d98248b5317c, type: 3}
+  completeStepSound: {fileID: 8300000, guid: 3257f6937b122394abbee17c182042c1, type: 3}
 --- !u!1001 &1315550893
 PrefabInstance:
   m_ObjectHideFlags: 0

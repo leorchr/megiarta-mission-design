@@ -8,6 +8,7 @@ public class SFXManager : MonoBehaviour
     private AudioSource audioSource;
 
     public AudioClip missionRewardSound;
+    public AudioClip completeStepSound;
 
     private void Awake()
     {

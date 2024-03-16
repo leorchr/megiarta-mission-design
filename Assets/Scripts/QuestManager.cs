@@ -57,6 +57,10 @@ public class QuestManager : MonoBehaviour
 
     public void Notify(bool finished = false)
     {
+        if (SFXManager.instance)
+        {
+            SFXManager.instance.PlaySound(SFXManager.instance.completeStepSound);
+        }
         foreach (GameObject quest in questVisulization.Values)
         {
             QuestPanel panel = quest.GetComponent<QuestPanel>();
