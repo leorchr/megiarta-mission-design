@@ -41,8 +41,7 @@ public class QuestStep
 {
     [TextArea] public string stepName;
 
-    [TextArea] public string dialogue;
-    [TextArea] public string thankYouMessage;
+    public DialogueSC dialogue;
 
     public List<QuestItem> requirements = new List<QuestItem>();
 }
