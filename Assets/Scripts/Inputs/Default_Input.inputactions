@@ -24,18 +24,18 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Interact",
+                    "name": "Validate",
                     "type": "Button",
-                    "id": "b525ca10-0332-44e0-ac44-ff98a715c34a",
+                    "id": "f816da47-5df5-4d28-a06f-8fc26606fe54",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Validate",
+                    "name": "Interact",
                     "type": "Button",
-                    "id": "f816da47-5df5-4d28-a06f-8fc26606fe54",
+                    "id": "b525ca10-0332-44e0-ac44-ff98a715c34a",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -173,39 +173,6 @@
                 },
                 {
                     "name": "",
-                    "id": "8172f235-005f-4494-ade5-cf65a50f718d",
-                    "path": "<Gamepad>/buttonSouth",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Validate",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "44a9e4f1-ad25-4b1e-8948-59aff8d5bfe0",
-                    "path": "<Keyboard>/e",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Validate",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "23b314d0-c51c-4448-8acb-c36f1be019c6",
-                    "path": "<Keyboard>/enter",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Validate",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "42913d56-bdb7-4e37-835e-097cde447ba9",
                     "path": "<Gamepad>/start",
                     "interactions": "",
@@ -245,6 +212,39 @@
                     "processors": "",
                     "groups": "",
                     "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8172f235-005f-4494-ade5-cf65a50f718d",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Validate",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "44a9e4f1-ad25-4b1e-8948-59aff8d5bfe0",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Validate",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "23b314d0-c51c-4448-8acb-c36f1be019c6",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Validate",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -117,6 +117,8 @@ public class DialogueManager : MonoBehaviour
         return t;
     }
 
+
+
     public void OnValidateInput(InputAction.CallbackContext callbackContext)
     {
         if (callbackContext.started && currentDialogue != null && currentDialogue.dialogueType == DialogueType.Manual)
