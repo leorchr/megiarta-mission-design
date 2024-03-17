@@ -15,24 +15,29 @@ MonoBehaviour:
   questName: Into the dark
   steps:
   - stepName: Find a tool to destroy the rocks blocking the cave.
-    dialogue: 
-    thankYouMessage: 
+    BeginDialogue: {fileID: 0}
+    EndDialogue: {fileID: 0}
     requirements:
-    - item: {fileID: 11400000, guid: b235e9cbac7110a4da5894c9d751263b, type: 2}
+    - placeToVisit: {fileID: 0}
+      item: {fileID: 11400000, guid: b235e9cbac7110a4da5894c9d751263b, type: 2}
       quantity: 1
   - stepName: "Unseal the cave\u2019s entrance."
-    dialogue: 
-    thankYouMessage: 
+    BeginDialogue: {fileID: 0}
+    EndDialogue: {fileID: 0}
     requirements:
-    - item: {fileID: 11400000, guid: b235e9cbac7110a4da5894c9d751263b, type: 2}
-      quantity: 1
+    - placeToVisit: {fileID: 0}
+      item: {fileID: 11400000, guid: b235e9cbac7110a4da5894c9d751263b, type: 2}
+      quantity: 0
   - stepName: Investigate the cave.
-    dialogue: 
-    thankYouMessage: 
-    requirements: []
+    BeginDialogue: {fileID: 0}
+    EndDialogue: {fileID: 0}
+    requirements:
+    - placeToVisit: {fileID: 11400000, guid: c8fdfb1be84b38442bd70228ffb01310, type: 2}
+      item: {fileID: 0}
+      quantity: 0
   - stepName: Leave the island to report your findings !
-    dialogue: 
-    thankYouMessage: 
+    BeginDialogue: {fileID: 0}
+    EndDialogue: {fileID: 0}
     requirements: []
-  currentStep: 2
+  currentStep: 3
   moneyReward: 40

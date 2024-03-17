@@ -10,17 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 64a33b52a406789489485e0cc26e9bca, type: 3}
-  m_Name: Dialogue
+  m_Name: Q2-1-End
   m_EditorClassIdentifier: 
   dialogueType: 0
   subDialogues:
-  - showName: 0
-    defaultNameColor: {r: 0, g: 0, b: 0, a: 0}
-    name: 
-    defaultTextColor: {r: 1, g: 1, b: 1, a: 1}
-    text: Why am i talking to myself ?
-  - showName: 0
-    defaultNameColor: {r: 0, g: 0, b: 0, a: 0}
-    name: 
-    defaultTextColor: {r: 1, g: 1, b: 1, a: 1}
-    text: I have no idea
+  - showName: 1
+    character: {fileID: 11400000, guid: 2aa8c47d8f4c4e5448a47cbe30912646, type: 2}
+    text: "Hm\u2026 It seems to be a report written by the garrison's captain. And
+      it seems to be encrypted\u2026"
+    audioClip: {fileID: 0}

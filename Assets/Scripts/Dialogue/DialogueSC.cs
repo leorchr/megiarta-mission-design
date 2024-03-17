@@ -17,9 +17,8 @@ public class SubDialogue
 {
     public bool showName;
 
-    public Color defaultNameColor = Color.white;
-    public String name;
-    public Color defaultTextColor = Color.white;
+    public CharacterSC character;
+    [TextArea]
     public String text;
 
     public AudioClip audioClip;
@@ -37,12 +36,13 @@ public class SubDialogue
 
     public String getName()
     {
-        return "<color=#" + ColorUtility.ToHtmlStringRGB(defaultNameColor) + ">" + name + " : </color>";
+        return "<color=#" + ColorUtility.ToHtmlStringRGB(character.nameColor) + ">" + character.characterName + " : </color>";
     }
 
     public String getText()
     {
-        return "<color=#" + ColorUtility.ToHtmlStringRGB(defaultTextColor) + ">" + text + "</color> ";
+        return text;
+        //return "<color=#" + ColorUtility.ToHtmlStringRGB(character.defaultColorText) + ">" + text + "</color> ";
     }
 }
 

@@ -54,14 +54,24 @@ public class DialogueManager : MonoBehaviour
 
     public void PlayDialogue(DialogueSC dsc)
     {
+        if (dsc == null) { return; }
+
         if (currentDialogue == null)
         {
             currentDialogue = dsc;
         }
         else
         {
-            dialogueQueue.Add(dsc);
-            return;
+            if (currentDialogue.dialogueType == DialogueType.Automatic) { 
+                timeToNext = 0;
+                OnDialogueEnd();
+                currentDialogue = dsc;
+            }
+            else
+            {
+                dialogueQueue.Add(dsc);
+                return;
+            }
         }
        
         if (currentDialogueBox != null)
@@ -71,6 +81,7 @@ public class DialogueManager : MonoBehaviour
         }
 
         
+
         switch(currentDialogue.dialogueType) {
             case DialogueType.Automatic:
                 currentDialogueBox = Instantiate(AutomaticDiscussion, UICanvas.transform);
@@ -145,7 +156,7 @@ public class DialogueManager : MonoBehaviour
     }
     public void OnDialogueEnd()
     {
-        currentDialogue = null;
+        
         if (currentDialogueBox.GetComponent<Animator>() != null)
         {
             currentDialogueBox.GetComponent<Animator>().SetTrigger("Close");
@@ -158,12 +169,19 @@ public class DialogueManager : MonoBehaviour
         currentDialogueBox = null;
         currentSubdialogueID = 0;
         Debug.Log("Dialogue Ended");
-        if(dialogueQueue.Count > 0)
+
+        if (dialogueQueue.Contains(currentDialogue))
+        {
+            while (dialogueQueue.Contains(currentDialogue) ) { dialogueQueue.Remove(currentDialogue); }
+        }
+        
+        currentDialogue = null;
+        if (dialogueQueue.Count > 0)
         {
             PlayDialogue(dialogueQueue[0]);
             dialogueQueue.Remove(dialogueQueue[0]);
             //dialogueQueue.RemoveAt(0);
         }
-
+        
     }
 }

@@ -15,16 +15,18 @@ MonoBehaviour:
   questName: Administrative work
   steps:
   - stepName: "Find one of the garrison\u2019s captain\u2019s coded reports."
-    dialogue: 
-    thankYouMessage: 
+    BeginDialogue: {fileID: 0}
+    EndDialogue: {fileID: 11400000, guid: 6ac3460c366c80f45aa31af881da1ce2, type: 2}
     requirements:
-    - item: {fileID: 11400000, guid: 8c0b469490f2e6949baa5b06c9aa6998, type: 2}
+    - placeToVisit: {fileID: 0}
+      item: {fileID: 11400000, guid: 8c0b469490f2e6949baa5b06c9aa6998, type: 2}
       quantity: 1
   - stepName: "Bring back the captain\u2019s coded report to the \u201CAnalyser\u201D."
-    dialogue: 
-    thankYouMessage: 
+    BeginDialogue: {fileID: 0}
+    EndDialogue: {fileID: 11400000, guid: ea447a0918185d44c9832ab07ee7b2d3, type: 2}
     requirements:
-    - item: {fileID: 11400000, guid: 8c0b469490f2e6949baa5b06c9aa6998, type: 2}
+    - placeToVisit: {fileID: 0}
+      item: {fileID: 11400000, guid: 8c0b469490f2e6949baa5b06c9aa6998, type: 2}
       quantity: 1
   currentStep: 2
   moneyReward: 15

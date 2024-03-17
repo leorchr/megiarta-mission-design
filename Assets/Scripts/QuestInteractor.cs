@@ -15,7 +15,8 @@ public class QuestInteractor : Interactive
     {
         if (quests.Count > 0 && current < quests.Count)
         {
-            QuestManager.Instance.TakeQuest(quests[current]);
+            QuestFullData QFD = new QuestFullData(quests[current],this);
+            QuestManager.Instance.TakeQuest(QFD);
 
             if (quests[current].GetCurrentStep().requirements.Count > 0)
             {
@@ -44,6 +45,8 @@ public class QuestInteractor : Interactive
 
     public virtual void FinishQuest()
     {
+        DialogueManager.instance.PlayDialogue(quests[current].GetCurrentStep().EndDialogue);
+
 
         //Dialogue end quest
         if (quests[current].GetCurrentStep().requirements.Count > 0)

@@ -13,6 +13,7 @@ public class QuestData : ScriptableObject
     public void StartQuest()
     {
         currentStep = 0;
+        DialogueManager.instance.PlayDialogue(steps[currentStep].BeginDialogue);
     }
     public QuestStep GetCurrentStep()
     {
@@ -41,7 +42,8 @@ public class QuestStep
 {
     [TextArea] public string stepName;
 
-    public DialogueSC dialogue;
+    public DialogueSC BeginDialogue;
+    public DialogueSC EndDialogue;
 
     public List<QuestItem> requirements = new List<QuestItem>();
 }

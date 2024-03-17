@@ -21,7 +21,7 @@ public class Analyser : QuestInteractor
 
         if (current == 2 && quests[current].currentStep == 0)
         {
-            Debug.Log("Dialogue Quest 3 !");
+            //Debug.Log("Dialogue Quest 3 !");
         }
         else if (!waitForObject || Inventory.Instance.HasEveryItem(requiredItems))
         {
@@ -29,7 +29,7 @@ public class Analyser : QuestInteractor
         }
         else
         {
-            Debug.Log("Dialogue Current Quest !");
+            DialogueManager.instance.PlayDialogue(quests[current].GetCurrentStep().BeginDialogue );
         }
     }
 

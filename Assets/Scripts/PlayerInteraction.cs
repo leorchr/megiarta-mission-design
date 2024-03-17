@@ -40,8 +40,9 @@ public class PlayerInteraction : MonoBehaviour
 
     private bool IsPickableNeeded()
     {
-        foreach (QuestData quest in QuestManager.Instance.questsProgress)
+        foreach (QuestFullData qfd in QuestManager.Instance.questsProgress)
         {
+            QuestData quest = qfd.questData;
             foreach (QuestItem item in quest.GetCurrentStep().requirements)
             {
                 if (_possiblePickable.item.Equals(item.item)

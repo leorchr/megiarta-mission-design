@@ -81,6 +81,7 @@ public class Inventory : MonoBehaviour
 
     public int GetItemQuantity(QuestItem item)
     {
+        if (item.item == null) return 0;
         if (!IsItemFound(item.item)) return 0;
         int index = GetItemIndex(item.item);
         return items[index].quantity;

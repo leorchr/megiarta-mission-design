@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64a33b52a406789489485e0cc26e9bca, type: 3}
+  m_Name: Q2-2-End
+  m_EditorClassIdentifier: 
+  dialogueType: 1
+  subDialogues:
+  - showName: 1
+    character: {fileID: 11400000, guid: 2570fa5825f1e8d41872272997399cfe, type: 2}
+    text: AWAITING MESSAGE TO DECIPHER
+    audioClip: {fileID: 0}
+  - showName: 1
+    character: {fileID: 11400000, guid: 2aa8c47d8f4c4e5448a47cbe30912646, type: 2}
+    text: And one report to decipher.
+    audioClip: {fileID: 0}
+  - showName: 1
+    character: {fileID: 11400000, guid: 2570fa5825f1e8d41872272997399cfe, type: 2}
+    text: ...
+    audioClip: {fileID: 0}
+  - showName: 1
+    character: {fileID: 11400000, guid: 2570fa5825f1e8d41872272997399cfe, type: 2}
+    text: "Report 05, by Gilead ROBENSON - Kadoken Island\u2019s captain."
+    audioClip: {fileID: 0}
+  - showName: 1
+    character: {fileID: 11400000, guid: 2570fa5825f1e8d41872272997399cfe, type: 2}
+    text: "Duke,  It is with great concern that I write to you what might be my last
+      letter. Our discoveries and our greed towards the crystals discovered in the
+      secret cave of Kadoken Island might lead to the garrison\u2019s demise. "
+    audioClip: {fileID: 0}
+  - showName: 1
+    character: {fileID: 11400000, guid: 2570fa5825f1e8d41872272997399cfe, type: 2}
+    text: 'It took us too much time to notice that madness progressively took over
+      the men and women on the island once the crystals were discovered. But it only
+      took us a few hours to understand : the crystals were slowly killing us ; for
+      such exceptional magical properties were not meant to be wielded or exposed
+      to mere mortals. '
+    audioClip: {fileID: 0}
+  - showName: 1
+    character: {fileID: 11400000, guid: 2570fa5825f1e8d41872272997399cfe, type: 2}
+    text: 'Sir, if no other report coming from the island finds you, please, do not
+      send any help or any reinforcements. We will try to put an end to- '
+    audioClip: {fileID: 0}
+  - showName: 1
+    character: {fileID: 11400000, guid: 2570fa5825f1e8d41872272997399cfe, type: 2}
+    text: 'Sir, if no other report coming from the island finds you, please, do not
+      send any help or any reinforcements. We will try to put an end to- '
+    audioClip: {fileID: 0}
+  - showName: 1
+    character: {fileID: 11400000, guid: 2570fa5825f1e8d41872272997399cfe, type: 2}
+    text: '*The letter seems unfinished*'
+    audioClip: {fileID: 0}
+  - showName: 1
+    character: {fileID: 11400000, guid: 2aa8c47d8f4c4e5448a47cbe30912646, type: 2}
+    text: ... I have to get to the bottom of this. I have to find this accursed cave.
+    audioClip: {fileID: 0}

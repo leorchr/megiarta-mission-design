@@ -15,19 +15,25 @@ MonoBehaviour:
   questName: A strange cave
   steps:
   - stepName: "Find the cave\u2019s entrance."
-    dialogue: 
-    thankYouMessage: 
-    requirements: []
-  - stepName: Investigate the entrance.
-    dialogue: 
-    thankYouMessage: 
+    BeginDialogue: {fileID: 0}
+    EndDialogue: {fileID: 0}
     requirements:
-    - item: {fileID: 11400000, guid: b6375180682c0e440b47c06899594bf2, type: 2}
+    - placeToVisit: {fileID: 11400000, guid: b10503bd17621f94394f1b6a94a78400, type: 2}
+      item: {fileID: 0}
+      quantity: 0
+  - stepName: Investigate the entrance.
+    BeginDialogue: {fileID: 0}
+    EndDialogue: {fileID: 0}
+    requirements:
+    - placeToVisit: {fileID: 0}
+      item: {fileID: 11400000, guid: b6375180682c0e440b47c06899594bf2, type: 2}
       quantity: 1
   - stepName: "Bring the message back to the \u201CAnalyser\u201D"
-    dialogue: 
-    thankYouMessage: 
+    BeginDialogue: {fileID: 0}
+    EndDialogue: {fileID: 0}
     requirements:
-    - item: {fileID: 11400000, guid: b6375180682c0e440b47c06899594bf2, type: 2}
+    - placeToVisit: {fileID: 0}
+      item: {fileID: 11400000, guid: b6375180682c0e440b47c06899594bf2, type: 2}
       quantity: 1
+  currentStep: 3
   moneyReward: 21

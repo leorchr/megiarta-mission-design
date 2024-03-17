@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64a33b52a406789489485e0cc26e9bca, type: 3}
+  m_Name: Q3-2-End
+  m_EditorClassIdentifier: 
+  dialogueType: 1
+  subDialogues:
+  - showName: 1
+    character: {fileID: 11400000, guid: 2570fa5825f1e8d41872272997399cfe, type: 2}
+    text: AWAITING MESSAGE TO DECIPHER
+    audioClip: {fileID: 0}
+  - showName: 1
+    character: {fileID: 11400000, guid: 2aa8c47d8f4c4e5448a47cbe30912646, type: 2}
+    text: "Let\u2019s hope this weird message helps me figure out where the garnison
+      went..."
+    audioClip: {fileID: 0}
+  - showName: 1
+    character: {fileID: 11400000, guid: 2570fa5825f1e8d41872272997399cfe, type: 2}
+    text: "Some of us already fell to the madness inhabiting these crystals.  In
+      a last attempt at stopping this and protecting our own and everyone else\u2019s
+      sanity, we decided to go into the cave at dusk to seal it. "
+    audioClip: {fileID: 0}
+  - showName: 1
+    character: {fileID: 11400000, guid: 2570fa5825f1e8d41872272997399cfe, type: 2}
+    text: " But it seems that the madness is aware of our plan ; our initial goal
+      to seal the cave seems to have been compromised the moment we stepped foot
+      in it. \r\nWe desperately argue, as some of us, now unable to think with reason,
+      desire to let this insanity spread.\r"
+    audioClip: {fileID: 0}
+  - showName: 1
+    character: {fileID: 11400000, guid: 2570fa5825f1e8d41872272997399cfe, type: 2}
+    text: "I will not allow this. If I have to seal us within the cave\u2019s walls
+      to stop this : I\u2019ll do so. \r\nI will try to stealthily get this letter
+      outside this hellhole ; hoping that no one will notice me. \r\n\r\nTo whoever
+      finds this letter : send the duke my regards.\r\n\r\nCaptain Gilead ROBENSON\u201C\r"
+    audioClip: {fileID: 0}
+  - showName: 1
+    character: {fileID: 11400000, guid: 2aa8c47d8f4c4e5448a47cbe30912646, type: 2}
+    text: "To the cave we go\u2026"
+    audioClip: {fileID: 0}

@@ -36,7 +36,7 @@ public class InteractionHelper : MonoBehaviour
                 else
                 {
                     interactionUiPos = PlayerInteraction.Instance._possiblePickable.UiPos;
-                    interactionCue.transform.parent = PlayerInteraction.Instance._possiblePickable.gameObject.transform;
+                    //interactionCue.transform.parent = PlayerInteraction.Instance._possiblePickable.gameObject.transform;
                     interactionCue.transform.position = interactionUiPos.position;
                 }
 
@@ -48,7 +48,7 @@ public class InteractionHelper : MonoBehaviour
                 else
                 {
                     vfxPos = PlayerInteraction.Instance._possiblePickable.VfxPos;
-                    vfxParticles.transform.parent = PlayerInteraction.Instance._possiblePickable.gameObject.transform;
+                    //vfxParticles.transform.parent = PlayerInteraction.Instance._possiblePickable.gameObject.transform;
                     vfxParticles.transform.position = vfxPos.position;
                 }
 
@@ -63,7 +63,7 @@ public class InteractionHelper : MonoBehaviour
                 }
                 interactionUiPos = PlayerInteraction.Instance._possibleInteractive.UiPos;
 
-                interactionCue.transform.parent = PlayerInteraction.Instance._possibleInteractive.gameObject.transform;
+                //interactionCue.transform.parent = PlayerInteraction.Instance._possibleInteractive.gameObject.transform;
                 interactionCue.transform.position = interactionUiPos.position;
             }
 
@@ -81,7 +81,7 @@ public class InteractionHelper : MonoBehaviour
 
     private void Update()
     {
-        if (interactionCue.activeSelf)
+        if (interactionCue != null && interactionCue.activeSelf )
         {
             interactionCue.transform.LookAt(cam.transform.position);
             interactionCue.transform.Rotate(new Vector3(0, 0, 0));

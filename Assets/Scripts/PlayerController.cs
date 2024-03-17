@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isLocked)
+        if (isLocked && false)
         {
             rb.velocity = Vector3.zero;
             return;
@@ -174,9 +174,9 @@ public class PlayerController : MonoBehaviour
     {
         isLocked = true;
         moveInput = Vector2.zero;
-        velocityB4Lock = rb.velocity;
-        rb.velocity = Vector3.zero;
-        animator.speed = 0;
+        //velocityB4Lock = rb.velocity;
+        //rb.velocity = Vector3.zero;
+        //animator.speed = 0;
         
     }
 
