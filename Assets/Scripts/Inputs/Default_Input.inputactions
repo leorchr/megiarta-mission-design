@@ -185,7 +185,18 @@
                 {
                     "name": "",
                     "id": "44a9e4f1-ad25-4b1e-8948-59aff8d5bfe0",
-                    "path": "<Keyboard>/space",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Validate",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "23b314d0-c51c-4448-8acb-c36f1be019c6",
+                    "path": "<Keyboard>/enter",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
