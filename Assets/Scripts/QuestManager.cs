@@ -11,9 +11,11 @@ public class QuestManager : MonoBehaviour
     public GameObject sideQuestPanelPrefab;
     public Transform questParent;
 
-    public List<QuestFullData> questsProgress = new List<QuestFullData>();
+    public QuestData startQuest;
+    public List<QuestData> questsProgress = new List<QuestData>();
     public Dictionary<QuestData, GameObject> questVisulization
         = new Dictionary<QuestData, GameObject>();
+
 
     public void Awake()
     {
@@ -21,21 +23,40 @@ public class QuestManager : MonoBehaviour
         else Instance = this;
     }
 
-    public void TakeQuest(QuestFullData quest, bool isSideQuest = false)
+    private void Start()
+    {
+        if (startQuest) TakeQuest(startQuest);
+    }
+
+    public void FinishQuest(QuestData quest)
+    {
+        DialogueManager.instance.PlayDialogue(quest.GetCurrentStep().EndDialogue);
+
+        if (quest.GetCurrentStep().requirements.Count > 0)
+        {
+            foreach (QuestItem required in quest.GetCurrentStep().requirements)
+            {
+                Inventory.Instance.RemoveFromInventory(required.item, required.quantity);
+            }
+        }
+        quest.NextStep();
+    }
+
+    public void TakeQuest(QuestData quest, bool isSideQuest = false)
     {
         questsProgress.Add(quest);
-        quest.questData.StartQuest();
+        quest.StartQuest();
         if (isSideQuest)
         {
             GameObject panel = Instantiate(sideQuestPanelPrefab, questParent);
-            panel.GetComponent<QuestPanel>().SetupQuest(quest.questData);
-            questVisulization.Add(quest.questData, panel);
+            panel.GetComponent<QuestPanel>().SetupQuest(quest);
+            questVisulization.Add(quest, panel);
         }
         else
         {
             GameObject panel = Instantiate(questPanelPrefab, questParent);
-            panel.GetComponent<QuestPanel>().SetupQuest(quest.questData);
-            questVisulization.Add(quest.questData, panel);
+            panel.GetComponent<QuestPanel>().SetupQuest(quest);
+            questVisulization.Add(quest, panel);
         }
     }
 
@@ -48,10 +69,14 @@ public class QuestManager : MonoBehaviour
             SFXManager.instance.PlayQuestSound(SFXManager.instance.missionRewardSound);
         }
         questVisulization[quest].GetComponent<QuestPanel>().Complete();
-        questsProgress.Remove(findQuestFullData(quest));
+        questsProgress.Remove(quest);
         if (questVisulization.ContainsKey(quest))
         {
             questVisulization.Remove(quest);
+        }
+        if (quest.questGivenWhenFinish != null)
+        {
+            TakeQuest(quest.questGivenWhenFinish);
         }
     }
 
@@ -69,26 +94,13 @@ public class QuestManager : MonoBehaviour
         }
     }
 
-    QuestFullData findQuestFullData(QuestData quest) {
-        foreach(QuestFullData qfd in questsProgress)
-        {
-            if (qfd.questData == quest)
-            {
-                return qfd;
-            }
-        }
-        return null;
-    }
-}
-
-public class QuestFullData
-{
-    public QuestFullData(QuestData questP,QuestInteractor interactorP)
+    public void CheckItem(QuestItem item)
     {
-        questData = questP;
-        interactor = interactorP;
+        //TODO : Check if a quest needs an item
     }
 
-    public QuestData questData;
-    public QuestInteractor interactor;
+    public void checkPlace(PlaceSC place)
+    {
+        //TODO : Check if a quest to visit a place
+    }
 }

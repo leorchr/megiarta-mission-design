@@ -35,11 +35,14 @@ public class Inventory : MonoBehaviour
         if (found < 0)
         {
             items.Add(new QuestItem(questItem));
+            found = items.FindIndex(q => q.item.Equals(questItem));
         }
         else
         {
             items[found].quantity++;
         }
+        
+        QuestManager.Instance.CheckItem(items[found]);
     }
 
     public bool IsItemFound(ItemData questItem)

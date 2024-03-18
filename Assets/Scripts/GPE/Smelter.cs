@@ -37,7 +37,7 @@ public class Smelter : QuestInteractor
     {
         if (quests.Count > 0 && current < quests.Count)
         {
-            QuestFullData QFD = new QuestFullData(quests[current],this);
+            QuestData QFD = new QuestData(quests[current],this);
 
             QuestManager.Instance.TakeQuest(QFD, true);
 

@@ -15,12 +15,11 @@ public class QuestInteractor : Interactive
     {
         if (quests.Count > 0 && current < quests.Count)
         {
-            QuestFullData QFD = new QuestFullData(quests[current],this);
+            QuestData QFD = new QuestData(quests[current],this);
             QuestManager.Instance.TakeQuest(QFD);
 
             if (quests[current].GetCurrentStep().requirements.Count > 0)
             {
-                waitForObject = true;
                 //Setting up requirements to finish quests
                 foreach (QuestItem item in quests[current].GetCurrentStep().requirements)
                 {
@@ -34,7 +33,6 @@ public class QuestInteractor : Interactive
     {
         if (quests[current].GetCurrentStep().requirements.Count > 0)
         {
-            waitForObject = true;
             //Setting up requirements to finish quests
             foreach (QuestItem item in quests[current].GetCurrentStep().requirements)
             {
@@ -60,7 +58,6 @@ public class QuestInteractor : Interactive
         //QuestManager.Instance.CompleteQuest(quests[current]);
         quests[current].NextStep();
 
-        waitForObject = false;
         if (!quests[current].IsFinished())
         {
             SetupStep();

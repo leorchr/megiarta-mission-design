@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,7 +8,11 @@ public class QuestData : ScriptableObject
     public string questName;
     public List<QuestStep> steps = new List<QuestStep>();
     [HideInInspector] public int currentStep = 0;
+    [HideInInspector] public QuestInteractor /*TODO : Create special var for interactor*/ interactor = null;
     public int moneyReward;
+    public QuestData questGivenWhenFinish;
+
+    
     public void StartQuest()
     {
         currentStep = 0;
@@ -37,9 +40,14 @@ public class QuestData : ScriptableObject
         return currentStep == steps.Count; 
     }
 }
+
+public enum QuestType {pickItem, giveItem, triggerZone, interactWithInteractor }
+
 [Serializable]
 public class QuestStep
 {
+    QuestType questType;
+
     [TextArea] public string stepName;
 
     public DialogueSC BeginDialogue;

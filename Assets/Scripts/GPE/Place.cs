@@ -8,7 +8,7 @@ public class Place : MonoBehaviour
     public PlaceSC currentPlace;
     private void OnTriggerEnter(Collider other)
     {
-        foreach (QuestFullData q in QuestManager.Instance.questsProgress)
+        foreach (QuestData q in QuestManager.Instance.questsProgress)
         {
             
             if (q != null)
