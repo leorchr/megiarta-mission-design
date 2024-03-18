@@ -5,7 +5,6 @@ using System;
 [Serializable]
 public class QuestItem
 {
-    public PlaceSC placeToVisit;
     public ItemData item;
     public int quantity = 0;
 

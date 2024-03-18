@@ -80,7 +80,7 @@ public class QuestManager : MonoBehaviour
         }
     }
 
-    public void Notify(bool finished = false)
+    public void Notify(bool finished = false) 
     {
         if (SFXManager.instance)
         {
@@ -96,11 +96,36 @@ public class QuestManager : MonoBehaviour
 
     public void CheckItem(QuestItem item)
     {
-        //TODO : Check if a quest needs an item
+        foreach (QuestData quest in questsProgress)
+        {
+            if (quest.GetCurrentStep().questType == QuestType.pickItem)
+            {
+                if (quest.GetCurrentStep().requirements[0] == item)
+                {
+                    quest.NextStep();
+                    return;
+                }
+            }
+        }
     }
 
     public void checkPlace(PlaceSC place)
     {
-        //TODO : Check if a quest to visit a place
+        //TODO : Check if a quest needs to visit a place
+    }
+
+    public void checkInteract(QuestGiver QG)
+    {
+        foreach (QuestData quest in questsProgress)
+        {
+            if (quest.GetCurrentStep().questType == QuestType.interactWithInteractor)
+            {
+                if (quest.GetCurrentStep().interactorTriger == QG)
+                {
+                    quest.NextStep();
+                    return;
+                }
+            }
+        }
     }
 }

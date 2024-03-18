@@ -39,6 +39,7 @@ public class QuestData : ScriptableObject
     public bool IsFinished() { 
         return currentStep == steps.Count; 
     }
+
 }
 
 public enum QuestType {pickItem, giveItem, triggerZone, interactWithInteractor }
@@ -46,12 +47,16 @@ public enum QuestType {pickItem, giveItem, triggerZone, interactWithInteractor }
 [Serializable]
 public class QuestStep
 {
-    QuestType questType;
+    public QuestType questType;
 
     [TextArea] public string stepName;
 
     public DialogueSC BeginDialogue;
     public DialogueSC EndDialogue;
 
+    public QuestGiver interactorTriger;
+
     public List<QuestItem> requirements = new List<QuestItem>();
+
+    public PlaceSC placeToVisit;
 }

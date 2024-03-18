@@ -8,6 +8,6 @@ public class Pickable : MonoBehaviour
 
     public virtual void OnPick()
     {
-        Debug.LogWarning("No event");
+        
     }
 }
