@@ -14,19 +14,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questName: Administrative work
   steps:
-  - stepName: "Find one of the garrison\u2019s captain\u2019s coded reports."
+  - questType: 0
+    stepName: "Find one of the garrison\u2019s captain\u2019s coded reports."
     BeginDialogue: {fileID: 0}
     EndDialogue: {fileID: 11400000, guid: 6ac3460c366c80f45aa31af881da1ce2, type: 2}
+    interactorTriger: {fileID: 0}
     requirements:
-    - placeToVisit: {fileID: 0}
-      item: {fileID: 11400000, guid: 8c0b469490f2e6949baa5b06c9aa6998, type: 2}
+    - item: {fileID: 11400000, guid: 8c0b469490f2e6949baa5b06c9aa6998, type: 2}
       quantity: 1
-  - stepName: "Bring back the captain\u2019s coded report to the \u201CAnalyser\u201D."
+    placeToVisit: {fileID: 0}
+  - questType: 0
+    stepName: "Bring back the captain\u2019s coded report to the \u201CAnalyser\u201D."
     BeginDialogue: {fileID: 0}
     EndDialogue: {fileID: 11400000, guid: ea447a0918185d44c9832ab07ee7b2d3, type: 2}
+    interactorTriger: {fileID: 0}
     requirements:
-    - placeToVisit: {fileID: 0}
-      item: {fileID: 11400000, guid: 8c0b469490f2e6949baa5b06c9aa6998, type: 2}
+    - item: {fileID: 11400000, guid: 8c0b469490f2e6949baa5b06c9aa6998, type: 2}
       quantity: 1
-  currentStep: 2
+    placeToVisit: {fileID: 0}
+  currentStep: 0
+  interactor: {fileID: 0}
   moneyReward: 15
+  questGivenWhenFinish: {fileID: 11400000, guid: 3e2dedf6e0eabce4280b80ee0a30a937,
+    type: 2}

@@ -14,9 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questName: Anybody here ?
   steps:
-  - stepName: "Investigate the garrison\u2019s installations to try to find someone."
+  - questType: 3
+    stepName: "Investigate the garrison\u2019s installations to try to find someone."
     BeginDialogue: {fileID: 0}
     EndDialogue: {fileID: 11400000, guid: 196945b4633f1ff4187653e70d6f6db6, type: 2}
+    interactorTriger: {fileID: 11400000, guid: a6a45dab439a11d4fbfbdc355d6e5b76, type: 2}
     requirements: []
+    placeToVisit: {fileID: 0}
   currentStep: 1
+  interactor: {fileID: 0}
   moneyReward: 11
+  questGivenWhenFinish: {fileID: 11400000, guid: 9571cbe28091d6243a5e85b220ac5781,
+    type: 2}

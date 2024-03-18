@@ -14,26 +14,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questName: A strange cave
   steps:
-  - stepName: "Find the cave\u2019s entrance."
+  - questType: 0
+    stepName: "Find the cave\u2019s entrance."
     BeginDialogue: {fileID: 0}
     EndDialogue: {fileID: 0}
+    interactorTriger: {fileID: 0}
     requirements:
-    - placeToVisit: {fileID: 11400000, guid: b10503bd17621f94394f1b6a94a78400, type: 2}
-      item: {fileID: 0}
+    - item: {fileID: 0}
       quantity: 0
-  - stepName: Investigate the entrance.
+    placeToVisit: {fileID: 0}
+  - questType: 0
+    stepName: Investigate the entrance.
     BeginDialogue: {fileID: 0}
     EndDialogue: {fileID: 0}
+    interactorTriger: {fileID: 0}
     requirements:
-    - placeToVisit: {fileID: 0}
-      item: {fileID: 11400000, guid: b6375180682c0e440b47c06899594bf2, type: 2}
+    - item: {fileID: 11400000, guid: b6375180682c0e440b47c06899594bf2, type: 2}
       quantity: 1
-  - stepName: "Bring the message back to the \u201CAnalyser\u201D"
+    placeToVisit: {fileID: 0}
+  - questType: 0
+    stepName: "Bring the message back to the \u201CAnalyser\u201D"
     BeginDialogue: {fileID: 0}
     EndDialogue: {fileID: 0}
+    interactorTriger: {fileID: 0}
     requirements:
-    - placeToVisit: {fileID: 0}
-      item: {fileID: 11400000, guid: b6375180682c0e440b47c06899594bf2, type: 2}
+    - item: {fileID: 11400000, guid: b6375180682c0e440b47c06899594bf2, type: 2}
       quantity: 1
+    placeToVisit: {fileID: 0}
   currentStep: 3
+  interactor: {fileID: 0}
   moneyReward: 21
+  questGivenWhenFinish: {fileID: 11400000, guid: 3e4670ede95d22a4baeb4728f0b615d8,
+    type: 2}

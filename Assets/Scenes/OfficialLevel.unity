@@ -19632,6 +19632,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 238226004759433897, guid: 13a172d8d335ec1489a95030f61a0e20,
         type: 3}
+      propertyPath: startQuest
+      value: 
+      objectReference: {fileID: 11400000, guid: 073c3ca520d5001469e8bfeaeb746676,
+        type: 2}
+    - target: {fileID: 238226004759433897, guid: 13a172d8d335ec1489a95030f61a0e20,
+        type: 3}
       propertyPath: questParent
       value: 
       objectReference: {fileID: 1531710882}
@@ -22513,6 +22519,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: ArtifactFull
       objectReference: {fileID: 0}
+    - target: {fileID: 8159512093590186687, guid: bc9c21abe8d8a094f9414c4cbdba6c91,
+        type: 3}
+      propertyPath: QGInfo
+      value: 
+      objectReference: {fileID: 11400000, guid: a6a45dab439a11d4fbfbdc355d6e5b76,
+        type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
