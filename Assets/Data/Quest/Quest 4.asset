@@ -14,30 +14,45 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questName: Into the dark
   steps:
-  - stepName: Find a tool to destroy the rocks blocking the cave.
+  - questType: 0
+    stepName: Find a tool to destroy the rocks blocking the cave.
     BeginDialogue: {fileID: 0}
     EndDialogue: {fileID: 0}
+    interactorTriger: {fileID: 0}
     requirements:
-    - placeToVisit: {fileID: 0}
-      item: {fileID: 11400000, guid: b235e9cbac7110a4da5894c9d751263b, type: 2}
+    - item: {fileID: 11400000, guid: b235e9cbac7110a4da5894c9d751263b, type: 2}
       quantity: 1
-  - stepName: "Unseal the cave\u2019s entrance."
+    placeToVisit: {fileID: 0}
+    SpecialEventCode: 0
+  - questType: 4
+    stepName: "Unseal the cave\u2019s entrance."
     BeginDialogue: {fileID: 0}
     EndDialogue: {fileID: 0}
+    interactorTriger: {fileID: 0}
     requirements:
-    - placeToVisit: {fileID: 0}
-      item: {fileID: 11400000, guid: b235e9cbac7110a4da5894c9d751263b, type: 2}
+    - item: {fileID: 11400000, guid: b235e9cbac7110a4da5894c9d751263b, type: 2}
       quantity: 0
-  - stepName: Investigate the cave.
+    placeToVisit: {fileID: 0}
+    SpecialEventCode: 333
+  - questType: 2
+    stepName: Investigate the cave.
     BeginDialogue: {fileID: 0}
     EndDialogue: {fileID: 0}
+    interactorTriger: {fileID: 0}
     requirements:
-    - placeToVisit: {fileID: 11400000, guid: c8fdfb1be84b38442bd70228ffb01310, type: 2}
-      item: {fileID: 0}
+    - item: {fileID: 0}
       quantity: 0
-  - stepName: Leave the island to report your findings !
+    placeToVisit: {fileID: 11400000, guid: c8fdfb1be84b38442bd70228ffb01310, type: 2}
+    SpecialEventCode: 0
+  - questType: 2
+    stepName: Leave the island to report your findings !
     BeginDialogue: {fileID: 0}
     EndDialogue: {fileID: 0}
+    interactorTriger: {fileID: 0}
     requirements: []
-  currentStep: 3
+    placeToVisit: {fileID: 11400000, guid: 403d112c8ef3fcc458765d96ec9df36b, type: 2}
+    SpecialEventCode: 0
+  currentStep: 1
+  interactor: {fileID: 0}
   moneyReward: 40
+  questGivenWhenFinish: {fileID: 0}

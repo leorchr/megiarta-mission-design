@@ -8,7 +8,7 @@ public class QuestData : ScriptableObject
     public string questName;
     public List<QuestStep> steps = new List<QuestStep>();
     [HideInInspector] public int currentStep = 0;
-    [HideInInspector] public QuestInteractor /*TODO : Create special var for interactor*/ interactor = null;
+    [HideInInspector] public QuestInteractor interactor = null;
     public int moneyReward;
     public QuestData questGivenWhenFinish;
 
@@ -25,8 +25,9 @@ public class QuestData : ScriptableObject
 
     public void NextStep()
     {
+        DialogueManager.instance.PlayDialogue(steps[currentStep].EndDialogue);
         currentStep++;
-        if(IsFinished())
+        if (IsFinished())
         {
             QuestManager.Instance.CompleteQuest(this);
         }
@@ -42,7 +43,7 @@ public class QuestData : ScriptableObject
 
 }
 
-public enum QuestType {pickItem, giveItem, triggerZone, interactWithInteractor }
+public enum QuestType {pickItem, giveItem, triggerZone, interactWithInteractor, SpecialEvent }
 
 [Serializable]
 public class QuestStep
@@ -59,4 +60,6 @@ public class QuestStep
     public List<QuestItem> requirements = new List<QuestItem>();
 
     public PlaceSC placeToVisit;
+
+    public int SpecialEventCode;
 }

@@ -100,7 +100,7 @@ public class QuestManager : MonoBehaviour
         {
             if (quest.GetCurrentStep().questType == QuestType.pickItem)
             {
-                if (quest.GetCurrentStep().requirements[0] == item)
+                if (quest.GetCurrentStep().requirements[0].item == item.item)
                 {
                     quest.NextStep();
                     return;
@@ -111,7 +111,17 @@ public class QuestManager : MonoBehaviour
 
     public void checkPlace(PlaceSC place)
     {
-        //TODO : Check if a quest needs to visit a place
+        foreach (QuestData quest in questsProgress)
+        {
+            if (quest.GetCurrentStep().questType == QuestType.triggerZone)
+            {
+                if (quest.GetCurrentStep().placeToVisit == place)
+                {
+                    quest.NextStep();
+                    return;
+                }
+            }
+        }
     }
 
     public void checkInteract(QuestGiver QG)
@@ -121,6 +131,21 @@ public class QuestManager : MonoBehaviour
             if (quest.GetCurrentStep().questType == QuestType.interactWithInteractor)
             {
                 if (quest.GetCurrentStep().interactorTriger == QG)
+                {
+                    quest.NextStep();
+                    return;
+                }
+            }
+        }
+    }
+
+    public void checkEventCode(int code)
+    {
+        foreach (QuestData quest in questsProgress)
+        {
+            if (quest.GetCurrentStep().questType == QuestType.SpecialEvent)
+            {
+                if (quest.GetCurrentStep().SpecialEventCode == code)
                 {
                     quest.NextStep();
                     return;

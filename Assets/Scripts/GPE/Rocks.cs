@@ -1,17 +1,27 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+[Serializable]
+public struct ItemPower
+{
+    public ItemData item;
+    public float power;
+}
 public class Rocks : Interactive
 {
     public static Rocks Instance;
 
-    public ItemData obsidianPickaxe;
+    public List<ItemPower> itemPowers;
 
     public List<GameObject> rocks = new List<GameObject>(4);
     private int destroyIndex = 0;
     public GameObject vfx,vfx2;
     public AudioClip RockDestroy;
+
+    public int EventCode;
 
     public GameObject colliderRock;
 
@@ -27,49 +37,37 @@ public class Rocks : Interactive
 
     public override void OnInteraction()
     {
-        if (Inventory.Instance.IsItemFound(obsidianPickaxe)){
-            if(rocks[destroyIndex] != null)
-            {
-                GameObject vfxTemp = Instantiate(vfx, this.gameObject.transform);
-                vfxTemp.transform.position = rocks[destroyIndex].transform.position;
-                SFXManager.instance.PlaySound(RockDestroy);
-                GameObject vfxTemp2 = Instantiate(vfx2, this.gameObject.transform);
-                vfxTemp2.transform.position = rocks[destroyIndex].transform.position;
-                Destroy(rocks[destroyIndex]);
-                destroyIndex++;
-            }
-
-            if (rocks[destroyIndex+1] != null)
-            {
-                GameObject vfxTemp = Instantiate(vfx, this.gameObject.transform);
-                vfxTemp.transform.position = rocks[destroyIndex+1].transform.position;
-                SFXManager.instance.PlaySound(RockDestroy);
-                GameObject vfxTemp2 = Instantiate(vfx2, this.gameObject.transform);
-                vfxTemp2.transform.position = rocks[destroyIndex+1].transform.position;
-                Destroy(rocks[destroyIndex+1]);
-                destroyIndex++; ;
-            }
-        }
-        else
+        foreach (ItemPower ip in itemPowers)
         {
-            if (rocks[destroyIndex] != null)
+            if (Inventory.Instance.IsItemFound(ip.item))
             {
-                GameObject vfxTemp = Instantiate(vfx, this.gameObject.transform);
-                vfxTemp.transform.position = rocks[destroyIndex].transform.position;
-                SFXManager.instance.PlaySound(RockDestroy);
-                GameObject vfxTemp2 = Instantiate(vfx2, this.gameObject.transform);
-                vfxTemp2.transform.position = rocks[destroyIndex].transform.position;
-                Destroy(rocks[destroyIndex]);
-                destroyIndex++;
+                for (int i = 0; i < ip.power; i++)
+                {
+                    DestroyRocks();
+                }
             }
         }
         if (destroyIndex >= rocks.Count)
         {
             Destroy(colliderRock);
-            //Rowboat.Instance.FinishQuest();
+            QuestManager.Instance.checkEventCode(EventCode);
             GetComponent<Collider>().isTrigger = true;
             PlayerInteraction.Instance.StopInteractive();
             Destroy(this);
+        }
+    }
+
+    void DestroyRocks()
+    {
+        if (rocks[destroyIndex] != null)
+        {
+            GameObject vfxTemp = Instantiate(vfx, this.gameObject.transform);
+            vfxTemp.transform.position = rocks[destroyIndex].transform.position;
+            SFXManager.instance.PlaySound(RockDestroy);
+            GameObject vfxTemp2 = Instantiate(vfx2, this.gameObject.transform);
+            vfxTemp2.transform.position = rocks[destroyIndex].transform.position;
+            Destroy(rocks[destroyIndex]);
+            destroyIndex++;
         }
     }
 }

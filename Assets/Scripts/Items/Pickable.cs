@@ -8,6 +8,6 @@ public class Pickable : MonoBehaviour
 
     public virtual void OnPick()
     {
-        
+        QuestManager.Instance.CheckItem(new QuestItem(item, 1));
     }
 }
