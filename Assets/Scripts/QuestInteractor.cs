@@ -12,7 +12,10 @@ public class QuestInteractor : Interactive
         bool questGiven = QGInfo.GiveNextQuest();
         if (questGiven)
         {
-            DialogueManager.instance.PlayDialogue(QGInfo.currentQuest.GetCurrentStep().BeginDialogue);
+            DialogueSC d = QGInfo.currentQuest.GetCurrentStep().BeginDialogue;
+            if (d != null ) { 
+                DialogueManager.instance.PlayDialogue(d);
+            }
         }
         else
         {

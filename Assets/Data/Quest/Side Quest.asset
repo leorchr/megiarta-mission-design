@@ -13,26 +13,42 @@ MonoBehaviour:
   m_Name: Side Quest
   m_EditorClassIdentifier: 
   questName: Acquire hardware
+  isSideQuest: 1
   steps:
-  - stepName: Find a branch to use with this smelter.
-    dialogue: 
-    thankYouMessage: 
+  - questType: 0
+    stepName: Find a branch to use with this smelter.
+    BeginDialogue: {fileID: 0}
+    EndDialogue: {fileID: 0}
+    interactorTriger: {fileID: 0}
     requirements:
     - item: {fileID: 11400000, guid: 989be1f4ca2146c44a95775493f25a12, type: 2}
       quantity: 1
-  - stepName: Find a strong material to fuse with this branch.
-    dialogue: 
-    thankYouMessage: 
+    placeToVisit: {fileID: 0}
+    SpecialEventCode: 0
+  - questType: 0
+    stepName: Find a strong material to fuse with this branch.
+    BeginDialogue: {fileID: 0}
+    EndDialogue: {fileID: 0}
+    interactorTriger: {fileID: 0}
     requirements:
     - item: {fileID: 11400000, guid: c56a3323767441f47908193de34bf0b2, type: 2}
       quantity: 1
-  - stepName: "Use the armory\u2019s smelter to create a unique tool !"
-    dialogue: 
-    thankYouMessage: 
+    placeToVisit: {fileID: 0}
+    SpecialEventCode: 0
+  - questType: 3
+    stepName: "Use the armory\u2019s smelter to create a unique tool !"
+    BeginDialogue: {fileID: 0}
+    EndDialogue: {fileID: 0}
+    interactorTriger: {fileID: 11400000, guid: f62aeb438384b774c8ac04f772dc4fa2, type: 2}
     requirements:
     - item: {fileID: 11400000, guid: c56a3323767441f47908193de34bf0b2, type: 2}
       quantity: 1
     - item: {fileID: 11400000, guid: 989be1f4ca2146c44a95775493f25a12, type: 2}
       quantity: 1
+    placeToVisit: {fileID: 0}
+    SpecialEventCode: 0
   currentStep: 3
+  interactor: {fileID: 0}
   moneyReward: 0
+  itemReward: {fileID: 11400000, guid: a157688f880d52048baff6a421176e14, type: 2}
+  questGivenWhenFinish: {fileID: 0}

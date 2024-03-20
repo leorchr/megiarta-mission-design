@@ -6,10 +6,12 @@ using UnityEngine;
 public class QuestData : ScriptableObject
 {
     public string questName;
+    public bool isSideQuest;
     public List<QuestStep> steps = new List<QuestStep>();
     [HideInInspector] public int currentStep = 0;
     [HideInInspector] public QuestInteractor interactor = null;
     public int moneyReward;
+    public ItemData itemReward;
     public QuestData questGivenWhenFinish;
 
     

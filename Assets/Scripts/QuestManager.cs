@@ -42,11 +42,11 @@ public class QuestManager : MonoBehaviour
         quest.NextStep();
     }
 
-    public void TakeQuest(QuestData quest, bool isSideQuest = false)
+    public void TakeQuest(QuestData quest)
     {
         questsProgress.Add(quest);
         quest.StartQuest();
-        if (isSideQuest)
+        if (quest.isSideQuest)
         {
             GameObject panel = Instantiate(sideQuestPanelPrefab, questParent);
             panel.GetComponent<QuestPanel>().SetupQuest(quest);
@@ -63,6 +63,10 @@ public class QuestManager : MonoBehaviour
     public void CompleteQuest(QuestData quest)
     {
         Wallet.Instance.EarnMoney(quest.moneyReward);
+        if (quest.itemReward != null)
+        {
+            Inventory.Instance.AddToInventory(new QuestItem(quest.itemReward, 1));
+        }
         Notify(quest.IsFinished());
         if(SFXManager.instance)
         {

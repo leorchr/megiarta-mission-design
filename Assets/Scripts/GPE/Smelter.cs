@@ -10,6 +10,6 @@ public class Smelter : QuestInteractor
 
     public override void OnInteraction()
     {
-        
+        base.OnInteraction();
     }
 }

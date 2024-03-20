@@ -21,6 +21,7 @@ public class QuestGiver : ScriptableObject
         if (currentQuest == null && currentQuestID < questToGive.Count)
         {
             QuestManager.Instance.TakeQuest(questToGive[currentQuestID]);
+            currentQuest = (questToGive[currentQuestID]);
             return true;
         }
         return false;
@@ -31,5 +32,11 @@ public class QuestGiver : ScriptableObject
         currentQuest = null;
         currentQuestID++;
         GiveNextQuest();
+    }
+
+    private void Awake()
+    {
+        Debug.Log("Test");
+        currentQuest = null;
     }
 }
