@@ -379,6 +379,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6475929323966164773}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8440144082423518775 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3242157682252183826, guid: d939fd323c2547f438f20d3ce10fe5e2,
+    type: 3}
+  m_PrefabInstance: {fileID: 6475929323966164773}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9836b130f7a96c4490cc32505bc4722, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8792799365413125781
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -459,6 +471,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4086391014026971703, guid: 55cd9cac3e5e8ee48b4958db637af5c3,
         type: 3}
+      propertyPath: m_ControlsChangedEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4086391014026971703, guid: 55cd9cac3e5e8ee48b4958db637af5c3,
+        type: 3}
       propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -466,6 +483,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4086391014026971703, guid: 55cd9cac3e5e8ee48b4958db637af5c3,
+        type: 3}
+      propertyPath: m_ControlsChangedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4086391014026971703, guid: 55cd9cac3e5e8ee48b4958db637af5c3,
+        type: 3}
+      propertyPath: m_ControlsChangedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8440144082423518775}
+    - target: {fileID: 4086391014026971703, guid: 55cd9cac3e5e8ee48b4958db637af5c3,
+        type: 3}
+      propertyPath: m_ControlsChangedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4086391014026971703, guid: 55cd9cac3e5e8ee48b4958db637af5c3,
+        type: 3}
+      propertyPath: m_ControlsChangedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: updateDevice
       objectReference: {fileID: 0}
     - target: {fileID: 4086391014026971703, guid: 55cd9cac3e5e8ee48b4958db637af5c3,
         type: 3}
@@ -504,6 +541,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4086391014026971703, guid: 55cd9cac3e5e8ee48b4958db637af5c3,
         type: 3}
+      propertyPath: m_ControlsChangedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: InputManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4086391014026971703, guid: 55cd9cac3e5e8ee48b4958db637af5c3,
+        type: 3}
       propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: DialogueManager, Assembly-CSharp
       objectReference: {fileID: 0}
@@ -511,6 +553,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: PlayerController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4086391014026971703, guid: 55cd9cac3e5e8ee48b4958db637af5c3,
+        type: 3}
+      propertyPath: m_ControlsChangedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4086391014026971703, guid: 55cd9cac3e5e8ee48b4958db637af5c3,
         type: 3}
