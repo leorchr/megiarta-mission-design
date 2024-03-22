@@ -51,11 +51,6 @@ MonoBehaviour:
     audioClip: {fileID: 0}
   - showName: 1
     character: {fileID: 11400000, guid: 2570fa5825f1e8d41872272997399cfe, type: 2}
-    text: 'Sir, if no other report coming from the island finds you, please, do not
-      send any help or any reinforcements. We will try to put an end to- '
-    audioClip: {fileID: 0}
-  - showName: 1
-    character: {fileID: 11400000, guid: 2570fa5825f1e8d41872272997399cfe, type: 2}
     text: '*The letter seems unfinished*'
     audioClip: {fileID: 0}
   - showName: 1
