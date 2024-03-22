@@ -40,16 +40,7 @@ public class InteractionHelper : MonoBehaviour
                     interactionUiPos = PlayerInteraction.Instance._possiblePickable.UiPos;
                     //interactionCue.transform.parent = PlayerInteraction.Instance._possiblePickable.gameObject.transform;
                     interactionCue.transform.position = interactionUiPos.position;
-                    switch (InputManager.instance.getCurrentControlScheme())
-                    {
-                        case ControlScheme.Keyboard:
-                            interactionCue.GetComponent<SpriteRenderer>().sprite = KeyboardButton;
-                            break;
-                        case ControlScheme.Controller:
-                            interactionCue.GetComponent<SpriteRenderer>().sprite = ControllerButton;
-                            break;
-                        default: break;
-                    }
+                    
                     
                 }
 
@@ -100,6 +91,17 @@ public class InteractionHelper : MonoBehaviour
             interactionCue.transform.Rotate(new Vector3(0, 0, 0));
             float interactionScale = scale * dist * 0.5f;
             interactionCue.transform.localScale = new Vector3(interactionScale, interactionScale, interactionScale);
+
+            switch (InputManager.instance.getCurrentControlScheme())
+            {
+                case ControlScheme.Keyboard:
+                    interactionCue.GetComponent<SpriteRenderer>().sprite = KeyboardButton;
+                    break;
+                case ControlScheme.Controller:
+                    interactionCue.GetComponent<SpriteRenderer>().sprite = ControllerButton;
+                    break;
+                default: break;
+            }
         }
     }
 }
