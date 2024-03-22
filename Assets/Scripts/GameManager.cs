@@ -13,5 +13,6 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0;
         pauseMenu.SetActive(true);
         Cursor.visible = true;
+        PlayerController.instance.lockPlayer();
     }
 }

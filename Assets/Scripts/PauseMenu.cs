@@ -16,6 +16,10 @@ public class PauseMenu : MonoBehaviour
     public void Resume()
     {
         pauseMenu.SetActive(false);
+        if (PlayerController.instance != null)
+        {
+            PlayerController.instance.unlockPlayer();
+        }
         Time.timeScale = 1;
         Cursor.visible = false;
         Debug.Log("Resume Button");

@@ -9,6 +9,7 @@ using UnityEngine.InputSystem;
 [RequireComponent (typeof(CameraPointTriggerCollector))]
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController instance;
 
     public float maxSpeed;
     public float accelerationSpeed;
@@ -51,6 +52,7 @@ public class PlayerController : MonoBehaviour
     {
         rb =GetComponent<Rigidbody>();
         animator = GetComponentInChildren<Animator>();
+        instance = this;
     }
 
     // Update is called once per frame
@@ -167,7 +169,7 @@ public class PlayerController : MonoBehaviour
 
     private bool canJump()
     {
-        return !isJumping && isGrounded && !isLocked;
+        return !isJumping && isGrounded && !isLocked && Time.timeScale != 0;
     }
 
     public void lockPlayer()
