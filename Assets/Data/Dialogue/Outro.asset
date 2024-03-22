@@ -10,23 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 64a33b52a406789489485e0cc26e9bca, type: 3}
-  m_Name: Intro
+  m_Name: Outro
   m_EditorClassIdentifier: 
   dialogueType: 0
   subDialogues:
   - showName: 0
     character: {fileID: 0}
-    text: Recently, a rumor goes around that powerful magical ores could be found
-      on a new land.
+    text: 'After finding out what happened to the garrison, you decided to leave
+      Kadoken Island to inform the duchy of your discoveries. '
     audioClip: {fileID: 0}
   - showName: 0
     character: {fileID: 0}
-    text: The imperial kingdom of Arengarth didn't hesitate to send a garrison on
-      the Kadoken Island to find that new material.
-    audioClip: {fileID: 0}
-  - showName: 0
-    character: {fileID: 0}
-    text: "But for an unknown reason, that special unit didn\u2019t respond for a
-      couple of days now. The duchy of Brast\u2019Ani hired you to investigate what
-      is going on, on Kadoken Island."
+    text: Here, you will be greatly rewarded. Thanks to your report, they will take
+      their precautions for the next group, and maybe save the future adventurers
+      from a certain death.
     audioClip: {fileID: 0}
