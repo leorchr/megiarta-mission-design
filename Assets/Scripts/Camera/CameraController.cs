@@ -104,6 +104,7 @@ public class CameraController : MonoBehaviour
     {
         lookVectorInput = callbackContext.ReadValue<Vector2>();
         lookVectorInput = cData.invertedLook ? lookVectorInput * -1 : lookVectorInput; //Invert input
+        if (InputManager.instance.getCurrentControlScheme() == ControlScheme.Keyboard) { lookVectorInput /= new Vector2(Screen.width, Screen.height); }
     }
 
     public void CameraChange(InputAction.CallbackContext context)
