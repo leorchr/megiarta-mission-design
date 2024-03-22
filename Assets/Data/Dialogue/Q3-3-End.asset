@@ -17,7 +17,7 @@ MonoBehaviour:
   - showName: 1
     character: {fileID: 11400000, guid: 2570fa5825f1e8d41872272997399cfe, type: 2}
     text: AWAITING MESSAGE TO DECIPHER
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: cbd9b6786e7c0f34085a5a8726185d4d, type: 3}
   - showName: 1
     character: {fileID: 11400000, guid: 2aa8c47d8f4c4e5448a47cbe30912646, type: 2}
     text: "Let\u2019s hope this weird message helps me figure out where the garrison
@@ -28,25 +28,25 @@ MonoBehaviour:
     text: "\"Some of us already fell to the madness inhabiting these crystals.  \nIn
       a last attempt at stopping this and protecting our own and everyone else\u2019s
       sanity, we decided to go into the cave at dusk to seal it. "
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: e980fb2336b5ae04d977413678112796, type: 3}
   - showName: 1
     character: {fileID: 11400000, guid: 2570fa5825f1e8d41872272997399cfe, type: 2}
     text: " But it seems that the madness is aware of our plan ; our initial goal
       to seal the cave seems to have been compromised the moment we stepped foot
       in it. \r\nWe desperately argue, as some of us, now unable to think with reason,
       desire to let this insanity spread.\r"
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: bc381b42568cf8b4aa3c3e76a2ee90f7, type: 3}
   - showName: 1
     character: {fileID: 11400000, guid: 2570fa5825f1e8d41872272997399cfe, type: 2}
     text: "I will not allow this. If I have to seal us within the cave\u2019s walls
       to stop this : I\u2019ll do so. \r\nI will try to stealthily get this letter
       outside this hellhole ; hoping that no one will notice me.\r\n"
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: d457ddfbcbcd33a40a539041b7594525, type: 3}
   - showName: 1
     character: {fileID: 11400000, guid: 2570fa5825f1e8d41872272997399cfe, type: 2}
     text: "To whoever finds this letter : send the duke my regards.\n\n- Captain
       Gilead ROBENSON\u201C"
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: 6f143c5f1f02ecd429665f7c92482a14, type: 3}
   - showName: 1
     character: {fileID: 11400000, guid: 2aa8c47d8f4c4e5448a47cbe30912646, type: 2}
     text: "To the cave we go\u2026"

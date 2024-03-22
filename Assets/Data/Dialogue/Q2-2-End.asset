@@ -17,7 +17,7 @@ MonoBehaviour:
   - showName: 1
     character: {fileID: 11400000, guid: 2570fa5825f1e8d41872272997399cfe, type: 2}
     text: AWAITING MESSAGE TO DECIPHER
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: cbd9b6786e7c0f34085a5a8726185d4d, type: 3}
   - showName: 1
     character: {fileID: 11400000, guid: 2aa8c47d8f4c4e5448a47cbe30912646, type: 2}
     text: And one report to decipher.
@@ -35,23 +35,23 @@ MonoBehaviour:
     text: "Duke,  It is with great concern that I write to you what might be my last
       letter. Our discoveries and our greed towards the crystals discovered in the
       secret cave of Kadoken Island might lead to the garrison\u2019s demise. "
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: cc0ffd8d07fdae24a9754db383068df8, type: 3}
   - showName: 1
     character: {fileID: 11400000, guid: 2570fa5825f1e8d41872272997399cfe, type: 2}
     text: It took us too much time to notice that madness progressively took over
       the men and women on the island once the crystals were discovered.
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: a28432eb7c5d0ee41b1486f3daf1c828, type: 3}
   - showName: 1
     character: {fileID: 11400000, guid: 2570fa5825f1e8d41872272997399cfe, type: 2}
     text: 'But it only took us a few hours to understand : the crystals were slowly
       killing us ; for such exceptional magical properties were not meant to be wielded
       or exposed to mere mortals. '
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: b607457534c8a5a4c91095aac2be0d00, type: 3}
   - showName: 1
     character: {fileID: 11400000, guid: 2570fa5825f1e8d41872272997399cfe, type: 2}
     text: 'Sir, if no other report coming from the island finds you, please, do not
       send any help or any reinforcements. We will try to put an end to- '
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: d61b15c20226dee40b67bb9b95bff0f5, type: 3}
   - showName: 1
     character: {fileID: 11400000, guid: 2570fa5825f1e8d41872272997399cfe, type: 2}
     text: '*The letter seems unfinished*'
