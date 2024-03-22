@@ -10,9 +10,12 @@ public class GameManager : MonoBehaviour
 
     public void OpenPause(InputAction.CallbackContext callbackContext)
     {
-        Time.timeScale = 0;
-        pauseMenu.SetActive(true);
-        Cursor.visible = true;
-        PlayerController.instance.lockPlayer();
+        if(!DialogueManager.instance.isOnDialogue())
+        {
+            Time.timeScale = 0;
+            pauseMenu.SetActive(true);
+            Cursor.visible = true;
+            PlayerController.instance.lockPlayer();
+        }
     }
 }

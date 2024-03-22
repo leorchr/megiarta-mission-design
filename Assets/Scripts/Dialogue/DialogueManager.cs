@@ -186,4 +186,14 @@ public class DialogueManager : MonoBehaviour
         }
         
     }
+
+    public bool isOnDialogue()
+    {
+        if(currentDialogue != null)
+        {
+            return currentDialogue.dialogueType == DialogueType.Manual;
+        }
+
+        return false;
+    }
 }
