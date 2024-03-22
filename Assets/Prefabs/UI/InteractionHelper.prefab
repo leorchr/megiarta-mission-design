@@ -48,6 +48,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionCue: {fileID: 6642045755375413064}
   vfxParticles: {fileID: 609303100850352991}
+  ControllerButton: {fileID: 21300000, guid: 990775ef851349540be62689acfdbd31, type: 3}
+  KeyboardButton: {fileID: 21300000, guid: fd03c5fdea8642947a0259201abbee9a, type: 3}
 --- !u!1 &6642045755375413064
 GameObject:
   m_ObjectHideFlags: 0

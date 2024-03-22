@@ -10,6 +10,8 @@ public class InteractionHelper : MonoBehaviour
     private Transform vfxPos;
     private float dist, scale;
 
+    public Sprite ControllerButton, KeyboardButton;
+
     private void Awake()
     {
         Instance = this;
@@ -38,6 +40,17 @@ public class InteractionHelper : MonoBehaviour
                     interactionUiPos = PlayerInteraction.Instance._possiblePickable.UiPos;
                     //interactionCue.transform.parent = PlayerInteraction.Instance._possiblePickable.gameObject.transform;
                     interactionCue.transform.position = interactionUiPos.position;
+                    switch (InputManager.instance.getCurrentControlScheme())
+                    {
+                        case ControlScheme.Keyboard:
+                            interactionCue.GetComponent<SpriteRenderer>().sprite = KeyboardButton;
+                            break;
+                        case ControlScheme.Controller:
+                            interactionCue.GetComponent<SpriteRenderer>().sprite = ControllerButton;
+                            break;
+                        default: break;
+                    }
+                    
                 }
 
                 if (PlayerInteraction.Instance._possiblePickable.VfxPos == null)
