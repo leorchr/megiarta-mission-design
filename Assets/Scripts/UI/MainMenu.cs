@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
@@ -40,7 +41,7 @@ public class MainMenu : MonoBehaviour
     {
         UiSettings.SetActive(true);
         UiMenu.SetActive(false);
-        inputEventSystem.firstSelectedGameObject = exitButton;
+        exitButton.GetComponent<Button>().Select();
     }
 
     public void QuitGame()
@@ -52,6 +53,6 @@ public class MainMenu : MonoBehaviour
     {
         UiMenu.SetActive(true);
         UiSettings.SetActive(false);
-        inputEventSystem.firstSelectedGameObject = playButton;
+        playButton.GetComponent<Button>().Select();
     }
 }
