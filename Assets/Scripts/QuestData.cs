@@ -19,6 +19,7 @@ public class QuestData : ScriptableObject
     {
         currentStep = 0;
         DialogueManager.instance.PlayDialogue(steps[currentStep].BeginDialogue);
+        InteractionHelper.Instance.ShowParticles();
     }
     public QuestStep GetCurrentStep()
     {
@@ -28,6 +29,7 @@ public class QuestData : ScriptableObject
     public void NextStep()
     {
         DialogueManager.instance.PlayDialogue(steps[currentStep].EndDialogue);
+        InteractionHelper.Instance.ShowParticles();
         currentStep++;
         if (IsFinished())
         {

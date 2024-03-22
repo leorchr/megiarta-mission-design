@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 
 public class InteractionHelper : MonoBehaviour
@@ -7,10 +8,10 @@ public class InteractionHelper : MonoBehaviour
     public GameObject interactionCue, vfxParticles;
     private GameObject cam;
     private Transform interactionUiPos;
-    private Transform vfxPos;
     private float dist, scale;
 
     public Sprite ControllerButton, KeyboardButton;
+    private Pickable[] foundPickableObjects;
 
     private void Awake()
     {
@@ -21,7 +22,7 @@ public class InteractionHelper : MonoBehaviour
     {
         cam = GameObject.FindGameObjectWithTag("MainCamera");
         interactionCue.SetActive(false);
-        vfxParticles.SetActive(false);
+        foundPickableObjects = FindObjectsOfType<Pickable>();
     }
 
     public void Show(InteractionType interaction = InteractionType.None)
@@ -39,24 +40,7 @@ public class InteractionHelper : MonoBehaviour
                 {
                     interactionUiPos = PlayerInteraction.Instance._possiblePickable.UiPos;
                     //interactionCue.transform.parent = PlayerInteraction.Instance._possiblePickable.gameObject.transform;
-                    interactionCue.transform.position = interactionUiPos.position;
-                    
-                    
-                }
-
-                if (PlayerInteraction.Instance._possiblePickable.VfxPos == null)
-                {
-                    Debug.LogWarning("Missing VFX Position in pickable");
-                    return;
-                }
-                else
-                {
-                    vfxPos = PlayerInteraction.Instance._possiblePickable.VfxPos;
-                    //vfxParticles.transform.parent = PlayerInteraction.Instance._possiblePickable.gameObject.transform;
-                    vfxParticles.transform.position = vfxPos.position;
-                }
-
-
+                    interactionCue.transform.position = interactionUiPos.position;                }
             }
             else
             {
@@ -72,14 +56,40 @@ public class InteractionHelper : MonoBehaviour
             }
 
             interactionCue.SetActive(true);
-            vfxParticles.SetActive(true);
             dist = Vector3.Distance(cam.transform.position, interactionUiPos.position);
             scale = interactionUiPos.localScale.x;
         }
         else
         {
             interactionCue.SetActive(false);
-            vfxParticles.SetActive(false);
+        }
+    }
+
+    public void ShowParticles()
+    {
+        var quests = QuestManager.Instance.questsProgress;
+        for (int i = 0; i < quests.Count; i++)
+        {
+            for (int y = 0; y < quests[i].steps[quests[i].currentStep].requirements.Count; y++)
+            {
+                foreach (var pickable in foundPickableObjects)
+                {
+                    Pickable pick = pickable.GetComponent<Pickable>();
+                    if(pick.item == quests[i].steps[quests[i].currentStep].requirements[y].item)
+                    {
+                        if (pick.VfxPos == null)
+                        {
+                            Debug.LogWarning("Missing VFX Position in pickable");
+                            return;
+                        }
+                        else
+                        {
+                            GameObject particles = Instantiate(vfxParticles, pick.VfxPos);
+                            particles.transform.parent = pick.gameObject.transform;
+                        }
+                    }
+                }
+            }
         }
     }
 
