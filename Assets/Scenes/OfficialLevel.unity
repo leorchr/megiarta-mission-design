@@ -2154,6 +2154,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 14.772412, y: 17.06026, z: 3.1456022}
   m_Center: {x: 11.970601, y: 8.215483, z: 1.936826}
+--- !u!114 &188755795 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4806337603124573346, guid: c48943a3488df4d438cfd1728a5025c0,
+    type: 3}
+  m_PrefabInstance: {fileID: 448058074}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &194617334
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4536,6 +4548,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 24300002, guid: eb1923421539a6a4589238b2749b3283,
         type: 2}
+    - target: {fileID: 8440144082423518775, guid: c48943a3488df4d438cfd1728a5025c0,
+        type: 3}
+      propertyPath: plInput
+      value: 
+      objectReference: {fileID: 188755795}
     - target: {fileID: 8796253216393764117, guid: c48943a3488df4d438cfd1728a5025c0,
         type: 3}
       propertyPath: sensitivity
