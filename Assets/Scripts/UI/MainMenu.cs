@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
@@ -10,8 +11,12 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private GameObject blackScreen;
     [SerializeField] private GameObject UiSettings;
     [SerializeField] private GameObject UiMenu;
+    [SerializeField] private GameObject map;
+    [SerializeField] private GameObject exclamation;
+    [SerializeField] private GameObject close;
 
     [SerializeField] private AudioClip introSound;
+    [SerializeField] private AudioSource SFXSource;
     [SerializeField] private AudioSource ambienceSource;
 
     [Header("Controller Support")]
@@ -27,9 +32,28 @@ public class MainMenu : MonoBehaviour
 
     private void PlayIntroSound()
     {
-        ambienceSource.clip = introSound;
-        ambienceSource.Play();
+        SFXSource.clip = introSound;
+        SFXSource.Play();
+        ambienceSource.volume = 0.3f;
+        Invoke("Map", 5f);
+        Invoke("Exclamation", 9f);
+        Invoke("Target", 13f);
         Invoke("SceneChange", 40f);
+    }
+
+    private void Map()
+    {
+        map.SetActive(true);
+    }
+
+    private void Exclamation()
+    {
+        exclamation.SetActive(true);
+    }
+    
+    private void Target()
+    {
+        close.SetActive(true);
     }
 
     private void SceneChange()
