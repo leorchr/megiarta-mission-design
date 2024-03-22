@@ -38,11 +38,14 @@ MonoBehaviour:
     audioClip: {fileID: 0}
   - showName: 1
     character: {fileID: 11400000, guid: 2570fa5825f1e8d41872272997399cfe, type: 2}
-    text: 'It took us too much time to notice that madness progressively took over
-      the men and women on the island once the crystals were discovered. But it only
-      took us a few hours to understand : the crystals were slowly killing us ; for
-      such exceptional magical properties were not meant to be wielded or exposed
-      to mere mortals. '
+    text: It took us too much time to notice that madness progressively took over
+      the men and women on the island once the crystals were discovered.
+    audioClip: {fileID: 0}
+  - showName: 1
+    character: {fileID: 11400000, guid: 2570fa5825f1e8d41872272997399cfe, type: 2}
+    text: 'But it only took us a few hours to understand : the crystals were slowly
+      killing us ; for such exceptional magical properties were not meant to be wielded
+      or exposed to mere mortals. '
     audioClip: {fileID: 0}
   - showName: 1
     character: {fileID: 11400000, guid: 2570fa5825f1e8d41872272997399cfe, type: 2}
