@@ -29,7 +29,6 @@ public class QuestData : ScriptableObject
     public void NextStep()
     {
         DialogueManager.instance.PlayDialogue(steps[currentStep].EndDialogue);
-        InteractionHelper.Instance.ShowParticles();
         currentStep++;
         if (IsFinished())
         {
@@ -38,6 +37,7 @@ public class QuestData : ScriptableObject
         else
         {
             QuestManager.Instance.Notify();
+            InteractionHelper.Instance.ShowParticles();
         }
     }
 
