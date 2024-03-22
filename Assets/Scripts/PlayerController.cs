@@ -167,7 +167,7 @@ public class PlayerController : MonoBehaviour
 
     private bool canJump()
     {
-        return !isJumping && isGrounded;
+        return !isJumping && isGrounded && !isLocked;
     }
 
     public void lockPlayer()
