@@ -21,9 +21,16 @@ public class QuestInteractor : Interactive
         {
             if (QGInfo.currentQuest != null)
             {
-                DialogueSC currentQDialogue = QGInfo.currentQuest.GetCurrentStep().BeginDialogue;
-                if (currentQDialogue != null) { DialogueManager.instance.PlayDialogue(currentQDialogue); }
-                else { DialogueManager.instance.PlayDialogue(QGInfo.defaultDialogue); }
+                if (!QGInfo.currentQuest.IsFinished())
+                {
+                    DialogueSC currentQDialogue = QGInfo.currentQuest.GetCurrentStep().BeginDialogue;
+                    if (currentQDialogue != null) { DialogueManager.instance.PlayDialogue(currentQDialogue); }
+                    else { DialogueManager.instance.PlayDialogue(QGInfo.defaultDialogue); }
+                }
+                else
+                {
+                    DialogueManager.instance.PlayDialogue(QGInfo.defaultDialogue);
+                }
                 
             }
             else
