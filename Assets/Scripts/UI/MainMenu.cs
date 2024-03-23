@@ -82,4 +82,9 @@ public class MainMenu : MonoBehaviour
         UiSettings.SetActive(false);
         playButton.GetComponent<Button>().Select();
     }
+
+    private void Awake()
+    {
+        Time.timeScale = 1;
+    }
 }
