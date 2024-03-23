@@ -1651,7 +1651,7 @@ MonoBehaviour:
   ambienceSource: {fileID: 845301629}
   inputEventSystem: {fileID: 955711826}
   exitButton: {fileID: 1990277363}
-  playButton: {fileID: 1039804029}
+  playButton: {fileID: 1283260289}
   Intro: {fileID: 11400000, guid: 6b1b1b96a0b87074eb7c52d21c4aadb2, type: 2}
 --- !u!1 &529938737
 GameObject:

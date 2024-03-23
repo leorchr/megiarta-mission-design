@@ -23,7 +23,9 @@ MonoBehaviour:
     requirements:
     - item: {fileID: 11400000, guid: 989be1f4ca2146c44a95775493f25a12, type: 2}
       quantity: 1
+    skipIf: []
     placeToVisit: {fileID: 0}
+    ReportGO: {fileID: 0}
     SpecialEventCode: 0
   - questType: 0
     stepName: Find a strong material to fuse with this branch.
@@ -33,19 +35,23 @@ MonoBehaviour:
     requirements:
     - item: {fileID: 11400000, guid: c56a3323767441f47908193de34bf0b2, type: 2}
       quantity: 1
+    skipIf: []
     placeToVisit: {fileID: 0}
+    ReportGO: {fileID: 0}
     SpecialEventCode: 0
   - questType: 3
     stepName: "Use the armory\u2019s smelter to create a unique tool !"
     BeginDialogue: {fileID: 0}
-    EndDialogue: {fileID: 0}
+    EndDialogue: {fileID: 11400000, guid: 5f2e463f32645ab42a718285df692c50, type: 2}
     interactorTriger: {fileID: 11400000, guid: f62aeb438384b774c8ac04f772dc4fa2, type: 2}
     requirements:
     - item: {fileID: 11400000, guid: c56a3323767441f47908193de34bf0b2, type: 2}
       quantity: 1
     - item: {fileID: 11400000, guid: 989be1f4ca2146c44a95775493f25a12, type: 2}
       quantity: 1
+    skipIf: []
     placeToVisit: {fileID: 0}
+    ReportGO: {fileID: 0}
     SpecialEventCode: 0
   currentStep: 3
   interactor: {fileID: 0}

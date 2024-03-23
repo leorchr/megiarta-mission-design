@@ -21,7 +21,10 @@ MonoBehaviour:
     audioClip: {fileID: 8300000, guid: 4fa8bf10c9ff57f4c812c953c38ae0fc, type: 3}
   - showName: 0
     character: {fileID: 0}
-    text: Here, you will be greatly rewarded. Thanks to your report, they will take
-      their precautions for the next group, and maybe save the future adventurers
-      from a certain death.
+    text: Here, you will be greatly rewarded.
+    audioClip: {fileID: 0}
+  - showName: 0
+    character: {fileID: 0}
+    text: Thanks to your report, they will take their precautions for the next group,
+      and maybe save the future adventurers from a certain death.
     audioClip: {fileID: 0}
