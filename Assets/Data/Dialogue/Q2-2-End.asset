@@ -21,7 +21,7 @@ MonoBehaviour:
   - showName: 1
     character: {fileID: 11400000, guid: 2aa8c47d8f4c4e5448a47cbe30912646, type: 2}
     text: And one report to decipher.
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: 784609ba0670a9b429dee507db6696a3, type: 3}
   - showName: 1
     character: {fileID: 11400000, guid: 2570fa5825f1e8d41872272997399cfe, type: 2}
     text: ...
@@ -59,4 +59,4 @@ MonoBehaviour:
   - showName: 1
     character: {fileID: 11400000, guid: 2aa8c47d8f4c4e5448a47cbe30912646, type: 2}
     text: ... I have to get to the bottom of this. I have to find this accursed cave.
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: edf723c609fd2c442b3503ef5f606591, type: 3}

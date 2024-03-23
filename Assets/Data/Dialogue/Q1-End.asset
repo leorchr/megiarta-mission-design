@@ -22,7 +22,7 @@ MonoBehaviour:
     character: {fileID: 11400000, guid: 2aa8c47d8f4c4e5448a47cbe30912646, type: 2}
     text: "That\u2019s the kind of \u201CArtifacts\u201D used by the \u201CDuchy\u201D
       to decipher encrypted messages."
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: 266661d37aa4895429aa1167bbe7583a, type: 3}
   - showName: 1
     character: {fileID: 11400000, guid: 2570fa5825f1e8d41872272997399cfe, type: 2}
     text: AWAITING MESSAGE TO DECIPHER
