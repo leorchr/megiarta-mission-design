@@ -28,4 +28,10 @@ public class Question : MonoBehaviour
             if (yesToggle.isOn && noToggle.isOn) { yesToggle.isOn = false;}
         }
     }
+
+    public void resetToggle()
+    {
+        yesToggle.isOn = false;
+        noToggle.isOn = false;  
+    }
 }

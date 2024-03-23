@@ -14,15 +14,35 @@ public class QuestionManager : MonoBehaviour
 
     public List<QuestionAnswer> answerList;
 
-    // Start is called before the first frame update
-    void Start()
+    public DialogueSC dialogueWrong;
+
+    public void ResetQuestion()
     {
-        
+        foreach (QuestionAnswer qa in answerList)
+        {
+            qa.question.resetToggle();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Submit()
     {
-        
+        bool isValid = true;
+        foreach (QuestionAnswer qa in answerList)
+        {
+            if (qa.goodAnswer != qa.question.getChoice())
+            {
+                isValid = false;
+                break;
+            }
+        }
+        if (isValid)
+        {
+            GameManager.instance.EndGame();
+        }
+        else
+        {
+            ResetQuestion();
+            DialogueManager.instance.PlayDialogue(dialogueWrong);
+        }
     }
 }
