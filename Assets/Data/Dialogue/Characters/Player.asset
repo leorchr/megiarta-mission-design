@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a26c43584fc95f64494775282328d222, type: 3}
   m_Name: Player
   m_EditorClassIdentifier: 
-  characterName: Player
+  characterName: You
   nameColor: {r: 0.227451, g: 0.8509804, b: 0.3942372, a: 1}
   defaultColorText: {r: 1, g: 1, b: 1, a: 1}
