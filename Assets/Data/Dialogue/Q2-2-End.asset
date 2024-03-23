@@ -35,18 +35,18 @@ MonoBehaviour:
     text: "Duke,  It is with great concern that I write to you what might be my last
       letter. Our discoveries and our greed towards the crystals discovered in the
       secret cave of Kadoken Island might lead to the garrison\u2019s demise. "
-    audioClip: {fileID: 8300000, guid: cc0ffd8d07fdae24a9754db383068df8, type: 3}
+    audioClip: {fileID: 8300000, guid: ff36af05da338d64ebd25cf883c2ef4f, type: 3}
   - showName: 1
     character: {fileID: 11400000, guid: 2570fa5825f1e8d41872272997399cfe, type: 2}
     text: It took us too much time to notice that madness progressively took over
       the men and women on the island once the crystals were discovered.
-    audioClip: {fileID: 8300000, guid: a28432eb7c5d0ee41b1486f3daf1c828, type: 3}
+    audioClip: {fileID: 8300000, guid: 0a5ade6e6eee41942a93c1d25b31713b, type: 3}
   - showName: 1
     character: {fileID: 11400000, guid: 2570fa5825f1e8d41872272997399cfe, type: 2}
     text: 'But it only took us a few hours to understand : the crystals were slowly
       killing us ; for such exceptional magical properties were not meant to be wielded
       or exposed to mere mortals. '
-    audioClip: {fileID: 8300000, guid: b607457534c8a5a4c91095aac2be0d00, type: 3}
+    audioClip: {fileID: 8300000, guid: 5fc8e0fa68ba5324889871e60425e7a5, type: 3}
   - showName: 1
     character: {fileID: 11400000, guid: 2570fa5825f1e8d41872272997399cfe, type: 2}
     text: 'Sir, if no other report coming from the island finds you, please, do not
