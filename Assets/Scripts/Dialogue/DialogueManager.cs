@@ -46,6 +46,7 @@ public class DialogueManager : MonoBehaviour
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         playerController = (PlayerController)FindObjectOfType(typeof(PlayerController));
+        UICanvas = GameObject.Find("UI").transform.Find("Canvas").GetComponent<Canvas>();
     }
 
 
