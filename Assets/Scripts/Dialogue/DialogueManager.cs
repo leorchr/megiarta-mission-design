@@ -38,10 +38,11 @@ public class DialogueManager : MonoBehaviour
         }
         else
         {
-            Destroy(this);
+            Destroy(instance);
+            instance = this;
+            DontDestroyOnLoad(this);
         }
         currentAudioSource = GetComponent<AudioSource>();
-        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
