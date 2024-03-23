@@ -22,6 +22,7 @@ public class PauseMenu : MonoBehaviour
         }
         Time.timeScale = 1;
         Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
         Debug.Log("Resume Button");
     }
 

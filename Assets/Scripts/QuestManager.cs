@@ -160,6 +160,17 @@ public class QuestManager : MonoBehaviour
         }
     }
 
+    public void checkReport()
+    {
+        foreach (QuestData quest in questsProgress)
+        {
+            if (quest.GetCurrentStep().questType == QuestType.Report)
+            {
+                quest.NextStep();
+                return;
+            }
+        }
+    }
     public void checkEventCode(int code)
     {
         foreach (QuestData quest in questsProgress)
@@ -173,5 +184,17 @@ public class QuestManager : MonoBehaviour
                 }
             }
         }
+    }
+
+    public bool isInReport()
+    {
+        foreach (QuestData quest in questsProgress)
+        {
+            if (quest.GetCurrentStep().questType == QuestType.Report)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 }

@@ -37,6 +37,10 @@ public class QuestionManager : MonoBehaviour
         }
         if (isValid)
         {
+            Time.timeScale = 1;
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+            PlayerController.instance.unlockPlayer();
             GameManager.instance.EndGame();
         }
         else

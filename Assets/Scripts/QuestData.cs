@@ -40,6 +40,14 @@ public class QuestData : ScriptableObject
         {
             QuestManager.Instance.Notify(this);
             InteractionHelper.Instance.ShowParticles();
+            if (steps[currentStep].questType == QuestType.Report)
+            {
+                Instantiate(steps[currentStep].ReportGO,GameObject.Find("UI").transform.Find("Canvas"));
+                Time.timeScale = 0;
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
+                PlayerController.instance.lockPlayer();
+            }
             skipIfSkippable();
         }
     }
@@ -66,7 +74,7 @@ public class QuestData : ScriptableObject
 
 }
 
-public enum QuestType {pickItem, giveItem, triggerZone, interactWithInteractor, SpecialEvent }
+public enum QuestType {pickItem, giveItem, triggerZone, interactWithInteractor, Report, SpecialEvent }
 
 [Serializable]
 public class QuestStep
@@ -85,6 +93,8 @@ public class QuestStep
     public List<QuestData> skipIf = new List<QuestData>();
 
     public PlaceSC placeToVisit;
+
+    public GameObject ReportGO;
 
     public int SpecialEventCode;
 }

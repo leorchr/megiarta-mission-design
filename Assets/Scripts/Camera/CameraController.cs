@@ -135,8 +135,8 @@ public class CameraController : MonoBehaviour
 
             if (cData.typeOfRotation == RotationType.UseMouse)
             {
-                //Cursor.visible = false;
-                //Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+                Cursor.lockState = CursorLockMode.Locked;
             }
             else
             {

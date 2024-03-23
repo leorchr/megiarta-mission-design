@@ -26,17 +26,17 @@ MonoBehaviour:
     skipIf:
     - {fileID: 11400000, guid: 336dcf9a7129c9b4c819078756c1a3c4, type: 2}
     placeToVisit: {fileID: 0}
+    ReportGO: {fileID: 0}
     SpecialEventCode: 333
-  - questType: 4
+  - questType: 5
     stepName: "Unseal the cave\u2019s entrance."
     BeginDialogue: {fileID: 0}
     EndDialogue: {fileID: 11400000, guid: 2a8880ecaf46f3a4abec2303995aa210, type: 2}
     interactorTriger: {fileID: 0}
-    requirements:
-    - item: {fileID: 11400000, guid: b235e9cbac7110a4da5894c9d751263b, type: 2}
-      quantity: 0
+    requirements: []
     skipIf: []
     placeToVisit: {fileID: 0}
+    ReportGO: {fileID: 0}
     SpecialEventCode: 333
   - questType: 2
     stepName: Investigate the cave.
@@ -46,6 +46,7 @@ MonoBehaviour:
     requirements: []
     skipIf: []
     placeToVisit: {fileID: 11400000, guid: c8fdfb1be84b38442bd70228ffb01310, type: 2}
+    ReportGO: {fileID: 0}
     SpecialEventCode: 0
   - questType: 2
     stepName: Leave the island to report your findings !
@@ -55,6 +56,18 @@ MonoBehaviour:
     requirements: []
     skipIf: []
     placeToVisit: {fileID: 11400000, guid: 403d112c8ef3fcc458765d96ec9df36b, type: 2}
+    ReportGO: {fileID: 0}
+    SpecialEventCode: 0
+  - questType: 4
+    stepName: Fill the report
+    BeginDialogue: {fileID: 0}
+    EndDialogue: {fileID: 0}
+    interactorTriger: {fileID: 0}
+    requirements: []
+    skipIf: []
+    placeToVisit: {fileID: 11400000, guid: 403d112c8ef3fcc458765d96ec9df36b, type: 2}
+    ReportGO: {fileID: 1370889702352882941, guid: 8bdd632062d4d31409e552d8a2bceff5,
+      type: 3}
     SpecialEventCode: 0
   currentStep: 4
   interactor: {fileID: 0}
