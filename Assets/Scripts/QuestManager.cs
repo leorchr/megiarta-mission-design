@@ -69,6 +69,7 @@ public class QuestManager : MonoBehaviour
         if (quest.itemReward != null)
         {
             Inventory.Instance.AddToInventory(new QuestItem(quest.itemReward, 1));
+            GameManager.instance.NewItem(quest.itemReward);
         }
         Notify(quest,quest.IsFinished());
         if(SFXManager.instance)

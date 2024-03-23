@@ -4,6 +4,7 @@ using TMPro;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -15,6 +16,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI itemName;
     [SerializeField] private GameObject newItemPanel;
     [SerializeField] private Image itemImage;
+
+    [SerializeField] private GameObject blackEndScreen;
+    [SerializeField] private AudioClip outroClip;
 
     private void Start()
     {
@@ -38,12 +42,24 @@ public class GameManager : MonoBehaviour
         print("she");
         newItemPanel.SetActive(true);
         itemImage.sprite = newItem.icon;
-        itemName.text = newItem.name;
-        Invoke("newItemPanel", 4f);
+        itemName.text = newItem.label;
+        Invoke("Despawn", 4f);
     }
 
-    public void Despawn()
+    private void Despawn()
     {
         newItemPanel.SetActive(false);
+    }
+
+    public void EndGame()
+    {
+        blackEndScreen.SetActive(true);
+        SFXManager.instance.PlaySound(outroClip);
+        Invoke("EndGameLoadScene", 36f);
+    }
+
+    private void EndGameLoadScene()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 }

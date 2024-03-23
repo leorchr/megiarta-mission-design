@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c76d6368d8b97e4ea73169e473ddea6, type: 3}
   m_Name: CaptainsReport
   m_EditorClassIdentifier: 
-  label: "Captain\u2019s report"
+  label: "Captain\u2019s Report"
   icon: {fileID: 21300000, guid: 100b5bbee23779c499c6b698490bb5c3, type: 3}
