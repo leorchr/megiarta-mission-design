@@ -21,6 +21,9 @@ public class Rocks : Interactive
     public GameObject vfx,vfx2;
     public AudioClip RockDestroy;
 
+    public QuestData lockQuestData;
+    public int lockQuestStep;
+
     public int EventCode;
 
     public GameObject colliderRock;
@@ -35,6 +38,23 @@ public class Rocks : Interactive
         destroyIndex = 0;
     }
 
+    private void Update()
+    {
+        if (!gameObject.CompareTag("Interactive"))
+        {
+            foreach (QuestData data in QuestManager.Instance.questsProgress)
+            {
+                if (data == lockQuestData)
+                {
+                    if (data.currentStep >= lockQuestStep)
+                    {
+                        gameObject.tag = "Interactive";
+                    }
+                }
+            }
+        }
+    }
+
     public override void OnInteraction()
     {
         foreach (ItemPower ip in itemPowers)
@@ -43,7 +63,7 @@ public class Rocks : Interactive
             {
                 for (int i = 0; i < ip.power; i++)
                 {
-                    DestroyRocks();
+                   DestroyRocks();
                 }
             }
         }
@@ -59,7 +79,7 @@ public class Rocks : Interactive
 
     void DestroyRocks()
     {
-        if (rocks[destroyIndex] != null)
+        if (destroyIndex < rocks.Count && rocks[destroyIndex] != null)
         {
             GameObject vfxTemp = Instantiate(vfx, this.gameObject.transform);
             vfxTemp.transform.position = rocks[destroyIndex].transform.position;

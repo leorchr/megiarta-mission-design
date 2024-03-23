@@ -12,6 +12,7 @@ public class QuestManager : MonoBehaviour
     public Transform questParent;
 
     public QuestData startQuest;
+    public List<QuestData> finishedQuest = new List<QuestData>();
     public List<QuestData> questsProgress = new List<QuestData>();
     public Dictionary<QuestData, GameObject> questVisulization
         = new Dictionary<QuestData, GameObject>();
@@ -58,16 +59,18 @@ public class QuestManager : MonoBehaviour
             panel.GetComponent<QuestPanel>().SetupQuest(quest);
             questVisulization.Add(quest, panel);
         }
+        quest.skipIfSkippable();
     }
 
     public void CompleteQuest(QuestData quest)
     {
+        finishedQuest.Add(quest);
         Wallet.Instance.EarnMoney(quest.moneyReward);
         if (quest.itemReward != null)
         {
             Inventory.Instance.AddToInventory(new QuestItem(quest.itemReward, 1));
         }
-        Notify(quest.IsFinished());
+        Notify(quest,quest.IsFinished());
         if(SFXManager.instance)
         {
             SFXManager.instance.PlayQuestSound(SFXManager.instance.missionRewardSound);
@@ -84,20 +87,30 @@ public class QuestManager : MonoBehaviour
         }
     }
 
-    public void Notify(bool finished = false) 
+    public bool hasFinishedThisQuest(QuestData quest)
+    {
+        foreach (QuestData questData in finishedQuest) {
+            if (questData == quest)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void Notify( QuestData questTemp ,bool finished = false) 
     {
         if (SFXManager.instance)
         {
             SFXManager.instance.PlayQuestSound(SFXManager.instance.completeStepSound);
         }
-        foreach (GameObject quest in questVisulization.Values)
-        {
-            QuestPanel panel = quest.GetComponent<QuestPanel>();
-            if(!finished) panel.Notify();
-            else panel.Complete();
-        }
+        GameObject quest = questVisulization[questTemp];
+        QuestPanel panel = quest.GetComponent<QuestPanel>();
+        if(!finished) panel.Notify();
+        else panel.Complete();
     }
 
+    
     public void CheckItem(QuestItem item)
     {
         foreach (QuestData quest in questsProgress)

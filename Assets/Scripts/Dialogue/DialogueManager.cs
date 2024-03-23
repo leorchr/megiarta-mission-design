@@ -28,6 +28,7 @@ public class DialogueManager : MonoBehaviour
 
     public PlayerController playerController;
 
+    private AudioSource currentAudioSource;
     private void Awake()
     {
         if (instance == null)
@@ -38,6 +39,7 @@ public class DialogueManager : MonoBehaviour
         {
             Destroy(this);
         }
+        currentAudioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -59,6 +61,7 @@ public class DialogueManager : MonoBehaviour
         if (currentDialogue == null)
         {
             currentDialogue = dsc;
+            
         }
         else
         {
@@ -108,6 +111,7 @@ public class DialogueManager : MonoBehaviour
         }
         timeToNext = calculateTimeToRead(dsc.subDialogues[0].getString());
         currentSubdialogueID = 0;
+        playAudioClip(currentDialogue.subDialogues[currentSubdialogueID].audioClip);
     }
 
     public float calculateTimeToRead(string st)
@@ -139,7 +143,7 @@ public class DialogueManager : MonoBehaviour
             else
             {
                 DialogueBoxContent dbc = currentDialogueBox.GetComponent<DialogueBoxContent>();
-
+                playAudioClip(currentDialogue.subDialogues[currentSubdialogueID].audioClip);
                 if (dbc.hasSpecificNamePos)
                 {
                     dbc.nameText.text = currentDialogue.subDialogues[currentSubdialogueID].getName();
@@ -156,6 +160,16 @@ public class DialogueManager : MonoBehaviour
             
         }
     }
+
+    void playAudioClip(AudioClip clip)
+    {
+        if (clip != null)
+        {
+            currentAudioSource.Stop();
+            currentAudioSource.PlayOneShot(clip);
+        }
+    }
+
     public void OnDialogueEnd()
     {
         

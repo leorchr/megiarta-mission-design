@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Quest 4
   m_EditorClassIdentifier: 
   questName: Into the dark
+  isSideQuest: 0
   steps:
   - questType: 0
     stepName: Find a tool to destroy the rocks blocking the cave.
@@ -22,8 +23,10 @@ MonoBehaviour:
     requirements:
     - item: {fileID: 11400000, guid: b235e9cbac7110a4da5894c9d751263b, type: 2}
       quantity: 1
+    skipIf:
+    - {fileID: 11400000, guid: 336dcf9a7129c9b4c819078756c1a3c4, type: 2}
     placeToVisit: {fileID: 0}
-    SpecialEventCode: 0
+    SpecialEventCode: 333
   - questType: 4
     stepName: "Unseal the cave\u2019s entrance."
     BeginDialogue: {fileID: 0}
@@ -32,6 +35,7 @@ MonoBehaviour:
     requirements:
     - item: {fileID: 11400000, guid: b235e9cbac7110a4da5894c9d751263b, type: 2}
       quantity: 0
+    skipIf: []
     placeToVisit: {fileID: 0}
     SpecialEventCode: 333
   - questType: 2
@@ -42,6 +46,7 @@ MonoBehaviour:
     requirements:
     - item: {fileID: 0}
       quantity: 0
+    skipIf: []
     placeToVisit: {fileID: 11400000, guid: c8fdfb1be84b38442bd70228ffb01310, type: 2}
     SpecialEventCode: 0
   - questType: 2
@@ -50,9 +55,11 @@ MonoBehaviour:
     EndDialogue: {fileID: 0}
     interactorTriger: {fileID: 0}
     requirements: []
+    skipIf: []
     placeToVisit: {fileID: 11400000, guid: 403d112c8ef3fcc458765d96ec9df36b, type: 2}
     SpecialEventCode: 0
-  currentStep: 1
+  currentStep: 4
   interactor: {fileID: 0}
   moneyReward: 40
+  itemReward: {fileID: 0}
   questGivenWhenFinish: {fileID: 0}

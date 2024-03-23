@@ -20,6 +20,8 @@ public class QuestData : ScriptableObject
         currentStep = 0;
         DialogueManager.instance.PlayDialogue(steps[currentStep].BeginDialogue);
         InteractionHelper.Instance.ShowParticles();
+        
+
     }
     public QuestStep GetCurrentStep()
     {
@@ -36,8 +38,25 @@ public class QuestData : ScriptableObject
         }
         else
         {
-            QuestManager.Instance.Notify();
+            QuestManager.Instance.Notify(this);
             InteractionHelper.Instance.ShowParticles();
+            skipIfSkippable();
+        }
+    }
+
+    public void skipIfSkippable()
+    {
+        if (steps[currentStep].skipIf.Count != 0)
+        {
+            bool skip = true;
+            foreach (QuestData q in steps[currentStep].skipIf)
+            {
+                if (!QuestManager.Instance.hasFinishedThisQuest(q))
+                {
+                    skip = false; break;
+                }
+            }
+            if (skip) NextStep();
         }
     }
 
@@ -62,6 +81,8 @@ public class QuestStep
     public QuestGiver interactorTriger;
 
     public List<QuestItem> requirements = new List<QuestItem>();
+
+    public List<QuestData> skipIf = new List<QuestData>();
 
     public PlaceSC placeToVisit;
 

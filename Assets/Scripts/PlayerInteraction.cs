@@ -29,7 +29,7 @@ public class PlayerInteraction : MonoBehaviour
             if (_possibleInteraction == InteractionType.Pickup && _possiblePickable && IsPickableNeeded())
             {
                 Pickup();
-                QuestManager.Instance.Notify();
+                //QuestManager.Instance.Notify();
             }
             else if (_possibleInteraction != InteractionType.Pickup)
             {
