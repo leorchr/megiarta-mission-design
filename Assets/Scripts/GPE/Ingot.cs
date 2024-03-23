@@ -4,5 +4,8 @@ using UnityEngine;
 
 public class Ingot : Pickable
 {
-    
+    public override void OnPick()
+    {
+
+    }
 }

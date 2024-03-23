@@ -120,6 +120,9 @@ public class QuestManager : MonoBehaviour
                 if (quest.GetCurrentStep().requirements[0].item == item.item)
                 {
                     quest.NextStep();
+                    GameObject questGO = questVisulization[quest];
+                    QuestPanel panel = questGO.GetComponent<QuestPanel>();
+                    panel.Notify();
                     return;
                 }
             }
