@@ -24,10 +24,13 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private GameObject exitButton;
     [SerializeField] private GameObject playButton;
 
+    [SerializeField] private DialogueSC Intro;
+
     public void StartGame()
     {
         blackScreen.SetActive(true);
         Invoke("PlayIntroSound", 2f);
+        DialogueManager.instance.PlayDialogue(Intro);
     }
 
     private void PlayIntroSound()
@@ -38,7 +41,7 @@ public class MainMenu : MonoBehaviour
         Invoke("Map", 5f);
         Invoke("Exclamation", 9f);
         Invoke("Target", 13f);
-        Invoke("SceneChange", 40f);
+        Invoke("SceneChange", 37f);
     }
 
     private void Map()
