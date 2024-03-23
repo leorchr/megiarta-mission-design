@@ -544,7 +544,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: QUESTION 1
+  m_text: '- Did the garrison survive ?'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4321a296b5f1fe742a800b7ca63a6dfc, type: 2}
   m_sharedMaterial: {fileID: -5362464348495770838, guid: 4321a296b5f1fe742a800b7ca63a6dfc,
@@ -829,7 +829,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: QUESTION 1
+  m_text: '- Was the garrison found ?'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4321a296b5f1fe742a800b7ca63a6dfc, type: 2}
   m_sharedMaterial: {fileID: -5362464348495770838, guid: 4321a296b5f1fe742a800b7ca63a6dfc,
@@ -2101,7 +2101,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: QUESTION 1
+  m_text: '- Is there physical evidence of
+
+    such findings ?'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4321a296b5f1fe742a800b7ca63a6dfc, type: 2}
   m_sharedMaterial: {fileID: -5362464348495770838, guid: 4321a296b5f1fe742a800b7ca63a6dfc,
@@ -4283,7 +4285,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: QUESTION 1
+  m_text: "- Are the crystals found on \nKadoken Island safe to exploit ?"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4321a296b5f1fe742a800b7ca63a6dfc, type: 2}
   m_sharedMaterial: {fileID: -5362464348495770838, guid: 4321a296b5f1fe742a800b7ca63a6dfc,
@@ -4473,10 +4475,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 0
+    m_Left: 9
     m_Right: 0
-    m_Top: 0
-    m_Bottom: 0
+    m_Top: -30
+    m_Bottom: 18
   m_ChildAlignment: 0
   m_Spacing: 15
   m_ChildForceExpandWidth: 1
