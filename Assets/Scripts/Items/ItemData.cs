@@ -10,17 +10,17 @@ public class ItemData : ScriptableObject
 
     private void OnValidate()
     {
-#if UNITY_EDITOR
         if (UID == Guid.Empty)
         {
             UID = Guid.NewGuid();
+#if UNITY_EDITOR
             UnityEditor.EditorUtility.SetDirty(this);
-        }
 #endif
+        }
     }
 
     public bool Equals(ItemData data)
     {
-        return data != null && UID == data.UID;
+        return data != null && data == this;
     }
 }
