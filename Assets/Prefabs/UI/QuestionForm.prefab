@@ -477,7 +477,7 @@ MonoBehaviour:
     goodAnswer: 2
   - question: {fileID: 3239065609838473747}
     goodAnswer: 1
-  dialogueWrong: {fileID: 0}
+  dialogueWrong: {fileID: 11400000, guid: 7b8eba0573938cf489f905800a7a5b5a, type: 2}
 --- !u!1 &1395037946108073806
 GameObject:
   m_ObjectHideFlags: 0

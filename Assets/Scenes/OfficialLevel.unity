@@ -5778,7 +5778,7 @@ MonoBehaviour:
   newItemPanel: {fileID: 307097101}
   itemImage: {fileID: 1185632793}
   blackEndScreen: {fileID: 588388376}
-  outroClip: {fileID: 8300000, guid: 4fa8bf10c9ff57f4c812c953c38ae0fc, type: 3}
+  outroClip: {fileID: 11400000, guid: b58cf7deb487b6d4eac6592361be85d7, type: 2}
 --- !u!1 &588092320
 GameObject:
   m_ObjectHideFlags: 0

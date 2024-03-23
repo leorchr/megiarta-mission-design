@@ -18,7 +18,7 @@ MonoBehaviour:
     character: {fileID: 0}
     text: 'After finding out what happened to the garrison, you decided to leave
       Kadoken Island to inform the duchy of your discoveries. '
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: 4fa8bf10c9ff57f4c812c953c38ae0fc, type: 3}
   - showName: 0
     character: {fileID: 0}
     text: Here, you will be greatly rewarded. Thanks to your report, they will take

@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Image itemImage;
 
     [SerializeField] private GameObject blackEndScreen;
-    [SerializeField] private AudioClip outroClip;
+    [SerializeField] private DialogueSC outroClip;
 
     private void Start()
     {
@@ -55,7 +55,7 @@ public class GameManager : MonoBehaviour
     public void EndGame()
     {
         blackEndScreen.SetActive(true);
-        SFXManager.instance.PlaySound(outroClip);
+        DialogueManager.instance.PlayDialogue(outroClip);
         Invoke("EndGameLoadScene", 36f);
     }
 
