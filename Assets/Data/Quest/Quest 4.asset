@@ -43,9 +43,7 @@ MonoBehaviour:
     BeginDialogue: {fileID: 0}
     EndDialogue: {fileID: 11400000, guid: 06dd9ccf193a4014caeb420edad53df8, type: 2}
     interactorTriger: {fileID: 0}
-    requirements:
-    - item: {fileID: 0}
-      quantity: 0
+    requirements: []
     skipIf: []
     placeToVisit: {fileID: 11400000, guid: c8fdfb1be84b38442bd70228ffb01310, type: 2}
     SpecialEventCode: 0
