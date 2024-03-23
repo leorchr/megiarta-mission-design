@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [CreateAssetMenu(menuName = "Quest System/Quest")]
 public class QuestData : ScriptableObject
@@ -42,7 +43,8 @@ public class QuestData : ScriptableObject
             InteractionHelper.Instance.ShowParticles();
             if (steps[currentStep].questType == QuestType.Report)
             {
-                Instantiate(steps[currentStep].ReportGO,GameObject.Find("UI").transform.Find("Canvas"));
+                GameObject form = Instantiate(steps[currentStep].ReportGO,GameObject.Find("UI").transform.Find("Canvas"));
+                form.GetComponent<QuestionManager>().toggle.GetComponent<Toggle>().Select();
                 Time.timeScale = 0;
                 Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.None;

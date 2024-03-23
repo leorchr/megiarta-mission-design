@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class QuestionManager : MonoBehaviour
 {
+    public GameObject toggle;
+
     [Serializable]
     public struct QuestionAnswer
     {
