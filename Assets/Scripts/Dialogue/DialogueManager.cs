@@ -5,6 +5,7 @@ using TMPro;
 using System.Linq;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -46,7 +47,10 @@ public class DialogueManager : MonoBehaviour
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         playerController = (PlayerController)FindObjectOfType(typeof(PlayerController));
-        UICanvas = GameObject.Find("UI").transform.Find("Canvas").GetComponent<Canvas>();
+        if (GameObject.Find("UI") != null)
+        {
+            UICanvas = GameObject.Find("UI").transform.Find("Canvas").GetComponent<Canvas>();
+        }
     }
 
 
