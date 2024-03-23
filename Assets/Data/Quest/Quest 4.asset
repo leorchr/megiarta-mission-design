@@ -18,7 +18,7 @@ MonoBehaviour:
   - questType: 0
     stepName: Find a tool to destroy the rocks blocking the cave.
     BeginDialogue: {fileID: 0}
-    EndDialogue: {fileID: 0}
+    EndDialogue: {fileID: 11400000, guid: 5f2e463f32645ab42a718285df692c50, type: 2}
     interactorTriger: {fileID: 0}
     requirements:
     - item: {fileID: 11400000, guid: b235e9cbac7110a4da5894c9d751263b, type: 2}
@@ -30,7 +30,7 @@ MonoBehaviour:
   - questType: 4
     stepName: "Unseal the cave\u2019s entrance."
     BeginDialogue: {fileID: 0}
-    EndDialogue: {fileID: 0}
+    EndDialogue: {fileID: 11400000, guid: 2a8880ecaf46f3a4abec2303995aa210, type: 2}
     interactorTriger: {fileID: 0}
     requirements:
     - item: {fileID: 11400000, guid: b235e9cbac7110a4da5894c9d751263b, type: 2}
@@ -41,7 +41,7 @@ MonoBehaviour:
   - questType: 2
     stepName: Investigate the cave.
     BeginDialogue: {fileID: 0}
-    EndDialogue: {fileID: 0}
+    EndDialogue: {fileID: 11400000, guid: 06dd9ccf193a4014caeb420edad53df8, type: 2}
     interactorTriger: {fileID: 0}
     requirements:
     - item: {fileID: 0}
@@ -52,7 +52,7 @@ MonoBehaviour:
   - questType: 2
     stepName: Leave the island to report your findings !
     BeginDialogue: {fileID: 0}
-    EndDialogue: {fileID: 0}
+    EndDialogue: {fileID: 11400000, guid: 2ed7cdcb587ff5945883d105fa555f80, type: 2}
     interactorTriger: {fileID: 0}
     requirements: []
     skipIf: []

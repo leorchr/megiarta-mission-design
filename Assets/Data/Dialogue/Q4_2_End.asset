@@ -17,4 +17,4 @@ MonoBehaviour:
   - showName: 1
     character: {fileID: 11400000, guid: 2aa8c47d8f4c4e5448a47cbe30912646, type: 2}
     text: Phew...
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: 2cd3f6ad0e8dd9d438732e5ea771a8c8, type: 3}
