@@ -17,4 +17,4 @@ MonoBehaviour:
   - showName: 1
     character: {fileID: 11400000, guid: 2aa8c47d8f4c4e5448a47cbe30912646, type: 2}
     text: "A letter. But I can\u2019t figure out what\u2019s written on it."
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: 165677423ddf12c4f814570d9936d2ec, type: 3}

@@ -18,4 +18,4 @@ MonoBehaviour:
     character: {fileID: 11400000, guid: 2aa8c47d8f4c4e5448a47cbe30912646, type: 2}
     text: "Let\u2019s write down my report to the duke before leaving. I don\u2019t
       want to come back to this \u201Cinsanity island\u201D."
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: 9b55db10bde8bbd49b7955cda1389b92, type: 3}

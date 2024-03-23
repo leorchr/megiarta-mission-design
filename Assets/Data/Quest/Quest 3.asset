@@ -21,29 +21,32 @@ MonoBehaviour:
     EndDialogue: {fileID: 0}
     interactorTriger: {fileID: 0}
     requirements: []
+    skipIf: []
     placeToVisit: {fileID: 11400000, guid: b10503bd17621f94394f1b6a94a78400, type: 2}
     SpecialEventCode: 0
   - questType: 0
     stepName: Investigate the entrance.
     BeginDialogue: {fileID: 0}
-    EndDialogue: {fileID: 0}
+    EndDialogue: {fileID: 11400000, guid: 5b752fb77d2b8744088c3c1ab3e2c3d1, type: 2}
     interactorTriger: {fileID: 0}
     requirements:
     - item: {fileID: 11400000, guid: b6375180682c0e440b47c06899594bf2, type: 2}
       quantity: 1
+    skipIf: []
     placeToVisit: {fileID: 0}
     SpecialEventCode: 0
   - questType: 3
     stepName: "Bring the message back to the \u201CAnalyser\u201D"
     BeginDialogue: {fileID: 0}
-    EndDialogue: {fileID: 0}
+    EndDialogue: {fileID: 11400000, guid: dfb6cdb3368fc4a41a42c4e357146a87, type: 2}
     interactorTriger: {fileID: 11400000, guid: a6a45dab439a11d4fbfbdc355d6e5b76, type: 2}
     requirements:
     - item: {fileID: 11400000, guid: b6375180682c0e440b47c06899594bf2, type: 2}
       quantity: 1
+    skipIf: []
     placeToVisit: {fileID: 0}
     SpecialEventCode: 0
-  currentStep: 0
+  currentStep: 3
   interactor: {fileID: 0}
   moneyReward: 21
   itemReward: {fileID: 0}

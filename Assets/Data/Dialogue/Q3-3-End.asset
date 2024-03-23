@@ -22,7 +22,7 @@ MonoBehaviour:
     character: {fileID: 11400000, guid: 2aa8c47d8f4c4e5448a47cbe30912646, type: 2}
     text: "Let\u2019s hope this weird message helps me figure out where the garrison
       went..."
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: 285db268592c5ef4cbeb89ac93b83375, type: 3}
   - showName: 1
     character: {fileID: 11400000, guid: 2570fa5825f1e8d41872272997399cfe, type: 2}
     text: "\"Some of us already fell to the madness inhabiting these crystals.  \nIn
@@ -50,4 +50,4 @@ MonoBehaviour:
   - showName: 1
     character: {fileID: 11400000, guid: 2aa8c47d8f4c4e5448a47cbe30912646, type: 2}
     text: "To the cave we go\u2026"
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: 3f1b266960197174b8cf78d90956a9fe, type: 3}
