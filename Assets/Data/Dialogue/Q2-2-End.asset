@@ -17,7 +17,7 @@ MonoBehaviour:
   - showName: 1
     character: {fileID: 11400000, guid: 2570fa5825f1e8d41872272997399cfe, type: 2}
     text: AWAITING MESSAGE TO DECIPHER
-    audioClip: {fileID: 8300000, guid: cbd9b6786e7c0f34085a5a8726185d4d, type: 3}
+    audioClip: {fileID: 8300000, guid: 9e968ea9fa8a5f04a93f68fd0c6aa680, type: 3}
   - showName: 1
     character: {fileID: 11400000, guid: 2aa8c47d8f4c4e5448a47cbe30912646, type: 2}
     text: And one report to decipher.
@@ -51,11 +51,11 @@ MonoBehaviour:
     character: {fileID: 11400000, guid: 2570fa5825f1e8d41872272997399cfe, type: 2}
     text: 'Sir, if no other report coming from the island finds you, please, do not
       send any help or any reinforcements. We will try to put an end to- '
-    audioClip: {fileID: 8300000, guid: d61b15c20226dee40b67bb9b95bff0f5, type: 3}
+    audioClip: {fileID: 8300000, guid: 94cc554c5354c274dbbcc0f199fe4497, type: 3}
   - showName: 1
     character: {fileID: 11400000, guid: 2570fa5825f1e8d41872272997399cfe, type: 2}
     text: '*The letter seems unfinished*'
-    audioClip: {fileID: 8300000, guid: 63703cf4fa0e6274294784e6d18628d5, type: 3}
+    audioClip: {fileID: 8300000, guid: c754058d55178494ba6e43e614c3315a, type: 3}
   - showName: 1
     character: {fileID: 11400000, guid: 2aa8c47d8f4c4e5448a47cbe30912646, type: 2}
     text: ... I have to get to the bottom of this. I have to find this accursed cave.

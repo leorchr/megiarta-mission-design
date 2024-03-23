@@ -26,4 +26,4 @@ MonoBehaviour:
   - showName: 1
     character: {fileID: 11400000, guid: 2570fa5825f1e8d41872272997399cfe, type: 2}
     text: AWAITING MESSAGE TO DECIPHER
-    audioClip: {fileID: 8300000, guid: cbd9b6786e7c0f34085a5a8726185d4d, type: 3}
+    audioClip: {fileID: 8300000, guid: 9e968ea9fa8a5f04a93f68fd0c6aa680, type: 3}
