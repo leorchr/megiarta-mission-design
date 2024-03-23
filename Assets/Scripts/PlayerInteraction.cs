@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static UnityEditor.Progress;
 
 public class PlayerInteraction : MonoBehaviour
 {
@@ -60,6 +61,7 @@ public class PlayerInteraction : MonoBehaviour
     {
         _possiblePickable.OnPick();
         _inventory.PickupQuestItem(_possiblePickable.item);
+        GameManager.instance.NewItem(_possiblePickable.item);
         _possiblePickable.gameObject.SetActive(false);
         SetInteraction(InteractionType.None);
     }

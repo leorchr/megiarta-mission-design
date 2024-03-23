@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: WeirdBranch
   m_EditorClassIdentifier: 
   label: Weird branch
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 7b017fa05b3a3d942a07954e7f022be4, type: 3}

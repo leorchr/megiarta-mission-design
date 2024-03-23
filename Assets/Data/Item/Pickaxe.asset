@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Pickaxe
   m_EditorClassIdentifier: 
   label: Iron pickaxe
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 3d8511ba62a46134bbe29074e21335ae, type: 3}

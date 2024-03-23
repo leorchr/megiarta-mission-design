@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Ingot
   m_EditorClassIdentifier: 
   label: Ingot
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 2d6925360fa07154282f4eea95061b77, type: 3}
