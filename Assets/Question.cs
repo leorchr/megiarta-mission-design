@@ -12,8 +12,8 @@ public class Question : MonoBehaviour
 
     public enumChoice getChoice()
     {
-        if (yesToggle.isOn) { return enumChoice.Yes; }
-        else if (noToggle.isOn) { return enumChoice.No; }
+        if (yesToggle.isOn) { return enumChoice.No; }
+        else if (noToggle.isOn) { return enumChoice.Yes; }
         return enumChoice.None;
     }
 

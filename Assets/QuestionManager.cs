@@ -42,6 +42,7 @@ public class QuestionManager : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             PlayerController.instance.unlockPlayer();
             GameManager.instance.EndGame();
+            Destroy(gameObject);
         }
         else
         {
