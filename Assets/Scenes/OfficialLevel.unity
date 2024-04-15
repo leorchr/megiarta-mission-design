@@ -4947,7 +4947,7 @@ PrefabInstance:
     - target: {fileID: 8796253216393764117, guid: c48943a3488df4d438cfd1728a5025c0,
         type: 3}
       propertyPath: sensitivity
-      value: 1000
+      value: 300
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20783,6 +20783,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2060465214254225312, guid: 0eb3de24dc4599a4aaddb5f46fe5b7e8,
+        type: 3}
+      propertyPath: m_Navigation.m_SelectOnDown
+      value: 
+      objectReference: {fileID: 1655592093}
     - target: {fileID: 2949467978627209241, guid: 0eb3de24dc4599a4aaddb5f46fe5b7e8,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -22161,7 +22166,7 @@ MonoBehaviour:
   m_MinValue: 0.0001
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 1
+  m_Value: 0.3
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:

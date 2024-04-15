@@ -26,11 +26,19 @@ public class MainMenu : MonoBehaviour
 
     [SerializeField] private DialogueSC Intro;
 
+    [SerializeField] private bool onlyOnce;
+
+    private void Start()
+    {
+        onlyOnce = false;
+    }
     public void StartGame()
     {
+        if(onlyOnce) return;
         blackScreen.SetActive(true);
         Invoke("PlayIntroSound", 2f);
         DialogueManager.instance.PlayDialogue(Intro);
+        onlyOnce = true;
     }
 
     private void PlayIntroSound()
@@ -66,6 +74,7 @@ public class MainMenu : MonoBehaviour
 
     public void SettingsMenu()
     {
+        if (onlyOnce) return;
         UiSettings.SetActive(true);
         UiMenu.SetActive(false);
         exitButton.GetComponent<Button>().Select();
@@ -73,6 +82,7 @@ public class MainMenu : MonoBehaviour
 
     public void QuitGame()
     {
+        if (onlyOnce) return;
         Application.Quit();
     }
 
