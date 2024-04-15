@@ -78,6 +78,11 @@ public class CameraController : MonoBehaviour
         if (tTime != 1) { transitionUpdate(); }
     }
 
+    public void SetSensitivity(float sliderValue)
+    {
+        sensitivity = sliderValue * 1000;
+    }
+
     private CameraData getCurrentData()
     {
         if (cpList.Count > 0)
