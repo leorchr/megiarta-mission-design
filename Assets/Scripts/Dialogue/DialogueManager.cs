@@ -197,7 +197,6 @@ public class DialogueManager : MonoBehaviour
         }
         currentDialogueBox = null;
         currentSubdialogueID = 0;
-        Debug.Log("Dialogue Ended");
 
         if (dialogueQueue.Contains(currentDialogue))
         {

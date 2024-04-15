@@ -228,7 +228,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.33346394, y: -0.62353975, z: -0.62353975, w: 0.33346394}
   m_LocalPosition: {x: 173.8, y: 4.94, z: 117.32}
-  m_LocalScale: {x: 11.691706, y: 11.691706, z: 11.691705}
+  m_LocalScale: {x: 11.691705, y: 11.691705, z: 11.691705}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7386924947778007366}
@@ -324,9 +324,7 @@ MonoBehaviour:
   onlyOnce: 0
   requiredItems: []
   waitForObject: 0
-  quests:
-  - {fileID: 11400000, guid: 3e4670ede95d22a4baeb4728f0b615d8, type: 2}
-  current: 0
+  QGInfo: {fileID: 0}
 --- !u!64 &8359249285757150761
 MeshCollider:
   m_ObjectHideFlags: 0

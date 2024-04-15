@@ -58,11 +58,7 @@ MonoBehaviour:
   onlyOnce: 0
   requiredItems: []
   waitForObject: 0
-  quests:
-  - {fileID: 11400000, guid: 073c3ca520d5001469e8bfeaeb746676, type: 2}
-  - {fileID: 11400000, guid: 9571cbe28091d6243a5e85b220ac5781, type: 2}
-  - {fileID: 11400000, guid: 3e2dedf6e0eabce4280b80ee0a30a937, type: 2}
-  current: 0
+  QGInfo: {fileID: 11400000, guid: a6a45dab439a11d4fbfbdc355d6e5b76, type: 2}
 --- !u!95 &9201021599074572164
 Animator:
   serializedVersion: 5
@@ -99,7 +95,6 @@ MonoBehaviour:
   artifactSounds:
   - {fileID: 8300000, guid: d6d67a540708cb94d98c51c98a3149c8, type: 3}
   - {fileID: 8300000, guid: 22a0d42c3de37d44f8edc931eb990ca1, type: 3}
-  - {fileID: 8300000, guid: edf56bbfa62db2449b2e7cee3eb8b6fc, type: 3}
 --- !u!82 &3562637699032525351
 AudioSource:
   m_ObjectHideFlags: 0
@@ -109,10 +104,11 @@ AudioSource:
   m_GameObject: {fileID: 3942949501899509032}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 4017617450034642733, guid: eb1923421539a6a4589238b2749b3283,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -360,9 +356,9 @@ Transform:
   m_GameObject: {fileID: 4760808364023954343}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0, y: 1.5, z: 0}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 941074460999245432}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -23,11 +23,11 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
-        Debug.Log("Resume Button");
     }
 
     public void Settings()
     {
+        GameManager.instance.lockPauseMenu = true;
         pauseMenu.SetActive(false);
         settingsPanel.SetActive(true);
         exitButton.GetComponent<Button>().Select();
@@ -35,6 +35,7 @@ public class PauseMenu : MonoBehaviour
 
     public void QuitSettings()
     {
+        GameManager.instance.lockPauseMenu = false;
         settingsPanel.SetActive(false);
         pauseMenu.SetActive(true);
         settingsButton.GetComponent<Button>().Select();

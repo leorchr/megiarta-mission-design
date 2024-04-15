@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject blackEndScreen;
     [SerializeField] private DialogueSC outroClip;
 
+    [HideInInspector] public bool lockPauseMenu; // if settings are open for example
+
     private void Start()
     {
         if(instance == null)
@@ -28,7 +30,7 @@ public class GameManager : MonoBehaviour
 
     public void OpenPause(InputAction.CallbackContext callbackContext)
     {
-        if(!DialogueManager.instance.isOnDialogue() && !QuestManager.Instance.isInReport())
+        if(!DialogueManager.instance.isOnDialogue() && !QuestManager.Instance.isInReport() && !lockPauseMenu)
         {
             Time.timeScale = 0;
             pauseMenu.SetActive(true);
@@ -40,7 +42,6 @@ public class GameManager : MonoBehaviour
 
     public void NewItem(ItemData newItem)
     {
-        print("she");
         newItemPanel.SetActive(true);
         itemImage.sprite = newItem.icon;
         itemName.text = newItem.label;

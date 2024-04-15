@@ -49,4 +49,6 @@ MonoBehaviour:
   sideQuestPanelPrefab: {fileID: 850589837601034688, guid: 8e294a47cb34aac40a6446c80ab97f6b,
     type: 3}
   questParent: {fileID: 0}
+  startQuest: {fileID: 11400000, guid: 073c3ca520d5001469e8bfeaeb746676, type: 2}
+  finishedQuest: []
   questsProgress: []
