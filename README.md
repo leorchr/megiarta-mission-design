@@ -11,12 +11,8 @@ Hired by the **Duchy of Brast’ani**, you are sent to **Kadoken Island** to inv
 ## 🎮 Features
 
 - **Engaging Mission Design**: A deep main storyline with layered quest progression.
-- **Open Exploration**: Discover **Kadoken Island**, from ancient ruins to hidden settlements.
+- **Open Exploration**: Discover **Kadoken Island**.
 - **Main & Side Quests**: Follow the critical path or take on optional **side quests** to learn more about the world.
-- **Immersive Environment**: Dark forests, abandoned forts, and mysterious caves.
-- **Dynamic NPC Interactions**: Talk to survivors, traders, and unknown entities.
-- **Mystical Artifacts & Resources**: Magical ores and ancient relics to collect.
-
 <br>
 
 
